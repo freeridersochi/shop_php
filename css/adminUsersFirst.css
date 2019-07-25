@@ -1,0 +1,345 @@
+<<<<<<< HEAD
+/* **** First page **** */
+.adm_users_table .tr_title th:nth-child(2){
+    padding-left: 53px;
+}
+.adm_users_table .tr_title th:nth-child(3){
+        padding-left: 41px;
+}
+.adm_users_table .name_column{
+    width: 138px;
+    letter-spacing: 1px;
+    padding-left: 25px;
+}
+.adm_users_table .mail_column, .adm_users_table .phone_column{
+    color: #636363;
+}
+.adm_users_table .mail_column{
+    letter-spacing: 0.3px;
+    padding-left: 25px;
+    font-size: 15px;
+}
+.adm_users_table .phone_column{
+    padding-left: 14px;
+    letter-spacing: 1px;
+}
+.adm_users_table .link_column{
+    text-align: right;
+}
+.adm_users_table .link_column a{
+    margin-right: 22px;
+}
+
+/* **** Second page *** */
+.admin_users_control{
+    display: none;
+}
+/*  User data parth */
+.user_data{
+    width: 736px;
+    background-color: #fff;
+    margin: 9px 22px 19px;
+    height: 264px;
+}
+h2{
+	height: 46px;
+	border-bottom: 1px solid #dee1e2;
+	font-family: Proxima Nova, semybold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #95a5a6;
+	font-weight: 500;
+    text-align: left;
+    padding: 16px 20px;
+	vertical-align: middle;
+	letter-spacing: 0.5px;
+}
+.user_data .left_bar, .user_data .right_bar{
+    width: 251px;
+    height: 200px;
+}
+.user_data .left_bar{
+    float: left;
+    margin: 20px 0 0 17px;
+}
+.user_data .right_bar{
+    float: left;
+    margin: 20px 0 0 14px;
+}
+.user_data_lebels{
+    font-size: 14px;
+    line-height: 1.2;
+    color: #999;
+    letter-spacing: -0.2px;
+    margin-top: 21px;
+    margin-left: 4px;
+}
+.user_data input{
+    width: 241px;
+    height: 26px;
+    margin-bottom: 18px;
+    padding-left: 4px;
+}
+.user_data .right_bar input{
+    width: 212px;
+}
+.user_data .appartment_input, .user_data .home_input{
+    float: left;
+}
+.user_data .home_appartments{
+    width: 150px;    
+}
+.user_data .home_input{
+    width: 48px;
+    height: auto;
+}
+.user_data .appartment_input{
+    width: 70px;
+    margin-left: 30px;
+}
+.home_appartments .appartment_input .small_input, .home_appartments .home_input .small_input{
+    width: 49px;
+}
+
+/*   User story parth (table)  */
+.light_blue{
+    color: #3498db;
+}
+.middle_serif{
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: right;
+}
+/* colums of table */
+.orders_story .all_orders_total p{
+    font-size: 42.7px;
+}
+.orders_story .all_orders_total b{
+    font-size: 21px;
+}
+.orders_story .order_num{
+    padding-left: 27px;
+    letter-spacing: 0.1px;
+}
+.orders_story .order_cost{
+    padding-left: 29px;
+    letter-spacing: 0.3px;
+}
+.orders_story .order_date{
+    text-align: center;
+    letter-spacing: 0.1px;
+    padding-left: 28px;
+}
+/* last row of table */
+.orders_story tr:last-child{
+    height: 67px;
+}
+td.light_blue.middle_serif{
+    position: relative;
+}
+td.light_blue.middle_serif p{
+    position: absolute;
+    right: -34px;
+    top: 18px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+td.all_orders_total{
+    position: relative;
+}
+td.all_orders_total p{
+    position: absolute;
+    right: 21px;
+    top: 9px;
+    font-weight: 300;
+}
+.destroy_user_btn, .back_toUser_btn{
+    position: static;
+    font-family: Supermolot, sans-serif;
+    border-bottom: 1px solid;
+    float: right;
+    margin: -2px 17px;
+    font-size: 18px;
+    text-decoration: underline;
+    border-bottom: none;
+    color: #ad0000;
+    letter-spacing: -0.3px;
+}
+.back_toUser_btn{
+    float: left;
+    font-size: 16px;
+    color: #2ecc71;
+}
+=======
+/* **** First page **** */
+.adm_users_table .tr_title th:nth-child(2){
+    padding-left: 53px;
+}
+.adm_users_table .tr_title th:nth-child(3){
+        padding-left: 41px;
+}
+.adm_users_table .name_column{
+    width: 138px;
+    letter-spacing: 1px;
+    padding-left: 25px;
+}
+.adm_users_table .mail_column, .adm_users_table .phone_column{
+    color: #636363;
+}
+.adm_users_table .mail_column{
+    letter-spacing: 0.3px;
+    padding-left: 25px;
+    font-size: 15px;
+}
+.adm_users_table .phone_column{
+    padding-left: 14px;
+    letter-spacing: 1px;
+}
+.adm_users_table .link_column{
+    text-align: right;
+}
+.adm_users_table .link_column a{
+    margin-right: 22px;
+}
+
+/* **** Second page *** */
+.admin_users_control{
+    display: none;
+}
+/*  User data parth */
+.user_data{
+    width: 736px;
+    background-color: #fff;
+    margin: 9px 22px 19px;
+    height: 264px;
+}
+h2{
+	height: 46px;
+	border-bottom: 1px solid #dee1e2;
+	font-family: Proxima Nova, semybold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #95a5a6;
+	font-weight: 500;
+    text-align: left;
+    padding: 16px 20px;
+	vertical-align: middle;
+	letter-spacing: 0.5px;
+}
+.user_data .left_bar, .user_data .right_bar{
+    width: 251px;
+    height: 200px;
+}
+.user_data .left_bar{
+    float: left;
+    margin: 20px 0 0 17px;
+}
+.user_data .right_bar{
+    float: left;
+    margin: 20px 0 0 14px;
+}
+.user_data_lebels{
+    font-size: 14px;
+    line-height: 1.2;
+    color: #999;
+    letter-spacing: -0.2px;
+    margin-top: 21px;
+    margin-left: 4px;
+}
+.user_data input{
+    width: 241px;
+    height: 26px;
+    margin-bottom: 18px;
+    padding-left: 4px;
+}
+.user_data .right_bar input{
+    width: 212px;
+}
+.user_data .appartment_input, .user_data .home_input{
+    float: left;
+}
+.user_data .home_appartments{
+    width: 150px;    
+}
+.user_data .home_input{
+    width: 48px;
+    height: auto;
+}
+.user_data .appartment_input{
+    width: 70px;
+    margin-left: 30px;
+}
+.home_appartments .appartment_input .small_input, .home_appartments .home_input .small_input{
+    width: 49px;
+}
+
+/*   User story parth (table)  */
+.light_blue{
+    color: #3498db;
+}
+.middle_serif{
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: right;
+}
+/* colums of table */
+.orders_story .all_orders_total p{
+    font-size: 42.7px;
+}
+.orders_story .all_orders_total b{
+    font-size: 21px;
+}
+.orders_story .order_num{
+    padding-left: 27px;
+    letter-spacing: 0.1px;
+}
+.orders_story .order_cost{
+    padding-left: 29px;
+    letter-spacing: 0.3px;
+}
+.orders_story .order_date{
+    text-align: center;
+    letter-spacing: 0.1px;
+    padding-left: 28px;
+}
+/* last row of table */
+.orders_story tr:last-child{
+    height: 67px;
+}
+td.light_blue.middle_serif{
+    position: relative;
+}
+td.light_blue.middle_serif p{
+    position: absolute;
+    right: -34px;
+    top: 18px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+td.all_orders_total{
+    position: relative;
+}
+td.all_orders_total p{
+    position: absolute;
+    right: 21px;
+    top: 9px;
+    font-weight: 300;
+}
+.destroy_user_btn, .back_toUser_btn{
+    position: static;
+    font-family: Supermolot, sans-serif;
+    border-bottom: 1px solid;
+    float: right;
+    margin: -2px 17px;
+    font-size: 18px;
+    text-decoration: underline;
+    border-bottom: none;
+    color: #ad0000;
+    letter-spacing: -0.3px;
+}
+.back_toUser_btn{
+    float: left;
+    font-size: 16px;
+    color: #2ecc71;
+}
+>>>>>>> efab3abe5b4231bb418b51dcf492590d533438f9

@@ -1,0 +1,586 @@
+<<<<<<< HEAD
+
+.left_bar{
+    width: 470px;
+    float: left;
+}
+.middle_bar{
+    width: 428px;
+    float: left;
+    margin-bottom: 40px;
+}
+.right_bar{
+    width: 269px;
+    float: right;
+}
+h1{
+    margin: 192px 0 0;
+    letter-spacing: -4.05px;
+    font-size: 74px;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 0.833;
+    font-weight: 100;
+    float: left;
+    width: 1170px;
+}
+/* link Back */
+.back_to_cat1{
+    font-size: 14px;
+    font-family: "Supermolot";
+    color: rgb(237, 22, 81);
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+    float: left;
+    margin: 10px 0;
+    width: 300px;
+}
+/* end link back */
+
+/* Секция  товара */
+.item_in_cat{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    width: 1170px;
+    float: left;
+    margin: 18px 0;
+}
+/* Pictures zone */
+.cat1_item1_pictures{
+    position: relative;
+    width: 470px;
+    height: 470px;
+    display: inline-block;
+    text-align: center;
+}
+.cat1_item1_pictures img{
+    max-width: 470px;
+    max-height: 430px;
+    margin: 20px auto;
+}
+.cat1_item1_pictures .zoom{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+.item_slider{
+    margin: 20px 63px;
+    width: 350px;
+}
+.item_slider img{
+    margin: 0px 6.8px;
+    max-width: 56px;
+    max-height: 56px;
+}
+.prewiew_wrap{
+    width: 56px;
+    height: 56px;
+    float: left;
+    margin: 5px 6.8px;
+    display: inline-block;
+    text-align: center;
+}
+.move_right, .move_left{
+    color: #df645f;
+    padding: 22px 0;
+    float: left;
+}
+a.item_slider{
+    margin: 0px 6.8px;
+}
+.move_right{
+    -o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+    float: right;
+}
+
+/* active & hover */
+.active{
+    border: 2px solid #000;
+}
+.preview:hover{
+    border: 2px solid red;
+}
+/* End pictures zone */
+
+/* middle bar */
+.cat1_item1_name{
+    font-size: 36px;
+    font-family: "Supermolot";
+    color: #000;
+    font-style: italic;
+    text-align: left;
+    border-bottom: 3px solid #ed1651;
+    padding-bottom: 7px;
+    width: 370px;
+    margin: 26px 0 0px 28px;
+    font-weight: 300;
+}
+.cat1_item1_about{
+    font-size: 14px;
+    font-family: "Supermolot";
+    color: rgb(85, 85, 85);
+    line-height: 1.286;
+    text-align: left;
+    margin: 13px 31px;
+    font-weight: 300;
+}
+span p{
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Supermolot";
+    font-weight: 300;
+    color: rgb(51, 51, 51);
+    line-height: 1.2;
+    text-align: left;
+    margin: 23px 0 0 30px;
+}
+span select{   
+   font-size: 14px;
+   font-family: "Supermolot";
+   color: rgb(0, 0, 0);
+   line-height: 1.2;
+   text-align: left;
+}
+span select{
+    content: "▼";
+    padding: 0 9px;
+    width: 230px;
+    height: 30px;
+    background-color: #e9e9e9;
+}
+/* middle bar end */
+
+/* right bar start */
+.buy_bar{
+    width: 222px;
+    height: 188px;
+    border: 2px solid #dbdbdb;
+    margin: 39px 50px 0 0;
+    text-align: center;
+}
+.item1_old_price{
+    font-size: 16px;
+    font-family: "Supermolot";
+    color: rgba(153, 153, 153, 0.502);
+    font-style: italic;
+    text-decoration: line-through;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 19px;
+    margin-left: 5px;
+}
+.cat1_item1_price{
+    font-size: 26px;
+    font-family: "Supermolot";
+    color: rgb(237, 22, 81);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+.cat1_item1_status{
+    font-size: 11px;
+    font-family: "Supermolot";
+    color: rgb(0, 0, 0);
+    vertical-align: text-top;
+    margin: 0;
+}
+.cat1_item1_status_icon{
+    margin-top: 14px;
+}
+.gray_border{
+    border: 1px solid #dbdbdb;
+    margin-top: 8px;
+}
+
+/* Buy button */
+.buy_bar button{
+    background-color: rgb(237, 22, 81);
+    width: 129px;
+    height: 39px;
+    font-size: 15px;
+    font-family: "Supermolot";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.588;
+    text-align: left;
+    border: none;
+}
+.buy_button img{
+    margin: 10px;
+    display: inline-block;
+    float: left;
+}
+.buy_button p{
+    display: inline-block;
+    margin-top: 7px;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-family: "Supermolot";
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Buy button End*/
+
+/* Icons bar */
+.icons_bar{
+    width: 42px;
+    float: left;
+}
+.round_wrapper{
+    width: 40px;
+    height: 40px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    margin-top: 22px;
+}
+.delivery_icon{
+    margin: 12px 6px;
+}
+.hot_line_icon{
+    margin: 10px;
+}
+.presents_icon{
+    margin: 8px 11px;
+}
+.desc_bar{
+    float: right;
+    margin-right: 44px;
+    font-size: 14px;
+    font-family: "Supermolot";
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+}
+.stupid_disigner_bold{
+    font-weight: bold;
+    line-height: 1.071;
+    margin-top: 29px;
+}
+.stupid_disigner_thin{
+    font-weight: 200;
+    line-height: 1.271;
+}
+/* Icons bar End */
+
+/* Секция  товара Конец */
+
+/* Лучшие товары  Начало */
+.best_salers{
+    float: left;
+    margin-top: 24px;
+    position: inherit;
+}
+.item_img_wrap{
+    position: relative;
+    width: 290px;
+    height: 235px;
+    display: inline-block;
+    text-align: center;
+}
+.item_img_wrap img{
+    max-width: 290px;
+    max-height: 195px;
+    margin: 10px auto;
+}
+=======
+
+.left_bar{
+    width: 470px;
+    float: left;
+}
+.middle_bar{
+    width: 428px;
+    float: left;
+    margin-bottom: 40px;
+}
+.right_bar{
+    width: 269px;
+    float: right;
+}
+h1{
+    margin: 192px 0 0;
+    letter-spacing: -4.05px;
+    font-size: 74px;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 0.833;
+    font-weight: 100;
+    float: left;
+    width: 1170px;
+}
+/* link Back */
+.back_to_cat1{
+    font-size: 14px;
+    font-family: "Supermolot";
+    color: rgb(237, 22, 81);
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+    float: left;
+    margin: 10px 0;
+    width: 300px;
+}
+/* end link back */
+
+/* Секция  товара */
+.item_in_cat{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    width: 1170px;
+    float: left;
+    margin: 18px 0;
+}
+/* Pictures zone */
+.cat1_item1_pictures{
+    position: relative;
+    width: 470px;
+    height: 470px;
+    display: inline-block;
+    text-align: center;
+}
+.cat1_item1_pictures img{
+    max-width: 470px;
+    max-height: 430px;
+    margin: 20px auto;
+}
+.cat1_item1_pictures .zoom{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+.item_slider{
+    margin: 20px 63px;
+    width: 350px;
+}
+.item_slider img{
+    margin: 0px 6.8px;
+    max-width: 56px;
+    max-height: 56px;
+}
+.prewiew_wrap{
+    width: 56px;
+    height: 56px;
+    float: left;
+    margin: 5px 6.8px;
+    display: inline-block;
+    text-align: center;
+}
+.move_right, .move_left{
+    color: #df645f;
+    padding: 22px 0;
+    float: left;
+}
+a.item_slider{
+    margin: 0px 6.8px;
+}
+.move_right{
+    -o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+    float: right;
+}
+
+/* active & hover */
+.active{
+    border: 2px solid #000;
+}
+.preview:hover{
+    border: 2px solid red;
+}
+/* End pictures zone */
+
+/* middle bar */
+.cat1_item1_name{
+    font-size: 36px;
+    font-family: "Supermolot";
+    color: #000;
+    font-style: italic;
+    text-align: left;
+    border-bottom: 3px solid #ed1651;
+    padding-bottom: 7px;
+    width: 370px;
+    margin: 26px 0 0px 28px;
+    font-weight: 300;
+}
+.cat1_item1_about{
+    font-size: 14px;
+    font-family: "Supermolot";
+    color: rgb(85, 85, 85);
+    line-height: 1.286;
+    text-align: left;
+    margin: 13px 31px;
+    font-weight: 300;
+}
+span p{
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Supermolot";
+    font-weight: 300;
+    color: rgb(51, 51, 51);
+    line-height: 1.2;
+    text-align: left;
+    margin: 23px 0 0 30px;
+}
+span select{   
+   font-size: 14px;
+   font-family: "Supermolot";
+   color: rgb(0, 0, 0);
+   line-height: 1.2;
+   text-align: left;
+}
+span select{
+    content: "▼";
+    padding: 0 9px;
+    width: 230px;
+    height: 30px;
+    background-color: #e9e9e9;
+}
+/* middle bar end */
+
+/* right bar start */
+.buy_bar{
+    width: 222px;
+    height: 188px;
+    border: 2px solid #dbdbdb;
+    margin: 39px 50px 0 0;
+    text-align: center;
+}
+.item1_old_price{
+    font-size: 16px;
+    font-family: "Supermolot";
+    color: rgba(153, 153, 153, 0.502);
+    font-style: italic;
+    text-decoration: line-through;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 19px;
+    margin-left: 5px;
+}
+.cat1_item1_price{
+    font-size: 26px;
+    font-family: "Supermolot";
+    color: rgb(237, 22, 81);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+.cat1_item1_status{
+    font-size: 11px;
+    font-family: "Supermolot";
+    color: rgb(0, 0, 0);
+    vertical-align: text-top;
+    margin: 0;
+}
+.cat1_item1_status_icon{
+    margin-top: 14px;
+}
+.gray_border{
+    border: 1px solid #dbdbdb;
+    margin-top: 8px;
+}
+
+/* Buy button */
+.buy_bar button{
+    background-color: rgb(237, 22, 81);
+    width: 129px;
+    height: 39px;
+    font-size: 15px;
+    font-family: "Supermolot";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.588;
+    text-align: left;
+    border: none;
+}
+.buy_button img{
+    margin: 10px;
+    display: inline-block;
+    float: left;
+}
+.buy_button p{
+    display: inline-block;
+    margin-top: 7px;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-family: "Supermolot";
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Buy button End*/
+
+/* Icons bar */
+.icons_bar{
+    width: 42px;
+    float: left;
+}
+.round_wrapper{
+    width: 40px;
+    height: 40px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    margin-top: 22px;
+}
+.delivery_icon{
+    margin: 12px 6px;
+}
+.hot_line_icon{
+    margin: 10px;
+}
+.presents_icon{
+    margin: 8px 11px;
+}
+.desc_bar{
+    float: right;
+    margin-right: 44px;
+    font-size: 14px;
+    font-family: "Supermolot";
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+}
+.stupid_disigner_bold{
+    font-weight: bold;
+    line-height: 1.071;
+    margin-top: 29px;
+}
+.stupid_disigner_thin{
+    font-weight: 200;
+    line-height: 1.271;
+}
+/* Icons bar End */
+
+/* Секция  товара Конец */
+
+/* Лучшие товары  Начало */
+.best_salers{
+    float: left;
+    margin-top: 24px;
+    position: inherit;
+}
+.item_img_wrap{
+    position: relative;
+    width: 290px;
+    height: 235px;
+    display: inline-block;
+    text-align: center;
+}
+.item_img_wrap img{
+    max-width: 290px;
+    max-height: 195px;
+    margin: 10px auto;
+}
+>>>>>>> efab3abe5b4231bb418b51dcf492590d533438f9
+/* Лучшие товары Конец */
