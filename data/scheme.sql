@@ -16,4 +16,7 @@ CREATE TABLE marks (
     name CHAR(10) NOT NULL UNIQUE
 );
 
-insert into marks (name) values('hot'),('sale'),('new');
+INSERT INTO marks (name) 
+VALUES  ('hot'),
+        ('sale'),
+        ('new');
