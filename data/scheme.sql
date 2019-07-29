@@ -11,6 +11,13 @@ CREATE TABLE photos (
     data MEDIUMBLOB NOT NULL 
 );
 
+INSERT INTO photos ( id, data )
+
+VALUES (0 , '../img/snowboards/1_1.jpg', 
+            '../img/snowboards/1_2.jpg', 
+            '../img/snowboards/1_3.jpg',
+            '../img/snowboards/1_4.jpg');
+
 CREATE TABLE marks (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     name CHAR(10) NOT NULL UNIQUE
@@ -20,3 +27,20 @@ INSERT INTO marks (name)
 VALUES  ('hot'),
         ('sale'),
         ('new');
+        
+CREATE TABLE products(
+    id INT UNSIGNED PRIMARY KEY,
+    name TEXT(20) NOT NULL UNIQUE,
+    price INT(10),
+    quanity INT(10),
+    description TEXT(100),
+    size TEXT(5),
+    discount DOUBLE(3,2)
+ 
+/*    
+    mark(),
+    photo(),
+    category()
+*/
+    
+);
