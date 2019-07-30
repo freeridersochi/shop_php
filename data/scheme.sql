@@ -12,11 +12,11 @@ CREATE TABLE photos (
 );
 
 INSERT INTO photos ( id, data )
-
-VALUES (0 , '../img/snowboards/1_1.jpg', 
-            '../img/snowboards/1_2.jpg', 
-            '../img/snowboards/1_3.jpg',
-            '../img/snowboards/1_4.jpg');
+VALUES (0 , LOAD_FILE('../img/snowboards/1_1.jpg'), 
+            LOAD_FILE('../img/snowboards/1_2.jpg'), 
+            LOAD_FILE('../img/snowboards/1_3.jpg'),
+            LOAD_FILE('../img/snowboards/1_4.jpg')
+        );
 
 CREATE TABLE marks (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
