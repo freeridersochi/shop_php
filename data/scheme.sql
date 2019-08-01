@@ -31,7 +31,6 @@ CREATE TABLE products(
     size CHAR(10),
     discount DOUBLE(3,2),
     mark INT references marks(id) ON DELETE RESTRICT,
-    photo INT references photos(id) ON DELETE CASCADE,
     category INT references categories(id) ON DELETE RESTRICT 
 );
 
