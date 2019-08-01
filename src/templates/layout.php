@@ -7,6 +7,12 @@
     <title>Super Shop</title>
     <link href="../css/resetCss.css" rel="stylesheet">
     <link href="../css/mainCssWebDesign.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet"> 
+    <link href="../css/categoryOne.css" rel="stylesheet">
+    <link href="../css/personalArea.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <link href="../css/registration.css" rel="stylesheet">
+    <link href="../css/basket.css" rel="stylesheet">
 </head>
 <body>
 <!--  Заголовок и  основное меню  -->

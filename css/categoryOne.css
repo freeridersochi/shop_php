@@ -1,0 +1,137 @@
+html{
+    background: #dee1e3;
+}
+.nav1_status{
+    float: left;
+    width: 1170px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+    margin-bottom: 22px;
+}
+/*   Pagination  */
+.cat_nav{
+    float: left;
+    width: 1172px;
+    height: 80px;
+    background: #fff;
+}
+.cat_nav span{
+    float: right;
+    width: 214px;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 25px;
+}
+.cat_nav span a, .cat_nav span p{
+    float: left;
+}
+.cat_nav span p{
+    margin: 6px 5px 0 1px;
+    font-weight: 300;
+}
+.cat_nav span a{
+    margin: 0 4px;
+    background: #e9e9e9;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #333333;
+    padding: 8px;
+}
+.cat_nav span a.active{
+    background:#ed1651;
+    color: #fff;
+}
+/*    Cat 1     */
+.category_items{
+    float: left;
+    width: 1172px;
+}
+/*  Banner  */
+.cat1_banner_one{
+    position: relative;
+    float: left;
+}
+.cat1_banner_one img{
+    position: relative;
+}
+.cat1_banner_one p{
+    position: absolute;
+    top: 68px;
+    left: 42px;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+}
+.cat1_banner_one p strong{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    white-space: nowrap;
+}
+.cat1_desc{
+    top: 117px!important;
+    left: 45px!important;
+}
+/*  Items cart  */
+.cat_one_item1{
+    margin: 0 0 3px 2px;
+}
+/*    Banner 2    */
+.cat1_banner_two{
+    position: relative;
+    float: right;
+    width: 585px;
+    height: 648px;
+}
+.cat1_banner_two p{
+    position: absolute;
+}
+p.banner2_item{
+    top: 41px;
+    left: 48px;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -1.3px;
+    line-height: 1;
+}
+p.banner2_desc{
+    top: 130px;
+    left: 48px;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+    color: #555555;
+}
+p.baner2_price{
+    top: 222px;
+    left: 48px;
+    color: #ed1651;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 37px;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+}
+p.baner2_price b{
+    text-transform: lowercase;
+    font-size: 30px;
+    font-weight: 600;
+}
+.banner2_item_viev{
+    position: absolute;
+    top: 277px;
+    left: 46px;
+    border: 3px solid #ed1651;
+    padding: 13px 11px 11px 13px;
+    background: transparent;
+    font: italic 17px Supermolot;
+    letter-spacing: 0.6px;
+}

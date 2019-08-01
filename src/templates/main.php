@@ -20,7 +20,7 @@
     </span>
     <?php foreach($items as $item):?>
     <article class="new_item">
-        <a href="/product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
+        <a href="/pages/product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
             <div class="img_conteiner">
                 <img src="<?=$item['image']?>" alt="Изображение отсутствует">
             </div>
@@ -58,7 +58,7 @@
     </span>
     <?php foreach($bests as $item):?>
     <article class="best_items">
-        <a href="/product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
+        <a href="/pages/product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
             <div class="img_conteiner">
                 <img src="<?=$item['image']?>" alt="Изображение отсутствует">
             </div>

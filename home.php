@@ -1,4 +1,5 @@
 <?php 
+
 require_once './src/include/database.php';
 require_once './src/include/nav_functions.php';
 
