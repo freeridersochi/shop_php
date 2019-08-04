@@ -2,15 +2,11 @@
 
 require_once '../src/include/database.php';
 require_once '../src/include/nav_functions.php';
+require_once '../src/include/include.php';
 
 $categories = get_categories();
 
-require_once '../src/include/include.php';
-
-$login_data = [ 
-                'items' => $items,
-                'bests' => $bests
-             ];
+$login_data = [];
 
 $login_page = include_template('../src/templates/login.php', $login_data );
 

@@ -308,9 +308,9 @@ article{
     text-align: center;
     margin: 10px auto;
 }
-.new_item img{
-    max-width: 290px;
-    max-height: 220px;
+.img_conteiner img{
+    max-width: 290px!important;
+    max-height: 220px!important;
 }
 .item_name{
     font: 14px "Supermolot", sans-serif;
@@ -829,9 +829,9 @@ article{
     text-align: center;
     margin: 10px auto;
 }
-.new_item img{
-    max-width: 290px;
-    max-height: 220px;
+.img_conteiner img{
+    max-width: 290px!important;
+    max-height: 220px!important;
 }
 .item_name{
     font: 14px "Supermolot", sans-serif;

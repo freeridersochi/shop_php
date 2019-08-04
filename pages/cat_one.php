@@ -2,12 +2,11 @@
 
 require_once '../src/include/database.php';
 require_once '../src/include/nav_functions.php';
+require_once '../src/include/include.php';
 
 $categories = get_categories();
 $items = get_items(); 
 $bests = get_best();
-
-require_once '../src/include/include.php';
 
 $cat_data = [ 
                 'items' => $items,
