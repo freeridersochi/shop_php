@@ -21,7 +21,8 @@ $home_page = include_template('./src/templates/main.php', $home_data );
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
 $include_result = include_template('./src/templates/layout.php', [
                                                 'categories' => $categories,
-                                                'content' => $home_page
+                                                'content' => $home_page,
+                                                'styles' => ["alert('hello!')"]
                                                 ]);
 //Show final template with include template
 print($include_result);

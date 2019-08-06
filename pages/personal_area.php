@@ -10,7 +10,7 @@ $bests = get_best();
 
 $cat_data = [];
 
-$cat_page = include_template('../src/templates/pers_area.php', $cat_data );
+$cat_page = include_template('../src/templates/pers_area.php');
 
 $include_result = include_template('../src/templates/layout.php', [
                                                 'categories' => $categories,

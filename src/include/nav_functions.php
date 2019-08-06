@@ -1,4 +1,6 @@
 <?php
+//Connect DB
+require_once '../src/include/database.php';
 
 // GEt cat func 
 function get_categories(){

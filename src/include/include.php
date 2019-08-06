@@ -5,6 +5,7 @@
 * @param array|null $data
 * @return string
 **/
+//INclude func
 function include_template(string $src, array $data = null): string{
     $result = '';
     
@@ -24,4 +25,9 @@ function include_template(string $src, array $data = null): string{
     $result = ob_get_clean(); //Clear memory
     
     return $result;
-}
+};
+//REnder func
+function render_page($data){
+    $include_result = include_template('../src/templates/layout.php', $data);
+    print($include_result);
+};
