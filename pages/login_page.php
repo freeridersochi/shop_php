@@ -11,5 +11,3 @@ render_page([ 'categories' => $categories,
               'content' => $login_page,
               'styles' => ['../css/login.css']
 ]);
-
-?>

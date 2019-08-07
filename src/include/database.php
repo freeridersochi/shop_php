@@ -1,6 +1,6 @@
 <?php 
 
-$link = mysqli_connect('localhost','root','','main_db');
+$link = mysqli_connect('localhost','root','','shop_main_db');
 
 if (mysqli_connect_errno())
 {

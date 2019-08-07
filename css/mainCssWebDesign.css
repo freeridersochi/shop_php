@@ -6,7 +6,7 @@ body{
     background-color: #e4e0d6;
     width: 1400px;
     height: auto;
-    margin: 0 8%;
+    margin: 0 auto;
     font-family: Supermolot, sans-serif;
 }
 header{
@@ -34,14 +34,12 @@ header{
 .super{
     font-size: 95%;
     padding-top: 28px;
-    padding-left: 31px;
 }
 .shop{
     font-size: 115%;
     width: 140px;
     font-weight: 600;
     margin-left: 31px;
-    margin-top: 5px;
 }
 
 /* main Menu */
@@ -83,7 +81,7 @@ menu{
     background-color: #f1f1f1;
     z-index: 3;
     position: absolute;
-    margin: 59px 170px;
+    margin: 45px 170px;
     border: none;
 }
 .mainNav a:hover{

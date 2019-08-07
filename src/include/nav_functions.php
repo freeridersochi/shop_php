@@ -1,13 +1,13 @@
 <?php
 //Connect DB
-require_once '../src/include/database.php';
+require_once 'database.php';
 
 // GEt cat func 
 function get_categories(){
     
 global $link;
 
-$sql = "SELECT * FROM `order category`"; 
+$sql = "SELECT * FROM `categories`"; 
 
 $result = mysqli_query( $link, $sql ); 
 
@@ -22,7 +22,7 @@ function get_items(){
     
 global $link;
 
-$sql = "SELECT * FROM `new items`"; 
+$sql = "SELECT * FROM `products`"; 
 
 $result = mysqli_query( $link, $sql ); 
 
@@ -37,7 +37,7 @@ function get_best(){
     
 global $link;
 
-$sql = "SELECT * FROM `best salers`"; 
+$sql = "SELECT * FROM `products`"; 
 
 $result = mysqli_query( $link, $sql ); 
 
@@ -54,7 +54,7 @@ function get_all($item_id){
     
 global $link;
 
-$sql = "SELECT * FROM `all items` WHERE id=".$item_id; 
+$sql = "SELECT * FROM `products` WHERE id=".$item_id; 
 
 $result = mysqli_query( $link, $sql ); 
 
@@ -70,7 +70,7 @@ function get_cat_items($item_cat){
     
 global $link;
 
-$sql = "SELECT * FROM `all items` WHERE id<=4";//.$item_cat;
+$sql = "SELECT * FROM `products` WHERE id<=4";//.$item_cat;
 
 $result = mysqli_query ( $link, $sql );
 

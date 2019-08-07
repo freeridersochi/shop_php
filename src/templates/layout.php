@@ -9,7 +9,7 @@
     <link href="../css/mainCssWebDesign.css" rel="stylesheet">
                
     <?php foreach($styles as $style) : ?>   
-    <link href="<?=$style ?>" rel="stylesheet">
+    <link href="../css/<?=$style ?>" rel="stylesheet">
     <?php endforeach;?> 
        
 </head>
@@ -24,7 +24,7 @@
     <menu>
         <ul class="mainNav">
             <?php foreach($categories as $category) : ?>
-                <li><a href="/category.php?id=<?=$category['id']?>"><?=$category['title']?></a></li>
+                <li><a href="/category.php?id=<?=$category['id']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
         </ul>
     </menu>

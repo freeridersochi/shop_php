@@ -5,7 +5,7 @@
 * @param array|null $data
 * @return string
 **/
-//INclude func
+//Include func
 function include_template(string $src, array $data = null): string{
     $result = '';
     
@@ -26,7 +26,7 @@ function include_template(string $src, array $data = null): string{
     
     return $result;
 };
-//REnder func
+//Render func
 function render_page($data){
     $include_result = include_template('../src/templates/layout.php', $data);
     print($include_result);

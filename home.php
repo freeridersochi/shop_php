@@ -1,6 +1,5 @@
 <?php 
 
-require_once './src/include/database.php'; // link database
 require_once './src/include/nav_functions.php';// link nav functions
 require_once './src/include/include.php'; //link include function
 
