@@ -1,0 +1,354 @@
+/* **** First Parth **** */
+
+/* Table */
+.cat_icon{
+    background-image: url("../image/icons/adm_cat.png");
+    background-position: center;
+    width: 22px;
+    height: 20px;
+    margin-right: 7px;
+    border: transperent;
+}
+.all_group_admin td{
+    width: 245px;
+    padding-left: 12px;
+    text-align: left;
+}
+.all_group_admin td.left_column{
+    width: 274px;
+    font-size: 16px;
+    letter-spacing: 0.04px;
+}
+img.cat_icon{
+    margin-top: -5px;
+}
+.all_group_admin td.middle_column{
+    text-align: center;
+    color: #636363;
+    padding-right: 31px;
+    font-weight: 500;
+}
+.all_group_admin td.right_column{
+    text-align: right;
+    padding-right: 22px;
+    font-weight: 400;
+}
+.all_group_admin a{
+    margin-left: 13px;
+}
+a.color_red{
+    color: #d24242;
+    margin-left: 48px;
+    float: left;
+}
+/* Create category bar */
+.category_control_bar{
+    width: 412px;
+    float: right;
+    margin-right: 21px;
+    margin-top: 46px;
+}
+.new_cat_name{
+    width: 239px;
+    height: 31px;
+    border: none;
+    padding-left: 6px;
+    font-size: 16px;
+    font-family: Proxima Nova, sans-serif;
+    color: #0d0b0b;
+}
+.category_control_bar button{
+    position: static;
+    float: right;
+    border-bottom: 1px solid;
+    padding: 0;
+    font-size: 14px;
+    font-family: Supermolot, sans-serif;
+    letter-spacing: -0.1px;
+    margin-right: 6px;
+    margin-top: 4px;
+}
+
+/* **** Second parth **** */ 
+.inside_category_admin{
+    display: none;    
+}
+.inside_category_admin header{
+    margin: 15px 0 0 18px;
+    letter-spacing: 0.1px;
+}
+.inside_category_admin header .chosed_cat_name{
+    width: 238px;
+    height: 28px;
+    border: none;
+    padding-left: 6px;
+    font-size: 16px;
+    font-family: Proxima Nova, sans-serif;
+    color: #0d0b0b;
+    letter-spacing: -0.1px;
+}
+.inside_category_admin header button{
+    position: static;
+    border-bottom: 1px solid;
+    padding: 0;
+    font-size: 14px;
+    font-family: Supermolot, sans-serif;
+    letter-spacing: -0.1px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+.inside_cat_table{
+    margin-top: 25px;
+}
+.inside_cat_table td{
+    width: 245px;
+    padding-left: 12px;
+    text-align: left;
+}
+.inside_cat_table td.left_column{
+    width: 274px;
+    font-size: 16px;
+    letter-spacing: 0.04px;
+    padding-left: 25px;
+}
+.inside_cat_table td.right_column{
+    text-align: right;
+    padding-right: 22px;
+    font-weight: 400;
+}
+.inside_cat_table td.middle_column{
+    text-align: center;
+    color: #636363;
+    padding-right: 21px;
+    font-weight: 500;
+}
+.inside_cat_table  .tr_title th:last-child{
+    padding-left: 64px;
+}
+.back_to_adminItems{
+    position: static;
+    border-bottom: 1px solid;
+    padding: 0;
+    font-size: 14px;
+    font-family: Supermolot, sans-serif;
+    letter-spacing: -0.1px;
+    margin-left: 24px;
+}
+
+/* **** Third parth **** */
+.create_items_admin{
+    display: none;
+}
+.create_items_admin{
+    width: 778px;
+}
+.iten_desc_admin, .item_foto_admin, .create_item_property{
+    background-color: #fff;
+    margin: 20px 22px;
+    width: 94.5%;
+    overflow: hidden;
+    margin-top: 8px;
+}
+.create_items_admin h2{
+    color: #95a5a6;
+    font-weight: 500;
+    text-align: left;
+    padding: 16px 20px 12px 20px;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #dee1e2;
+    font-family: Proxima Nova, semybold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.iten_desc_admin .left_bar{
+    width: 438px;
+    padding-left: 16px;
+    margin-top: 20px;
+    float: left;
+}
+.iten_desc_admin label{
+    padding-left: 4px;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+    color: #999999;
+}
+.iten_desc_admin input{
+    padding-left: 4px;
+    border: 1px solid #dee1e2;
+    height: 26px;
+    width: 324px;
+    font-size: 18px;
+    font-family: Proxima Nova, semybold;
+    letter-spacing: -0.1px;
+    margin-bottom: 17px;
+}
+.iten_desc_admin .new_item_desc{
+    width: 324px;
+    height: 92px;
+    resize: none;
+    padding: 4px 5px;
+    letter-spacing: 0.8px;
+    margin-bottom: 17px;
+    border: 1px solid #dee1e2;
+}
+/*    Check box    */
+.right_bar{
+    float: left;
+}
+.iten_desc_admin .right_bar p{
+    margin: 21px 0 0 -3px;
+    font-size: 14px;
+    color: #999;
+}
+.iten_desc_admin .container{
+    display: block;
+    position: relative;
+    padding: 7px 0 3px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input{
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark{
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark{
+  background-color: #2196F3;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after{
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after{
+  display: block;
+}
+/* Style the indicator (dot/circle) */
+.container .checkmark:after{
+ 	top: 4px;
+	left: 4px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+/* *********** Second div  ************** */
+.item_foto_admin img{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    background: transperent;
+    box-sizing: border-box;
+}
+.item_foto_admin a{
+    display: block;
+    text-align: center;
+    font-family: Supermolot, sans-serif;
+    margin: 4px 0 6px 0;
+}
+.item_foto_admin .first_img, .item_foto_admin .second_img, .item_foto_admin .third_img, .item_foto_admin .fourth_img{
+    float: left;
+    margin: 15px 10px 10px 21px;
+    box-sizing: border-box;
+    position: relative;
+}
+.purple{
+    color: #8e44ad;
+}
+.load_first_img.purple{
+    display: none;
+}
+.green{
+    color: #099d48;
+}
+.red{
+    color: #ad0000;
+}
+.loaded{
+    background: url("..image/item_photo/Layer%2015.png") no-repeat;
+}
+.item_foto_admin p{
+    position: absolute;
+    top: 65px;
+    left: 25px;
+    color: #d5d5d5;
+}
+.first_img p{
+    z-index: -10;
+}
+/* ******* Third div ******** */
+.create_item_property h2{
+    margin-bottom: 10px;
+}
+.create_item_property label{
+    display: inline-block;
+    width: 300px;
+    height: 28px;
+    position: relative;
+    top: 2px;
+}
+.create_item_property label a{
+    color: #ad0000;
+}
+.item_foto_admin{
+    height: 275px;
+}
+.create_item_property  input{
+    margin: 5px 5px 3px 16px;
+    width: 323px;
+    height: 28px;
+    padding-left: 3px;
+    letter-spacing: 1px;
+    color: #0d0b0b;
+}
+.create_item_property  input:nth-child(6){
+    margin-bottom: 22px;
+}
+.create_item_property label:last-child{
+   top: -6px;
+}
+.destroy_item.left, .save_change.right{
+    position: static;
+    font-family: Supermolot, sans-serif;
+    text-decoration: underline;
+    border-bottom: none;
+}
+.destroy_item.left{
+    float: left;
+    color: #ad0000;
+    font-size: 14px;
+    margin: 10px 0 0 14px;
+}
+.save_change.right{
+    float: right;
+    margin: 7px 24px 0 0;
+    font-size: 18px;
+    letter-spacing: -0.2px;
+}
+.back_to_inside_category{
+    position: relative;
+    border: none;
+    text-decoration: underline;
+    float: left;
+    color: #ad0000;
+    top: 25px;
+    left: -112px;
+}
