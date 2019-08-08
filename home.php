@@ -21,7 +21,7 @@ $home_page = include_template('./src/templates/main.php', $home_data );
 $include_result = include_template('./src/templates/layout.php', [
                                                 'categories' => $categories,
                                                 'content' => $home_page,
-                                                'styles' => ["alert('hello!')"]
+                                                'styles' => []
                                                 ]);
 //Show final template with include template
 print($include_result);

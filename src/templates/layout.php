@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Super Shop</title>
     <link href="../css/resetCss.css" rel="stylesheet">
-    <link href="../css/mainCssWebDesign.css" rel="stylesheet">
+    <link href="../css/mainCssWebDesignTwo.css" rel="stylesheet">
                
     <?php foreach($styles as $style) : ?>   
     <link href="../css/<?=$style ?>" rel="stylesheet">
