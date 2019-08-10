@@ -28,6 +28,11 @@ function include_template(string $src, array $data = null): string{
 };
 //Render func
 function render_page($data){
-    $include_result = include_template('../src/templates/layout.php', $data);
+    $include_result = include_template('src/templates/layout.php', $data);
+    print($include_result);
+};
+
+function render_back_page($data){
+    $include_result = include_template('../src/templates/admin.php', $data);
     print($include_result);
 };

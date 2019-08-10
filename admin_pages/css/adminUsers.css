@@ -1,0 +1,185 @@
+/* **** First page **** */
+
+/*h2*/
+.name_column{
+    width: 160px;
+}
+.mail_column{
+    width: 180px;
+    text-align: center;
+}
+.phone_column{
+    text-align: center;
+    width: 234px;
+}
+/* table */
+.adm_users_table .name_column{
+    width: 138px;
+    letter-spacing: 1px;
+    padding-left: 25px;
+}
+.adm_users_table .mail_column, .adm_users_table .phone_column{
+    color: #636363;
+}
+.adm_users_table td.mail_column{
+    letter-spacing: 0.3px;
+    font-size: 15px;
+    width: 146px;
+    text-align: center;
+    padding-left: 0px;
+}
+.adm_users_table td.phone_column{
+    padding-left: 14px;
+    letter-spacing: 1px;
+    width: 150px;
+}
+.adm_users_table .link_column{
+    text-align: right;
+}
+.adm_users_table .link_column a{
+    margin-right: 22px;
+}
+
+/* **** Second page *** */
+.admin_users_control{
+    display: none;
+}
+/*  User data parth */
+.user_data{
+    width: 736px;
+    background-color: #fff;
+    margin: 9px 22px 19px;
+    height: 264px;
+}
+h2{
+	height: 46px;
+	border-bottom: 1px solid #dee1e2;
+	font-family: Proxima Nova, semybold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #95a5a6;
+	font-weight: 500;
+    text-align: left;
+    padding: 16px 20px;
+	vertical-align: middle;
+	letter-spacing: 0.5px;
+}
+.user_data .left_bar, .user_data .right_bar{
+    width: 251px;
+    height: 200px;
+}
+.user_data .left_bar{
+    float: left;
+    margin: 20px 0 0 17px;
+}
+.user_data .right_bar{
+    float: left;
+    margin: 20px 0 0 14px;
+}
+.user_data_lebels{
+    font-size: 14px;
+    line-height: 1.2;
+    color: #999;
+    letter-spacing: -0.2px;
+    margin-top: 21px;
+    margin-left: 4px;
+}
+.user_data input{
+    width: 241px;
+    height: 26px;
+    margin-bottom: 18px;
+    padding-left: 4px;
+}
+.user_data .right_bar input{
+    width: 212px;
+}
+.user_data .appartment_input, .user_data .home_input{
+    float: left;
+}
+.user_data .home_appartments{
+    width: 150px;    
+}
+.user_data .home_input{
+    width: 48px;
+    height: auto;
+}
+.user_data .appartment_input{
+    width: 70px;
+    margin-left: 30px;
+}
+.home_appartments .appartment_input .small_input, .home_appartments .home_input .small_input{
+    width: 49px;
+}
+
+/*   User story parth (table)  */
+
+/* colums of table */
+.orders_story .order_num{
+    padding-left: 27px;
+    letter-spacing: 0.1px;
+    text-align: left;
+    color: #3498db;
+}
+.orders_story .order_cost{
+    padding-left: 29px;
+    letter-spacing: 0.3px;
+}
+.orders_story .order_date{
+    text-align: center;
+    letter-spacing: 0.1px;
+    padding-left: 28px;
+}
+
+/* last row of table */
+.admin_users_control div.total_sum{
+    height: 67px;
+    width: 736px;
+    background: #fff;
+    margin: 0 0 0 21px;
+    position: relative;
+    top: -17px;
+}
+.light_blue{
+    text-transform: uppercase;
+    text-align: right;
+}
+span.light_blue, span.all_orders_total{
+    float: right;
+}
+span.all_orders_total{
+    margin: 9px 19px 0 15px;
+    letter-spacing: 0.9px;
+    font-size: 42px;
+}
+span.light_blue p{
+    color: #3498db;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: 18px;
+}
+.all_orders_total p b{
+    font-size: 21px;
+}
+.all_orders_total p{
+    font-weight: 300;
+}
+
+/* buttons parth */
+.destroy_user_btn, .back_toUser_btn{
+    position: static;
+    font-family: Supermolot, sans-serif;
+    border-bottom: 1px solid;
+    float: right;
+    margin: -2px 17px;
+    font-size: 18px;
+    text-decoration: underline;
+    border-bottom: none;
+    color: #ad0000;
+    letter-spacing: -0.3px;
+}
+.back_toUser_btn{
+    float: left;
+    font-size: 16px;
+    color: #2ecc71;
+}

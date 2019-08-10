@@ -1,7 +1,7 @@
 <?php 
 
-require_once '../src/include/nav_functions.php';
-require_once '../src/include/include.php';
+require_once 'src/include/nav_functions.php';
+require_once 'src/include/include.php';
 
 $categories = get_categories();
 $items = get_items(); 
@@ -11,7 +11,7 @@ $cat_data = [
               'bests'=>$items
             ];
 
-$cat_page = include_template('../src/templates/cat_one.php', $cat_data);
+$cat_page = include_template('src/templates/cat_one.php', $cat_data);
 
 render_page( [
                 'categories' => $categories,
