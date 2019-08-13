@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Super Shop</title>
-    <link href="../css/resetCss.css" rel="stylesheet">
-    <link href="../css/mainCssWebDesignTwo.css" rel="stylesheet">
+    <link href="../../css/resetCss.css" rel="stylesheet">
+    <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
+    <script src="../../js/siema.min.js"></script>
                
     <?php foreach($styles as $style) : ?>   
     <link href="../css/<?=$style ?>" rel="stylesheet">
-    <?php endforeach;?> 
-       
+    <?php endforeach;?>
+    
+    <?php foreach($scripts as $script) : ?>
+    <script scr="../../js/<?=$script ?>"></script> 
+    <?php endforeach;?>
+          
 </head>
 <body>
 <!--  Заголовок и  основное меню  -->

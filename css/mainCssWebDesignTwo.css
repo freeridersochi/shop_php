@@ -258,6 +258,9 @@ h1{
 }
 
 /* New items* & *Best Saler */
+.first_slider, .second_slider{
+    width: 1172px;
+}
 .best_salers{
     width: 1172px;
     height: 402px;
@@ -272,6 +275,7 @@ h1{
     float: left;
     position: relative;
     margin-top: -80px;
+    z-index: 20;
 }
 .new_item_title, .best_item_title{
     width: 1046px;

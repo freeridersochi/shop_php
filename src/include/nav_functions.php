@@ -79,6 +79,29 @@ $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 return $data;
     
 }
+
+function get_page( $items , $current_page ){
+    $page=[];
+    $items_count = sizeof($items);
+    
+    $total_pages = ceil($items_count/8);
+    
+    if ($current_page < 1) {
+        $current_page = 1;
+    }
+    if ($current_page > $total_pages) {
+        $current_page = $total_pages;
+    }
+    
+    $offset = ($current_page - 1)*8;
+    
+    $page['data'] = array_slice($items, $offset, 8);
+    $page['total'] = $total_pages;
+    $page['current'] = $current_page;
+    
+    return $page;
+    
+};
     
 /*function get_prod_db(){
 
