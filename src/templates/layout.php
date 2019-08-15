@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Super Shop</title>
-    <link href="../css/resetCss.css" rel="stylesheet">
-    <link href="../css/mainCssWebDesignTwo.css" rel="stylesheet">
+    <link href="../../css/resetCss.css" rel="stylesheet">
+    <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
                
     <?php foreach($styles as $style) : ?>   
     <link href="../css/<?=$style ?>" rel="stylesheet">
-    <?php endforeach;?> 
-       
+    <?php endforeach;?>
+          
 </head>
 <body>
 <!--  Заголовок и  основное меню  -->
@@ -24,7 +24,7 @@
     <menu>
         <ul class="mainNav">
             <?php foreach($categories as $category) : ?>
-                <li><a href="/category.php?id=<?=$category['id']?>"><?=$category['name']?></a></li>
+                <li><a href="/cat_one.php?name=<?=$category['alias']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
         </ul>
     </menu>

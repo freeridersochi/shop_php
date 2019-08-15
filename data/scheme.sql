@@ -6,10 +6,10 @@ CREATE DATABASE shop_main_db
     
 USE shop_main_db;
 
-CREATE TABLE photos (
+CREATE TABLE sizes (
     id INT UNSIGNED PRIMARY KEY,
     product_id INT references products(id) ON DELETE CASCADE,
-    url CHAR(100) NOT NULL    
+    size CHAR(100) NOT NULL    
 );
 
 CREATE TABLE marks (
@@ -19,19 +19,26 @@ CREATE TABLE marks (
 
 CREATE TABLE categories (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    name CHAR(255) NOT NULL UNIQUE
+    name CHAR(255) NOT NULL UNIQUE,
+    alias CHAR(255) NOT NULL UNIQUE,
+    banner CHAR(255) NOT NULL,
+    description MEDIUMTEXT 
 );
        
 CREATE TABLE products(
     id INT UNSIGNED PRIMARY KEY,
     name CHAR(255) NOT NULL UNIQUE,
     price INT,
+    main_photo CHAR(255) NOT NULL,
+    photo1 CHAR(255),
+    photo2 CHAR(255),
+    photo3 CHAR(255),
     quanity INT,
     description MEDIUMTEXT,
-    size CHAR(10),
-    discount DOUBLE(3,2),
+    #sizes from table Sizes 
+    discount DOUBLE(3,2) DEFAULT 1.0 NOT NULL,
     mark INT references marks(id) ON DELETE RESTRICT,
     category INT references categories(id) ON DELETE RESTRICT 
 );
 
-       
+

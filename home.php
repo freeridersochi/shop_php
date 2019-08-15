@@ -7,11 +7,17 @@ require_once './src/include/include.php'; //link include function
 $categories = get_categories();
 $items = get_items(); 
 $bests = get_best();
+$new_prod_page_number = intval($_GET['new_prod_page']??0);
+$new_page = get_page($items, $new_prod_page_number, 8);
+$pop_prod_page_number = intval($_GET['pop_prod_page']??0);
+$pop_page = get_page($items, $pop_prod_page_number, 4);
 
 //Use data from "nav_functions.php" in variable $home_data
 $home_data = [ 
                 'items' => $items,
-                'bests' => $bests
+                'bests' => $bests,
+                'new_page' => $new_page,
+                'pop_page' => $pop_page
              ];
 
 // Use variable $home_data in Include function
@@ -21,7 +27,7 @@ $home_page = include_template('./src/templates/main.php', $home_data );
 $include_result = include_template('./src/templates/layout.php', [
                                                 'categories' => $categories,
                                                 'content' => $home_page,
-                                                'styles' => []
+                                                'styles' => [],
                                                 ]);
 //Show final template with include template
 print($include_result);

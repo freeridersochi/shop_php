@@ -37,7 +37,7 @@ function get_best(){
     
 global $link;
 
-$sql = "SELECT * FROM `products`"; 
+$sql = "SELECT * FROM `products` WHERE id='hot'"; 
 
 $result = mysqli_query( $link, $sql ); 
 
@@ -79,7 +79,36 @@ $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 return $data;
     
 }
+
+//New product pagination & best salers & category pagination
+
+function get_page( $items , $current_page, $item_counter ){
+    $new_page=[];
+    $items_count = sizeof($items);
     
+    $total_pages = ceil($items_count/$item_counter);
+    
+    if ($current_page < 1) {
+        $current_page = 1;
+    }
+    if ($current_page > $total_pages) {
+        $current_page = $total_pages;
+    }
+    
+    $offset = ($current_page - 1)*$item_counter;
+    
+    $new_page['data'] = array_slice($items, $offset, $item_counter);
+    $new_page['total'] = $total_pages;
+    $new_page['current'] = $current_page;
+    
+    return $new_page;
+    
+};
+
+
+
+
+
 /*function get_prod_db(){
 
 global $link;

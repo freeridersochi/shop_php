@@ -24,3 +24,14 @@ $phonebook = [
                [ 'BOSTON' => [ 'CODE' => 235 , 'ZIP' => 777 ],'BALTIMORE' => 235 ] 
              ];
 print_r ('Boston: <br>'.$phonebook[1]['BOSTON']['CODE'].' and '.$phonebook[1]['BOSTON']['ZIP']);
+
+$page= [
+    'data'=>['a','b','c'], 
+    'current'=>1,
+    'total'=>6
+];
+$next = $page['current'] < $page['total'];
+$prev = $page['current'] > 1;
+echo (current);
+
+print_r('page: '.$page['data']."</br> hasnext: ".($next?'yes':'no')."</br>hasprev:".($prev?'yes':'no')."<br>        position".$page['current'].'/'.$page['total']);
