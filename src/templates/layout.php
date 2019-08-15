@@ -7,14 +7,9 @@
     <title>Super Shop</title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
-    <script src="../../js/siema.min.js"></script>
                
     <?php foreach($styles as $style) : ?>   
     <link href="../css/<?=$style ?>" rel="stylesheet">
-    <?php endforeach;?>
-    
-    <?php foreach($scripts as $script) : ?>
-    <script scr="../../js/<?=$script ?>"></script> 
     <?php endforeach;?>
           
 </head>
@@ -29,7 +24,7 @@
     <menu>
         <ul class="mainNav">
             <?php foreach($categories as $category) : ?>
-                <li><a href="/category.php?id=<?=$category['id']?>"><?=$category['name']?></a></li>
+                <li><a href="/cat_one.php?name=<?=$category['alias']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
         </ul>
     </menu>

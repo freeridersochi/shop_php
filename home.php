@@ -7,14 +7,17 @@ require_once './src/include/include.php'; //link include function
 $categories = get_categories();
 $items = get_items(); 
 $bests = get_best();
-$new_product_page = intval($_GET['new_product_page']??0);
-$page = get_page($items, $new_product_page);
+$new_prod_page_number = intval($_GET['new_prod_page']??0);
+$new_page = get_page($items, $new_prod_page_number, 8);
+$pop_prod_page_number = intval($_GET['pop_prod_page']??0);
+$pop_page = get_page($items, $pop_prod_page_number, 4);
 
 //Use data from "nav_functions.php" in variable $home_data
 $home_data = [ 
                 'items' => $items,
                 'bests' => $bests,
-                'page' => $page
+                'new_page' => $new_page,
+                'pop_page' => $pop_page
              ];
 
 // Use variable $home_data in Include function
@@ -25,8 +28,6 @@ $include_result = include_template('./src/templates/layout.php', [
                                                 'categories' => $categories,
                                                 'content' => $home_page,
                                                 'styles' => [],
-                                                'scripts' => ['siema.min.js']
-                                                
                                                 ]);
 //Show final template with include template
 print($include_result);

@@ -12,21 +12,21 @@
     </div>
 </section>
 <!-- Item parth -->
-<section class="new_items"><!--    Панель новых товаров   -->
+<section class="new_items" id="new_items"><!--    Панель новых товаров   -->
     <span>
         <p class="new_item_title">Новые товары</p>
-        <?php if ($page['current']<$page['total']): ?>
-        <a href="home.php?new_product_page=<?=$page['current']+1?>">
+        <?php if ($new_page['current']<$new_page['total']): ?>
+        <a href="home.php?new_prod_page=<?=$new_page['current']+1?>#new_items">
             <img class="arrow_right next" src="../img/icons/arrow_right.png" alt="move in right">
         </a>
         <?php endif ?> 
-        <?php if ($page['current']>1):?>
-        <a href="home.php?new_product_page=<?=$page['current']-1?>">
+        <?php if ($new_page['current']>1):?>
+        <a href="home.php?new_prod_page=<?=$new_page['current']-1?>#new_items">
             <img class="arrow_left prev" src="../img/icons/arrow_left.png" alt="move in left">
         </a>
         <?php endif ?> 
     </span>
-    <?php foreach($page['data'] as $item):?>
+    <?php foreach($new_page['data'] as $item):?>
     <article class="new_item">
         <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
             <div class="img_conteiner">
@@ -42,11 +42,11 @@
 </section>
 <section class="banners">
     <div class="banner_one">
-        <img src="./img/banners/banner%20_one.png" alt="One">
+        <img src="./img/banners/banner_one.png" alt="One">
         <p><strong>заголовок</strong><br>промо-товара</p>
     </div>
     <div class="banner_two">
-        <img src="./img/banners/banner%20_two.png" alt="Two">
+        <img src="./img/banners/banner_two.png" alt="Two">
         <p>
             <strong>заголовок</strong><br>промо-товара
         </p>
@@ -58,18 +58,25 @@
         </p>
     </div>
 </section>
-<section class="best_salers">
+<section class="best_salers" id="best_items">    
     <span>
         <p class="best_item_title">Популярные товары</p>
-        <img class="arrow_right next_two" src="../img/icons/arrow_right.png" alt="move in right">
-        <img class="arrow_left prev_two" src="../img/icons/arrow_left.png" alt="move in left">
+        <?php if ($pop_page['current']<$pop_page['total']): ?>
+            <a href="home.php?pop_prod_page=<?=$pop_page['current']+1?>#best_items">
+                <img class="arrow_right next_two" src="../img/icons/arrow_right.png" alt="move in right">
+            </a>
+        <?php endif ?>
+        <?php if ($pop_page['current']>1):?>
+            <a href="home.php?pop_prod_page=<?=$pop_page['current']-1?>#best_items">
+                <img class="arrow_left prev_two" src="../img/icons/arrow_left.png" alt="move in left">
+            </a>
+        <?php endif ?> 
     </span>
-    <div class="second_slider">
-        <?php foreach($bests as $item):?>
+        <?php foreach($pop_page['data'] as $item):?>
         <article class="best_items">
             <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
                 <div class="img_conteiner">
-                    <img src="<?=$item['image']?>" alt="Изображение отсутствует">
+                    <img src="<?=$item['main_photo']?>" alt="Изображение отсутствует">
                 </div>
                 <!--    обрезаем имя до нужного количества символов    -->
                 <p class="item_name"><?=mb_substr($item['name'], 0, 15, 'UTF-8').'...'?></p>
@@ -79,7 +86,6 @@
             </a>
         </article>
         <?php endforeach; ?>
-    </div>
 </section>
 <section class="about_shop">
     <img src="../img/banners/about_shop.png">
@@ -91,4 +97,3 @@
     </p>
     </div>
 </section>
-<script src="../../js/slider_control.js"></script> 

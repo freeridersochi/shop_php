@@ -19,7 +19,10 @@ CREATE TABLE marks (
 
 CREATE TABLE categories (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    name CHAR(255) NOT NULL UNIQUE
+    name CHAR(255) NOT NULL UNIQUE,
+    alias CHAR(255) NOT NULL UNIQUE,
+    banner CHAR(255) NOT NULL,
+    description MEDIUMTEXT 
 );
        
 CREATE TABLE products(
