@@ -1,6 +1,6 @@
 
     <h1><?=$item['item_cat']?></h1>
-    <a class="back_to_cat1" href="pages/product.php?item_id=<?=$item['id']?>">Вернуться в каталог</a>  
+    <a class="back_to_cat1" href="home.php">Вернуться в каталог</a>  
 <!--   верхняя навигация начало    -->
     <div class="cat_nav">
         <span>
@@ -21,7 +21,7 @@
 <!--     Товары    -->
     <?php foreach($cat_page['data'] as $item):?>
     <article class="new_item">
-        <a href="/pages/product2.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
+        <a href="product.php?item_id=<?=$item['id']?>">
             <div class="img_conteiner">
                 <img src="<?=$item['main_photo']?>" alt="Изображение отсутствует">
             </div>

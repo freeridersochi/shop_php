@@ -1,0 +1,431 @@
+body{
+    background-color: #dee1e3;
+    font-family: "Supermolot",  sans-serif;
+}
+/* Title start*/
+h1{
+    font-size: 73.666px;
+    font-weight: 300;
+    font-family: "Supermolot";
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    text-transform: uppercase;
+    z-index: 15;
+    margin: 175px 0 10px;
+    float: left;
+    letter-spacing: -4px;
+}
+h2{ 
+    width: 1170px;
+    height: 78px;
+    padding: 21px 0 0 31px;
+    font-size: 24px;
+    font-family: "Supermolot";
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2;
+    border-top: 2px solid #f6f6f6;
+}
+.active{
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+b{
+    color: #ed1651;
+}
+h3{
+    color: #ed1651;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 29px;
+}
+/* Title End */
+.first_form, .second_form{
+    background-color: #fff;
+    margin: 10px 0 0;
+    width: 1170px;
+    float: left;
+}
+/* Bg start */
+.checkOut_form{
+    background-color: #fff;
+    margin: 10px 0 0;
+    width: 1170px;
+    height: 934px;
+    float: left;
+}
+/* Bg end */
+
+/* Форма 1 начало */
+.left{
+    float: left;
+    width: 460px;
+    height: 416px;
+    padding-left: 31px;
+}
+.right{
+    float: right;
+    width: 710px;
+    height: 416px;
+    padding: 0 277px 0 41px;
+}
+form p{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 14px;
+    color: #999;
+    float: left;
+    width: 390px;
+}
+input{
+    background-color: rgb(233, 233, 233);
+    width: 390px;
+    height: 47px;
+    font-size: 16px;
+    font-family: "Supermolot";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 5px;
+    border: none;
+    padding-left: 16px;
+    font-weight: 300;
+    float: left;
+}
+.left button{
+    margin-top: 18px;
+    width: 155px;
+    height: 50px;
+    border: none;
+    background-color: #ed1651;
+    float: left;
+}
+.left button p{
+    font-size: 18px;
+    font-family: Supermolot;
+    margin: 0px 5px 0 18px;
+    color: #fff;
+    width: 110px;
+}
+.user_password{
+    margin-top: 33px;
+}
+.right button{
+    margin-top: 28px;
+    width: 102px;
+    height: 50px;
+    border: none;
+    background-color: #ed1651;
+}
+.right button p{
+    font-size: 18px;
+    font-family: Supermolot;
+    margin: 0px 5px 0 0px;
+    color: #fff;
+    width: 90px;
+}
+.right a{
+    color: #000;
+    font-size: 14px;
+    margin: 46px 122px 15px 19px;
+    display: block;
+    float: right;
+}
+/* Форма 1 конец */
+
+/* Форма 2 начало */
+.second_form{
+    margin-top: 0;
+    height: auto;
+}
+.second_form form{
+	display: none;
+}
+/* Левая секция начало */
+.left_bar{
+        width: 430px;
+        float: left;
+}
+.client_adres{
+    width: 385px;
+    padding-left: 31px;
+}
+.city{
+    margin-top: 13px;
+    width: auto;
+}
+.client_city, .client_street{
+    margin-top: 4px;
+}
+.client_adres button{
+    float: left;
+    margin-top: 50px;
+    width: 155px;
+    height: 49px;
+    border: none;
+}
+.name_phone{
+    width: 585px;
+    height: 340px;
+}
+.client_adres h2{
+    margin-top: 11px; 
+}
+.client_mail h2{
+    margin-top: 12px; 
+}
+.street{
+    margin-top: 15px;
+    width: auto;
+}
+.home_appartments{
+    float: left;
+    width: 390px;
+}
+.home_input{
+    float: left;
+    width: 180px;
+}
+.appartment_input{
+    float: right;
+    width: 180px;
+}
+.small_input{
+    width: 180px;
+}
+.home_input p, .appartment_input p{
+    width: auto;
+}
+.home_input p{
+    float: left;
+}
+.appartment_input p{
+    float: left;
+}
+.client_adres button{
+    margin-top: 52px;
+    width: 155px;
+    height: 50px;
+    border: none;
+    background-color: #ed1651;
+    float: left;
+	margin-bottom: 50px;
+}
+.client_adres button p{
+    font-size: 18px;
+    font-family: Supermolot;
+    margin: 0px 5px 0 18px;
+    color: #fff;
+    width: 110px;
+}
+/* Левая секция конец */
+
+/* Средняя секция */
+.midle_bar{
+    width: 300px;
+    float: left;
+    padding-left: 46px;
+}
+.midle_bar h3{
+    margin-bottom: 31px;
+}
+/* Выбор доставки начало */
+.container{
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    padding-left: 27px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input{
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark{
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark{
+  background-color: #2196F3;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after{
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after{
+  display: block;
+}
+/* Style the indicator (dot/circle) */
+.container .checkmark:after{
+ 	top: 4px;
+	left: 4px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+/* Выбор доставки конец */
+/* Textarea */
+textarea{
+    background-color: #e9e9e9;
+	outline: none;
+	-moz-appearance: none;
+    resize: none;
+    margin-top: 5px;
+    padding: 10px 15px;
+    border: none;
+    width: 372px;
+    height: 215px;
+    font-family: "Supermolot";
+}
+
+/* Правая секеция */
+.right_bar{
+    width: 395px;
+    float: right;
+}
+/* Форма 2 конец */
+
+/* Форма 3 начало */
+.confim_order{
+    width: 1170px;
+    background-color: #fff;
+    float: left;
+}
+.form_body{
+	display: none;
+}
+.confim_order h3{
+    margin-top: 23px;
+    padding: 0 31px;
+}
+.order_info{
+    height: 276px;
+}
+/* Таблица */
+table{
+    width: 1170px;
+    height: auto;
+}
+tr{
+    text-align: center;
+    width: 1170px;
+    border-bottom: 2px solid #f6f6f6;
+    
+}
+th{
+    font-weight: 200;
+    font-size: 14px;
+    vertical-align: middle;
+    padding: 20px 20px 14px 32px;
+    width: 142px;
+}
+th:first-child{
+    width: 500px;
+}
+th:last-child{
+    width: 194px;
+    padding-left: 14px;
+}
+#th_bold{
+    all: unset;
+    width: 800px;
+}
+.order_calc, .order_detals{
+    border: none;
+}
+/* Delivery info */
+.delivery_info{
+    overflow: hidden;
+    height: 222px;
+}
+/* name phone mail*/
+.person_info.left{
+    width: 296px;
+}
+.person_adress.middle{
+    width: 300px;
+    float: left;
+}
+.delivery_adress.right{
+    padding: 0;
+    width: 400px;
+    margin-right: 143px;
+}
+.delivery_info p{
+    font-size: 14px;
+    line-height: 1.2;
+    color: #999;
+    letter-spacing: -0.2px;
+    margin-top: 12px;
+}
+p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.delivery_choose, p.delivery_commentss{
+    margin-bottom: 27px;
+    font-size: 16px;
+    color: #000;
+    margin-top: 2px;
+}
+.person_adress p.left{
+    width: 40px;
+    height: auto;
+    padding: 0;
+    clear: left;
+    margin-top: 0;
+    font-size: 14px;
+}
+p.home_num.left{
+    font-size: 18px;
+    color: #000;
+}
+.person_adress p.right{
+    margin-right: 156px;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-top: -17px;
+}
+p.appartment_num.right{
+    margin-top: -2px;
+    font-size: 18px;
+    color: #000;
+    margin-right: 191px;
+}
+p.delivery_choose{
+    height: 51px;
+    margin-bottom: 0;
+}
+/* confim button */
+#final_confirmation{
+    float: left;
+    width: 152px;
+    height: 52px;
+    background-color: #ed1651;
+    font-family: Supermolot, sans-serif;
+    border: none;
+    color: #fff;
+    margin: 0 0 50px 20px;
+}
+#final_confirmation a{
+	color: #fff;
+	text-decoration: none;
+}
+.continue{
+	color: #fff;
+}

@@ -8,14 +8,16 @@
             <input type="email" class="left">
             <p>Пароль</p> 
             <input type="password" class="right main_psw">
-            <button class="enter_button">
-                <p>Войти</p>
-            </button>
-            <a href="#" class="recovery_link">Забыли пароль?</a>
+            <a href="registration.php">
+                <button class="enter_button">
+                    <p>Войти</p>
+                </button>
+            </a>
+            <a href="registration.php" class="recovery_link">Забыли пароль?</a>
         </div>
         <div class="right_section">
             <h2>Новый пользователь</h2>
-            <a class="reg_link" href="registrationPage.html">Зарегистрироваться</a>
+            <a class="reg_link" href="registration.php">Зарегистрироваться</a>
         </div>
     </form>
 </section>

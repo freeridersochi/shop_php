@@ -1,24 +1,18 @@
 <?php foreach($product as $item):?>
     <h1><?=$item['item_cat']?></h1>
-    <a class="back_to_cat1" href="product.php?item_id=<?=$item['item_id']?>">Вернуться в каталог</a>  
+    <a class="back_to_cat1" href="home.php">Вернуться в каталог</a>  
 <!-- Секция товара начало -->
     <section class="item_in_cat">
         <!--  left_bar  -->
-        <div class="left_bar">  
-            <!--    Start Foto div    -->
-            <div class="cat1_item1_pictures">
-                <img src="<?=$item['main_img']?>">
-                <img class="zoom" src="../img/icons/zoom_icon.png">
-            </div>  <!--    End Foto div    -->
-            <div class="item_slider"> <!--   Start slider    -->
-                    <a><img src="../img/icons/product_slider_arrow.png" class="move_left"></a>
-                        <div class="prewiew_wrap"><img src="<?=$item['item_slider_img']?>" class="preview"></div>
-                        <div class="prewiew_wrap"><img src="<?=$item['item_slider_img']?>" class="preview active"></div>
-                        <div class="prewiew_wrap"><img src="<?=$item['item_slider_img']?>" class="preview"></div>
-                        <div class="prewiew_wrap"><img src="<?=$item['item_slider_img']?>" class="preview"></div>
-                    <a><img src="../img/icons/product_slider_arrow.png" class="move_right"></a>
+        <div class="left_bar">   
+            <div id="slider"> <!--   Start slider    -->
+                <ul>
+                    <li><img src="<?=$item['main_photo']?>"></li>
+                    <li><img src="<?=$item['photo1']?>"></li>
+                    <li><img src="<?=$item['photo2']?>"></li>
+                    <li><img src="<?=$item['photo3']?>"></li>
+                </ul>
             </div> 
-            <!--   End slider    -->
         </div> 
         <!--  middle_bar    -->
         <div class="middle_bar">
@@ -44,10 +38,12 @@
                      <p class="cat1_item1_status">есть в наличии</p>
                  </span>
                  <hr class="gray_border">
-                 <button class="buy_button">
-                     <img src="../img/icons/buy_cart_icon.png">
-                     <p>купить</p>
-                 </button>
+                 <a href="backet.php">
+                     <button class="buy_button">
+                         <img src="../img/icons/buy_cart_icon.png">
+                         <p>купить</p>
+                     </button>
+                 </a>
              </div>
              <!--      Bay Bar Section End      -->
              <div class="icon_section">
@@ -97,4 +93,4 @@
         <?php endforeach; ?>
     </div>    
 </section>
-<script src="../../js/slider_control.js"></script> 
+<script src="../../js/product_slider.js"></script> 

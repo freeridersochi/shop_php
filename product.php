@@ -15,11 +15,11 @@ $product_data = [
     'items' => $items
 ];
 
-$product_page = include_template('src/templates/product_cart.php', $product_data );
+$product_page = include_template('src/templates/product.php', $product_data );
 
 render_page([
              'categories' => $categories,
              'content' => $product_page,
-             'styles' => ['product.css'],
-             'scripts' => ['siema.min.js']
+             'styles' => ['product.css','product_slider.css'],
+             'scripts' => ['product_slider.js']
 ]);

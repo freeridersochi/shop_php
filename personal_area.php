@@ -5,10 +5,11 @@ require_once 'src/include/include.php';
 
 $categories = get_categories();
 
-$cat_page = include_template('src/templates/pers_area.php');
+$pers_area_page = include_template('src/templates/personal_area.php');
 
 render_page([ 'categories' => $categories, 
-              'content' => $cat_page,
-              'styles' => ['personalArea.css']
+              'content' => $pers_area_page,
+              'styles' => ['personalArea.css'],
+              'scripts' => []
 ]);
 

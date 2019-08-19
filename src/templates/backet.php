@@ -11,9 +11,9 @@
             <td class="item_price">4 540 руб.</td>
             <td class="item_quanity">
                 <div >
-                    <p> - </p>
-                    <p class="qanity_count">1</p>
-                    <p> + </p>
+                    <button class="first_item_decr"> - </button >
+                    <input class="qanity_count" value="1">
+                    <button  class="first_item_incr"> + </button >
                 </div>
             </td>
             <td class="item_cost">4 540 руб.</td>
@@ -28,9 +28,9 @@
             <td class="item_price">4 540 руб.</td>
             <td class="item_quanity">
                 <div >
-                    <p> - </p>
-                    <p class="qanity_count">1</p>
-                    <p> + </p>
+                    <button class="first_item_decr"> - </button >
+                    <input class="qanity_count" value="1">
+                    <button  class="first_item_incr"> + </button >
                 </div>
             </td>
             <td class="item_cost">4 540 руб.</td>
@@ -44,10 +44,10 @@
             <td class="item_status">есть в наличии</td>
             <td class="item_price">4 540 руб.</td>
             <td class="item_quanity">
-                <div >
-                    <p> - </p>
-                    <p class="qanity_count">1</p>
-                    <p> + </p>
+                <div>
+                    <button class="first_item_decr"> - </button >
+                    <input class="qanity_count" value="1">
+                    <button  class="first_item_incr"> + </button >
                 </div>
             </td>
             <td class="item_cost">4 540 руб.</td>
@@ -57,10 +57,11 @@
         </tr>
     </table>
     <span class="total_span">
-        <p>72 640руб.</p>
+        <p>&#x20bd;</p>
+        <p class="total_order"></p>
         <p>Итого:</p>
     </span>
-    <button><a>Оформить заказ</a></button>
-    <button class="back_to_items"><a>Вернуться к покупкам</a></button>
+    <button><a href="checkout.php">Оформить заказ</a></button>
+    <button class="back_to_items"><a href="home.php">Вернуться к покупкам</a></button>
 </section>
-<!-- Подвал -->
+<script src="../../js/backet.js"></script>

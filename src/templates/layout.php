@@ -7,9 +7,15 @@
     <title>Super Shop</title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
                
     <?php foreach($styles as $style) : ?>   
-    <link href="../css/<?=$style ?>" rel="stylesheet">
+    <link href="../../css/<?=$style ?>" rel="stylesheet">
+    <?php endforeach;?>
+    
+    <?php foreach($scripts as $script) : ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <?php endforeach;?>
           
 </head>
@@ -32,10 +38,10 @@
     </div>
     <div class="reg_bar">
         <img class="user_enter" src="../img/icons/icon_user_login.png" alt="User Icon">
-        <p class="red">Войти</p>
-        <p class="reg">Регистрация</p>
+        <a href="login.php" class="red">Войти</a>
+        <a href="registration.php" class="reg">Регистрация</a>
     </div>
-    <div class="backet">
+    <a class="backet" href="backet.php">
         <img src="../img/icons/backet_icon.png" alt="Backet Icon">
         <div class="backet_value">
             <p class="backet_sum">46 945</p>
@@ -45,7 +51,7 @@
             <p class="item_quanity">2</p>
             <p>&nbsp;предмета</p>
         </div>
-    </div>
+    </a>
 </header>
 
 <?=$content ?>
@@ -57,7 +63,7 @@
     Разработан специально для «Всероссийской Школы Программирования»<br>
     http://bedev.ru/
     </p>
-    <span><a href="index.php">Наверх<img src="../img/icons/arrow_%20up.png" alt="Up"></a></span>
+    <span><a href="#">Наверх<img src="../img/icons/arrow_%20up.png" alt="Up"></a></span>
 </footer>
 </body>
 </html>

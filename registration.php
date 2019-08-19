@@ -9,6 +9,7 @@ $registration_page = include_template('src/templates/registration.php');
 
 render_page([ 'categories' => $categories, 
               'content' => $registration_page,
-              'styles' => ['registration.css']
+              'styles' => ['registration.css'],
+              'scripts' => []
 ]);
 

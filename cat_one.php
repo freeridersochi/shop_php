@@ -24,5 +24,6 @@ $cat_page = include_template('src/templates/cat_one.php', $cat_data);
 render_page( [
                 'categories' => $categories,
                 'content' => $cat_page,
-                'styles' => ['categoryOne.css']            
+                'styles' => ['categoryOne.css'],
+                'script' => []
 ]);

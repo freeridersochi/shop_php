@@ -21,13 +21,14 @@ $home_data = [
              ];
 
 // Use variable $home_data in Include function
-$home_page = include_template('./src/templates/main.php', $home_data );
+$home_page = include_template('./src/templates/home.php', $home_data );
 
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
 $include_result = include_template('./src/templates/layout.php', [
                                                 'categories' => $categories,
                                                 'content' => $home_page,
                                                 'styles' => [],
+                                                'scripts' => []
                                                 ]);
 //Show final template with include template
 print($include_result);

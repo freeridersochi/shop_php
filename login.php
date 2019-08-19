@@ -9,5 +9,6 @@ $login_page = include_template('src/templates/login.php');
 
 render_page([ 'categories' => $categories, 
               'content' => $login_page,
-              'styles' => ['../css/login.css']
+              'styles' => ['../css/login.css'],
+              'scripts' => []
 ]);
