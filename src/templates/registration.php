@@ -1,7 +1,7 @@
 
 <h1>Регистрация</h1>
 <section class="regPanel">
-    <form>
+    <form action="registration.php" method="post">
         <div class="left_section">
             <p>Контактное лицо (ФИО)</p>
             <input type="text" class="left">
