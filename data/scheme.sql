@@ -1,10 +1,10 @@
-DROP DATABASE IF EXISTS shop_main_db;
+DROP DATABASE IF EXISTS main_db;
 
-CREATE DATABASE shop_main_db
+CREATE DATABASE main_db
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
     
-USE shop_main_db;
+USE main_db;
 
 CREATE TABLE sizes (
     id INT UNSIGNED PRIMARY KEY,
@@ -41,4 +41,15 @@ CREATE TABLE products(
     category INT references categories(id) ON DELETE RESTRICT 
 );
 
-
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email CHAR(255) NOT NULL,
+    password CHAR(255) NOT NULL,
+    phone CHAR(255) NULL,
+    username CHAR(255) NOT NULL,
+    userfamily CHAR(255) NOT NULL,
+    usercity CHAR(255) NOT NULL,
+    usersrteet CHAR(255) NOT NULL,
+    userhome CHAR(255) NOT NULL,
+    userappartments CHAR(255) NOT NULL
+);

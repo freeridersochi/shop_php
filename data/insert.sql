@@ -14,22 +14,30 @@ INSERT INTO categories (name,
                         alias,
                         banner,
                         description)
-VALUES  ('сноуборды',
+VALUES  (
+         'сноуборды',
          'snowboards',
          '../img/banners/cat1_banner1.png' ,
-         'Супер сноуборды...'),
-        ('вейкборды' ,
+         'Супер сноуборды...'
+        ),
+        (
+          'вейкборды' ,
           'wakeboards',
           '../img/banners/cat1_banner1.png' ,
-          'Супер вейкборды...'),
-        ('лонгборды',
+          'Супер вейкборды...'
+        ),
+        (
+         'лонгборды',
          'longboards',
          '../img/banners/cat1_banner1.png' ,
-         'Супер лонгборды...'),
-        ('самокаты',
+         'Супер лонгборды...'
+        ),
+        (
+         'самокаты',
          'skates',
          '../img/banners/cat1_banner1.png' ,
-         'Супер самокаты...'); 
+         'Супер самокаты...'
+        ); 
  
 INSERT INTO products (id,
                       name,
@@ -272,3 +280,18 @@ VALUES (1, 1, '151'),
        (4, 1, '154'),
        (5, 2, '158'),
        (7, 3, '155');
+       
+
+INSERT INTO users ( id, email, password, phone, username, userfamily, usercity, usersrteet, userhome, userappartments )
+VALUES (
+        1 , 
+       'admin@gmail.com' ,
+       '1234' ,
+       79996663322 ,
+       'admin' ,
+       'father',
+       'Gotham',
+       'Baker',
+       22,
+       107
+       );
