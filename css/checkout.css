@@ -61,8 +61,7 @@ h3{
 .left{
     float: left;
     width: 460px;
-    height: 416px;
-    padding-left: 31px;
+    padding-left: 31px;    
 }
 .right{
     float: right;
@@ -73,10 +72,15 @@ h3{
 form p{
     font-size: 14px;
     font-weight: 300;
-    margin-top: 14px;
+    margin: 14px 20px 0 0;
     color: #999;
     float: left;
-    width: 390px;
+}
+form p.error{
+    color: red;
+}
+.user_psw{
+    margin-top: 33px;
 }
 input{
     background-color: rgb(233, 233, 233);
@@ -117,6 +121,7 @@ input{
     height: 50px;
     border: none;
     background-color: #ed1651;
+    float: left;
 }
 .right button p{
     font-size: 18px;
@@ -356,9 +361,20 @@ th:last-child{
     overflow: hidden;
     height: 222px;
 }
+.form_body input{
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    padding-left: 0;
+    float: none;
+}
+.form_body p{
+    float: none;
+}
 /* name phone mail*/
 .person_info.left{
-    width: 296px;
+    width: 240px;
+    margin-right: 50px;
 }
 .person_adress.middle{
     width: 300px;
@@ -368,6 +384,7 @@ th:last-child{
     padding: 0;
     width: 400px;
     margin-right: 143px;
+    height: auto;
 }
 .delivery_info p{
     font-size: 14px;
@@ -389,6 +406,16 @@ p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.
     clear: left;
     margin-top: 0;
     font-size: 14px;
+}
+.small_size div.left{
+    width: 100px;
+    padding: 0;
+}
+.small_size div.right{
+    width: 100px;
+    padding: 0;
+    margin-right: 100px;
+    height: auto;
 }
 p.home_num.left{
     font-size: 18px;

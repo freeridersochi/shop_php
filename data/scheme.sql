@@ -43,13 +43,7 @@ CREATE TABLE products(
 
 CREATE TABLE users(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    email CHAR(255) NOT NULL,
-    password CHAR(255) NOT NULL,
-    phone CHAR(255) NULL,
-    username CHAR(255) NOT NULL,
-    userfamily CHAR(255) NOT NULL,
-    usercity CHAR(255) NOT NULL,
-    usersrteet CHAR(255) NOT NULL,
-    userhome CHAR(255) NOT NULL,
-    userappartments CHAR(255) NOT NULL
+    name CHAR(255) NOT NULL,
+    email CHAR(255) NOT NULL UNIQUE,
+    password BINARY(60) NOT NULL
 );

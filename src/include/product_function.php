@@ -29,3 +29,19 @@ function get_product($id){
     return $data[0];
     
 };
+
+function get_promos($id){
+    
+    $id = intval($id);
+     
+    global $link;
+
+    $sql = "SELECT * FROM `products` WHERE =".$id; 
+
+    $result = mysqli_query( $link, $sql ); 
+
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    return $data[0];
+    
+};

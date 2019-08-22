@@ -2,28 +2,53 @@
 <!--   Первая форма начало     -->
 <section class="first_form">
      <h2 class="active"><b>1.</b>Контактная информация</h2>
-     <form>
-          <div class="left">
+     <form action="checkout.php" method="post">
+         <div class="left">
              <h3>Для новых покупателей</h3>
-             <p>Контактное лицо (ФИО):</p>
-             <input type="text" class="client_name">
-             <p>Контактный телефон:</p>
-             <input type="text" class="client_phone">
-             <p>E-mail:</p>
-             <input type="mail" class="client_mail">
-             <button class="continue_one"><p>Продолжить</p></button>
-         </div>
-         <div class="right">
+             <div>
+                 <p>Контактное лицо (ФИО):</p>
+                 <?php if($errors['name']): ?>
+                      <p class="error"><?=$errors['name']?></p>
+                 <? endif; ?>
+             </div>
+             <input type="text" class="client_name" name="name" value="<?=$fields['name']?>">
+             <div>
+                 <p>Контактный телефон:</p>
+                 <?php if($errors['phone']): ?>
+                     <p class="error"><?=$errors['phone']?></p>
+                 <? endif; ?>               
+             </div>
+             <input type="text" class="client_phone" name="phone" value="<?=$fields['phone']?>">
+             <div>
+                 <p>E-mail:</p>
+                 <?php if($errors['email']): ?>
+                     <p class="error"><?=$errors['email']?></p>
+                 <? endif; ?>
+             </div>
+             <input type="mail" class="client_mail" name="email" value="<?=$fields['email']?>">
+             <button class="continue_first"><p>Продолжить</p></button>
+          </div>
+          <div class="right">
              <h3>Быстрый вход</h3>
-             <p>Ваш e-mail:</p>
-             <input type="mail">
-             <p class="user_password">Пароль:</p>
-             <input type="password">
-             <button>
+             <div>
+                 <p>Ваш e-mail:</p>
+                 <?php if($user_errors['user_email']): ?>
+                     <p class="error"><?=$user_errors['user_email']?></p>
+                 <? endif; ?>
+             </div>
+             <input type="mail" name="user_email" value="<?=$fields['user_email']?>">
+             <div>
+                 <p class="user_password">Пароль:</p>
+                 <?php if($user_errors['user_password']): ?>
+                     <p class="error user_psw"><?=$user_errors['user_password']?></p>
+                 <? endif; ?>
+             </div>  
+             <input type="password" name="user_password">
+             <button class="continue_first">
                  <p>Войти</p>
              </button>
              <a href="#">Восстановить пароль</a>
-         </div>
+          </div>
      </form>
 </section>
 <!--   Вторая форма начало    -->
@@ -83,7 +108,7 @@
 </section>
 <section class="confim_order">
     <h2><b>3.</b> Подтверждение заказа</h2>
-    <div class="form_body">
+    <form class="form_body">
      <h3>Состав заказа:</h3>
      <div class="order_info">
          <table>
@@ -109,30 +134,37 @@
      <div class="delivery_info">
         <div class="person_info left">
              <p>Контактное лицо (ФИО):</p>
-             <p class="client_name">lorem Ipsum</p>
+             <input value="lorem Ipsum">
              <p>Контактный телефон:</p>
-             <p class="client_phone">+9 789 900 89 78</p>
+             <input value="+9 789 900 89 78">
              <p>E-mai:</p>
-             <p class="client_mail">lorem@ipsum.com</p>
+             <input class="client_mail" value="lorem@ipsum.com">
          </div>
          <div class="person_adress middle">
              <p>Город:</p>
-             <p class="client_city">Lorem Ipsum</p>
+             <input class="client_city" value="Lorem Ipsum">
              <p>Улица:</p>
-             <p class="client_street">Lorem Ipsum</p>
-             <p class="left">Дом:</p>
-             <p class="home_num left">78</p>
-             <p class="right">Квартира</p>
-             <p class="appartment_num right">150</p>
+             <input class="client_street" value="Lorem Ipsum">
+             <div class="small_size">
+                 <div class="left">
+                     <p>Дом:</p>
+                     <input class="home_num" value="78">
+                 </div>
+                 <div class="right">
+                     <p>Квартира</p>
+                     <input class="appartment_num" value="150"> 
+                 </div>
+
+             </div>
          </div>
          <div class="delivery_adress right">
              <p>Способ доставки:</p>
-             <p class="delivery_choose">Lorem Ipsum</p>
+             <input class="delivery_choose" value="Lorem Ipsum">
              <p>Комментарии к заказу:</p>
-             <p class="delivery_commentss">Lorem Ipsum</p>
+             <input class="delivery_commentss" value="Lorem Ipsum">
          </div>
      </div>
      <button id="final_confirmation"><a href="checkout_final.php">Подтвердить заказ</a></button>
-    </div>
+    </form>
 </section>
 <script src="../../js/checkout.js"></script>

@@ -282,16 +282,10 @@ VALUES (1, 1, '151'),
        (7, 3, '155');
        
 
-INSERT INTO users ( id, email, password, phone, username, userfamily, usercity, usersrteet, userhome, userappartments )
+INSERT INTO users ( id, name, email, password )
 VALUES (
-        1 , 
-       'admin@gmail.com' ,
-       '1234' ,
-       79996663322 ,
-       'admin' ,
-       'father',
-       'Gotham',
-       'Baker',
-       22,
-       107
+        1 ,
+        'admin'
+        'admin@gmail.com' ,
+        '1234' 
        );

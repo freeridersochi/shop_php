@@ -63,6 +63,10 @@ form p{
     margin:18px 10px 0 30px;
     float: left;
 }
+form p.error{
+    color: red;
+    margin-left: 10px;
+}
 .name_phone{
     width: 585px;
     height: 340px;
@@ -81,14 +85,8 @@ form p{
 .client_mail h2{
     margin-top: 12px; 
 }
-.phone, .city{
-    margin-top: 10px;
-}
 .city_input, .street_input, .main_psw, .confim_psw{
     margin-top: 4px;
-}
-.street, .confim_p{
-    margin-top: 15px;
 }
 .main_p{
     margin-top: 11px;
@@ -114,7 +112,7 @@ form p{
     height: 100px;
 }
 .left p, .right p{
-    margin: 15px 0;
+    margin: 15px 10px 15px 0;
 }
 /* Маленькие поля конец */
 /* Инпуты конец */
