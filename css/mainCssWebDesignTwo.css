@@ -30,6 +30,10 @@ header{
     position: absolute;
     z-index: 10;
 }
+#shop_logo a{
+    text-decoration: none;
+    color: #fff;
+}
 .super{
     font-size: 95%;
     padding-top: 28px;
@@ -51,14 +55,10 @@ header{
     position: absolute;
     z-index: 2;
 }
-menu{
-    margin-left: 170px;
-    z-index: 12;
-
-}
 .mainNav{
     line-height: 62px;
     width: 1170px;
+    margin-left: 170px;
 }
 .mainNav li{ 
     width: 131px; 
@@ -314,7 +314,7 @@ article{
     text-align: center;
     margin: 10px auto;
 }
-.new_item img{
+.img_conteiner img{
     max-width: 290px;
     max-height: 220px;
 }
@@ -392,6 +392,7 @@ article{
     margin-top: 30px;
     float: left;
     position: relative;
+    overflow: hidden;
 }
 .banner_one{
     float: left;

@@ -1,7 +1,9 @@
 html{
     background: #dee1e3;
 }
-.nav1_status{
+
+/*   Pagination  */
+.pag_count{
     float: left;
     width: 1170px;
     text-transform: uppercase;
@@ -9,13 +11,13 @@ html{
     letter-spacing: -0.1px;
     margin-bottom: 22px;
 }
-/*   Pagination  */
 .cat_nav{
     float: left;
     width: 1172px;
     height: 80px;
     background: #fff;
 }
+
 .cat_nav span{
     float: right;
     width: 214px;
@@ -102,6 +104,7 @@ p.banner2_item{
     font-weight: 600;
     letter-spacing: -1.3px;
     line-height: 1;
+    width: 400px;
 }
 p.banner2_desc{
     top: 130px;
@@ -109,6 +112,7 @@ p.banner2_desc{
     font-size: 14px;
     letter-spacing: -0.1px;
     color: #555555;
+    width: 250px;
 }
 p.baner2_price{
     top: 222px;
@@ -134,4 +138,8 @@ p.baner2_price b{
     background: transparent;
     font: italic 17px Supermolot;
     letter-spacing: 0.6px;
+}
+.banner2_item_viev a{
+    color: #000;
+    text-decoration: none;
 }

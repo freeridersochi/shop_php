@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Super Shop</title>
+    <title></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -23,17 +23,17 @@
 <!--  Заголовок и  основное меню  -->
 <header> 
     <div id="shop_logo">
-        <p class="super">SUPER</p>
-        <p class="shop">SHOP</p>
+        <a href="home.php">
+            <p class="super">SUPER</p>
+            <p class="shop">SHOP</p>
+        </a>
     </div>
     <div class="menu_bg">
-    <menu>
         <ul class="mainNav">
             <?php foreach($categories as $category) : ?>
-                <li><a href="/cat_one.php?name=<?=$category['alias']?>"><?=$category['name']?></a></li>
+                <li><a href="/cat_one.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
         </ul>
-    </menu>
     <hr>
     </div>
     <div class="reg_bar">

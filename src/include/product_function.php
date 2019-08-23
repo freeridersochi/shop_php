@@ -1,4 +1,5 @@
 <?php 
+
 function get_photos($product){
     $photos = [$product['main_photo']];
    
@@ -21,22 +22,6 @@ function get_product($id){
     global $link;
 
     $sql = "SELECT * FROM `products` WHERE id=".$id; 
-
-    $result = mysqli_query( $link, $sql ); 
-
-    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
-    return $data[0];
-    
-};
-
-function get_promos($id){
-    
-    $id = intval($id);
-     
-    global $link;
-
-    $sql = "SELECT * FROM `products` WHERE =".$id; 
 
     $result = mysqli_query( $link, $sql ); 
 

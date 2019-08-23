@@ -1,10 +1,10 @@
-DROP DATABASE IF EXISTS main_db;
+DROP DATABASE IF EXISTS main_db2;
 
-CREATE DATABASE main_db
+CREATE DATABASE main_db2
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
     
-USE main_db;
+USE main_db2;
 
 CREATE TABLE sizes (
     id INT UNSIGNED PRIMARY KEY,
@@ -22,7 +22,8 @@ CREATE TABLE categories (
     name CHAR(255) NOT NULL UNIQUE,
     alias CHAR(255) NOT NULL UNIQUE,
     banner CHAR(255) NOT NULL,
-    description MEDIUMTEXT 
+    description MEDIUMTEXT,
+    promo CHAR(255)
 );
        
 CREATE TABLE products(
@@ -39,6 +40,14 @@ CREATE TABLE products(
     discount DOUBLE(3,2) DEFAULT 1.0 NOT NULL,
     mark INT references marks(id) ON DELETE RESTRICT,
     category INT references categories(id) ON DELETE RESTRICT 
+);
+
+CREATE TABLE promo(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name CHAR(255),
+    price INT,
+    description MEDIUMTEXT,
+    promo_mark CHAR(255)
 );
 
 CREATE TABLE users(

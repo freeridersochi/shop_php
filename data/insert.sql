@@ -1,7 +1,9 @@
-
 DELETE FROM marks;
 DELETE FROM categories;
 DELETE FROM products;
+DELETE FROM users;
+DELETE FROM promo;
+DELETE FROM sizes;
 
 #marks
 INSERT INTO marks (name) 
@@ -13,30 +15,35 @@ VALUES  ('hot'),
 INSERT INTO categories (name, 
                         alias,
                         banner,
-                        description)
+                        description,
+                        promo)
 VALUES  (
-         'сноуборды',
-         'snowboards',
+         'сноуборды' ,
+         'snowboards' ,
          '../img/banners/cat1_banner1.png' ,
-         'Супер сноуборды...'
+         'на все случаи жизни, для всех склонов. От горки у дома до больших гор.' ,
+         'snow'
         ),
-        (
+        ( 
           'вейкборды' ,
-          'wakeboards',
+          'wakeboards' ,
           '../img/banners/cat1_banner1.png' ,
-          'Супер вейкборды...'
+          'тем кто только начинает и тем кто уже умеет.' ,
+          'water'
         ),
-        (
+        ( 
          'лонгборды',
          'longboards',
          '../img/banners/cat1_banner1.png' ,
-         'Супер лонгборды...'
+         'для спокойных поездок и не только...' ,
+         'skate'
         ),
-        (
-         'самокаты',
-         'skates',
+        ( 
+         'самокаты' ,
+         'skates' ,
          '../img/banners/cat1_banner1.png' ,
-         'Супер самокаты...'
+         'большим и маленьким.' ,
+         'wheels'
         ); 
  
 INSERT INTO products (id,
@@ -280,8 +287,28 @@ VALUES (1, 1, '151'),
        (4, 1, '154'),
        (5, 2, '158'),
        (7, 3, '155');
-       
 
+INSERT INTO promo ( name, price, description, promo_mark )
+VALUES  (
+         'Сноуборд Burton Trick Pony' ,
+         28599 ,
+         'Лучший выбор для катания в стиле All mountain freesstyle в больших горах. 
+          Mikel Bang  подтверждает личтно.',
+         'snow'
+        ),
+        (
+         'Сноуборд Salomon Sanchez',
+         15899 ,
+         'Лучшая доска для джиббинга по версии "Good Wood"2018',
+         'skate'
+        ),
+        (
+         'Сноуборд женский Volkl Melody',
+         15499 ,
+         'Идеальный выбор для девочек, которые хотят быстр прокачать свое катание.',
+         'water'
+        );
+        
 INSERT INTO users ( id, name, email, password )
 VALUES (
         1 ,
