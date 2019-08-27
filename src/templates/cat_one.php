@@ -1,5 +1,5 @@
     <h1><?=$category['name']?></h1>
-    <p class="pag_count">Показано из  товаров</p>  
+    <p class="pag_count">Показано <?=sizeof($cat_page['data'])?> из <?=$cat_page['items_count']?> товаров</p>
 <!--   верхняя навигация начало    -->
     <div class="cat_nav">
         <span>

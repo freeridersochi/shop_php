@@ -85,7 +85,6 @@ function get_cat_items($item_cat){
 function get_page( $items , $current_page, $item_counter ){
     $new_page=[];
     $items_count = sizeof($items);
-    
     $total_pages = ceil($items_count/$item_counter);
     
     if ($current_page < 1) {
@@ -100,6 +99,7 @@ function get_page( $items , $current_page, $item_counter ){
     $new_page['data'] = array_slice($items, $offset, $item_counter);
     $new_page['total'] = $total_pages;
     $new_page['current'] = $current_page;
+    $new_page['items_count'] = $items_count; 
     
     return $new_page;    
 };
