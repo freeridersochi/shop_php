@@ -5,46 +5,46 @@ require_once 'database.php';
 // GEt cat func 
 function get_categories(){
     
-global $link;
+    global $link;
 
-$sql = "SELECT * FROM `categories`"; 
+    $sql = "SELECT * FROM `categories`"; 
 
-$result = mysqli_query( $link, $sql ); 
+    $result = mysqli_query( $link, $sql ); 
 
-$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
-return $data;
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $data;
     
 }
 
 //Get item func
 function get_items(){
     
-global $link;
+    global $link;
 
-$sql = "SELECT * FROM `products`"; 
+    $sql = "SELECT * FROM `products`"; 
 
-$result = mysqli_query( $link, $sql ); 
+    $result = mysqli_query( $link, $sql ); 
 
-$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
-return $data;
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $data;
     
 }
 
 //Get best
 function get_best(){
     
-global $link;
+    global $link;
 
-$sql = "SELECT * FROM `products` WHERE id='hot'"; 
+    $sql = "SELECT * FROM `products` WHERE mark = 'hot'"; 
 
-$result = mysqli_query( $link, $sql ); 
+    $result = mysqli_query( $link, $sql ); 
 
 
-$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
-return $data;
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $data;
     
 }
 
@@ -52,15 +52,15 @@ return $data;
 
 function get_all($item_id){
     
-global $link;
+    global $link;
 
-$sql = "SELECT * FROM `products` WHERE id=".$item_id; 
+    $sql = "SELECT * FROM `products` WHERE id=".$item_id; 
 
-$result = mysqli_query( $link, $sql ); 
+    $result = mysqli_query( $link, $sql ); 
 
-$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
-return $data;
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $data;
 
 }
 
@@ -68,15 +68,15 @@ return $data;
 
 function get_cat_items($item_cat){
     
-global $link;
+    global $link;
 
-$sql = "SELECT * FROM `products` WHERE id<=4";//.$item_cat;
+    $sql = "SELECT * FROM `products` WHERE id<=4";//.$item_cat;
 
-$result = mysqli_query ( $link, $sql );
+    $result = mysqli_query ( $link, $sql );
 
-$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-return $data;
+    return $data;
     
 }
 
@@ -101,32 +101,6 @@ function get_page( $items , $current_page, $item_counter ){
     $new_page['total'] = $total_pages;
     $new_page['current'] = $current_page;
     
-    return $new_page;
-    
+    return $new_page;    
 };
 
-
-
-
-
-/*function get_prod_db(){
-
-global $link;
-
-$sql = "SELECT * FROM 'all items'";//WHERE id=".$item_id;//."& 'item_cat =".$item_category."; 
-
-var_dump($sql);
-var_dump($link);
-
-$result = mysqli_query( $link, $sql );
-    
-var_dump($result);
-    
-$data = mysqli_fetch_assoc($result);
-    
-return $data;    
-*/
-    
-
-
-?>

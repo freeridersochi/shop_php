@@ -4,16 +4,18 @@ require_once 'src/include/include.php';
 require_once 'src/include/product_function.php';
 
 $item_id = $_GET['item_id'];
-$item_cat = $_GET['item_cat'];
+
 $categories = get_categories();
-$cat_prod = get_cat_items($item_cat);
 $product = get_product($item_id);
+$items = get_items();
+
+$pop_prod_page_number = intval($_GET['pop_prod_page']??0);
+$pop_page = get_page($items, $pop_prod_page_number, 4);
 
 $product_data = [
+    'items' => $items,
     'product' => $product,
-    'product_cat' => $cat_prod,
-    'bests' => []
-    
+    'pop_page' => $pop_page  
 ];
 
 $product_page = include_template('src/templates/product.php', $product_data );

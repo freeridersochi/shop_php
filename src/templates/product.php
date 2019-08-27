@@ -68,26 +68,34 @@
         </div> <!--    End right_bar    -->
 </section>
 <!-- Best items in cat section -->
-<section class="best_salers">
+<section class="best_salers" id="best_items">    
     <span>
-        <p class="best_item_title">Другие товары из категории "<?=$product['category']?>"</p>
-        <img class="arrow_right next" src="../img/icons/arrow_right.png" alt="move in right">
-        <img class="arrow_left prev" src="../img/icons/arrow_left.png" alt="move in left">
+        <p class="best_item_title">Другие товары из категории <?=$product['category']?></p>
+        <?php var_dump($category['name']); ?>
+        <?php if ($pop_page['current']<$pop_page['total']): ?>
+            <a href="product.php?pop_prod_page=<?=$pop_page['current']+1?>#best_items">
+                <img class="arrow_right next_two" src="../img/icons/arrow_right.png" alt="move in right">
+            </a>
+        <?php endif ?>
+        <?php if ($pop_page['current']>1):?>
+            <a href="product.php?pop_prod_page=<?=$pop_page['current']-1?>#best_items">
+                <img class="arrow_left prev_two" src="../img/icons/arrow_left.png" alt="move in left">
+            </a>
+        <?php endif ?> 
     </span>
-    <div class="first_slider">
-        <?php foreach($bests as $product):?>
-        <article class="new_item">
-            <a href="product.php?item_id=<?=$product['id']?>&item_cat=<?=$product['item_cat']?>">
+        <?php foreach($pop_page['data'] as $item):?>
+        <article class="best_items">
+            <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
                 <div class="img_conteiner">
-                    <img src="<?=$product['image']?>" alt="Изображение отсутствует">
+                    <img src="<?=$item['main_photo']?>" alt="Изображение отсутствует">
                 </div>
-                <p class="item_name"><?=$product['name']?></p>
+                <!--    обрезаем имя до нужного количества символов    -->
+                <p class="item_name"><?=mb_substr($item['name'], 0, 15, 'UTF-8').'...'?></p>
                 <div class="price_conteiner">
-                    <p class="item_price"><?=$product['price']?></p>
+                    <p class="item_price"><?=$item['price']?></p>
                 </div>
             </a>
         </article>
         <?php endforeach; ?>
-    </div>    
 </section>
 <script src="../../js/product_slider.js"></script> 

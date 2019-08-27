@@ -25,6 +25,8 @@ h2{
     font-weight: bold;
     line-height: 1.2;
     border-top: 2px solid #f6f6f6;
+    float: left;
+    background-color: #fff;
 }
 .active{
     color: #fff;
@@ -43,7 +45,6 @@ h3{
 /* Title End */
 .first_form, .second_form{
     background-color: #fff;
-    margin: 10px 0 0;
     width: 1170px;
     float: left;
 }
@@ -143,6 +144,7 @@ input{
 .second_form{
     margin-top: 0;
     height: auto;
+    display: none;
 }
 .second_form form{
 	display: none;
@@ -313,6 +315,7 @@ textarea{
     width: 1170px;
     background-color: #fff;
     float: left;
+    display: none;
 }
 .form_body{
 	display: none;

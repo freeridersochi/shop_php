@@ -28,7 +28,7 @@
     </span>
     <?php foreach($new_page['data'] as $item):?>
     <article class="new_item">
-        <a href="product.php?item_id=<?=$item['id']?>">
+        <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['category']?>">
             <div class="img_conteiner">
                 <img src="<?=$item['main_photo']?>" alt="Изображение отсутствует">
             </div>
@@ -74,7 +74,7 @@
     </span>
         <?php foreach($pop_page['data'] as $item):?>
         <article class="best_items">
-            <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
+            <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['category']?>">
                 <div class="img_conteiner">
                     <img src="<?=$item['main_photo']?>" alt="Изображение отсутствует">
                 </div>
