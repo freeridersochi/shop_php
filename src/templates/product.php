@@ -68,22 +68,21 @@
         </div> <!--    End right_bar    -->
 </section>
 <!-- Best items in cat section -->
-<section class="best_salers" id="best_items">    
+<section class="best_salers" id="other_items">    
     <span>
         <p class="best_item_title">Другие товары из категории <?=$product['category']?></p>
-        <?php var_dump($category['name']); ?>
-        <?php if ($pop_page['current']<$pop_page['total']): ?>
-            <a href="product.php?pop_prod_page=<?=$pop_page['current']+1?>#best_items">
+        <?php if ($other_page['current']<$other_page['total']): ?>
+            <a href="product.php?item_id=<?=$product['id']?>&other_prod_page=<?=$other_page['current']+1?>#other_items">
                 <img class="arrow_right next_two" src="../img/icons/arrow_right.png" alt="move in right">
             </a>
         <?php endif ?>
-        <?php if ($pop_page['current']>1):?>
-            <a href="product.php?pop_prod_page=<?=$pop_page['current']-1?>#best_items">
+        <?php if ($other_page['current']>1):?>
+            <a href="product.php?item_id=<?=$product['id']?>&other_prod_page=<?=$other_page['current']-1?>#other_items">
                 <img class="arrow_left prev_two" src="../img/icons/arrow_left.png" alt="move in left">
             </a>
         <?php endif ?> 
     </span>
-        <?php foreach($pop_page['data'] as $item):?>
+        <?php foreach($other_page['data'] as $item):?>
         <article class="best_items">
             <a href="product.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
                 <div class="img_conteiner">
