@@ -20,10 +20,11 @@ foreach( $categories as $category ){
 
 if(!$current_category){
     http_response_code(404);
+    $cat_page = include_template('src/templates/404.php', $cat_data);
     render_page([
-                'categories' => $categories,
-                'content' => 'Ooops! Category is not found!',
-                'styles' => ['categoryOne.css'],
+                'categories' => $categories ,
+                'content' => $cat_page ,
+                'styles' => [] ,
                 'scripts' => []
     ]);
     die;

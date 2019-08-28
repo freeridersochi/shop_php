@@ -516,3 +516,8 @@ footer span a{
 .about_shop h1{
     margin: 0px;
 }
+//404
+section.error_page{
+    float: left;
+    background-image: url('../img/404/kot-kosmonavt.png');
+}
