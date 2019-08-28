@@ -1,5 +1,5 @@
 <?php 
-
+//foto
 function get_photos($product){
     $photos = [$product['main_photo']];
    
@@ -14,7 +14,7 @@ function get_photos($product){
     }
     return $photos;
 }
-
+// id
 function get_product($id){
     
     $id = intval($id);
@@ -30,3 +30,18 @@ function get_product($id){
     return $data[0];
     
 };
+//sizes
+function get_sizes($id){
+    
+    $id = intval($id);
+     
+    global $link;
+
+    $sql = "SELECT * FROM `sizes` WHERE product_id=".$id; 
+
+    $result = mysqli_query( $link, $sql ); 
+
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    return $data;
+}

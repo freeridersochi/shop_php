@@ -7,6 +7,7 @@ $item_id = $_GET['item_id'];
 
 $categories = get_categories();
 $product = get_product($item_id);
+$sizes = get_sizes($item_id);
 $items = get_items();
 
 $pop_prod_page_number = intval($_GET['pop_prod_page']??0);
@@ -15,6 +16,7 @@ $pop_page = get_page($items, $pop_prod_page_number, 4);
 $product_data = [
     'items' => $items,
     'product' => $product,
+    'sizes' => $sizes,
     'pop_page' => $pop_page  
 ];
 

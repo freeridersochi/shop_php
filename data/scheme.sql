@@ -9,7 +9,7 @@ USE shop_db;
 CREATE TABLE sizes (
     id INT UNSIGNED PRIMARY KEY,
     product_id INT references products(id) ON DELETE CASCADE,
-    size CHAR(100) NOT NULL    
+    size CHAR(100) NOT NULL     
 );
 
 CREATE TABLE marks (
@@ -35,7 +35,6 @@ CREATE TABLE products(
     photo3 CHAR(255),
     quanity INT,
     description MEDIUMTEXT,
-    #sizes from table Sizes 
     discount DOUBLE(3,2) DEFAULT 1.0 NOT NULL,
     mark INT references marks(id) ON DELETE RESTRICT,
     category INT references categories(id) ON DELETE RESTRICT 

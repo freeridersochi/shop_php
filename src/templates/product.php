@@ -18,10 +18,10 @@
                 <p class="cat1_item1_about"><?=$product['description']?></p>
                 <span>
                     <p>Выберете вариант:</p>
-                    <select>
-                        <option value="size_38"><?=$product['size']?></option>
-                        <option value="size_37"><?=$product['item_second_size']?></option>
-                        <option value="size_36" selected><?=$product['item_third_size']?></option>
+                    <select>                      
+                        <?php foreach($sizes as $size):?>
+                            <option value="<?=$size['size']?>"><?=$size['size']?></option>
+                        <?php endforeach; ?>
                     </select>
                 </span>    
         </div> 

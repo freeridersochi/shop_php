@@ -15,7 +15,8 @@ SET @promo_id = -1;
 SELECT id FROM marks WHERE name = 'promo' INTO @promo_id;
 
 #categories
-INSERT INTO categories (id,
+INSERT INTO categories (
+                        id,
                         name, 
                         alias,
                         banner,
@@ -49,8 +50,17 @@ VALUES  (
          '../img/banners/cat1_banner1.png' ,
          'большим и маленьким.' 
         ); 
+
+INSERT INTO sizes ( id, product_id, size )
+VALUES (1, 1, '151'), 
+       (2, 1, '152'), 
+       (3, 1, '153'),
+       (4, 1, '154'),
+       (5, 2, '158'),
+       (7, 3, '155');
  
-INSERT INTO products (id,
+INSERT INTO products (
+                      id,
                       name,
                       price,
                       main_photo,
@@ -396,14 +406,6 @@ VALUES ( # 01 Product
         NUll ,
         1  
        );
-
-INSERT INTO sizes ( id, product_id, size )
-VALUES (1, 1, '151'), 
-       (2, 1, '152'), 
-       (3, 1, '153'),
-       (4, 1, '154'),
-       (5, 2, '158'),
-       (7, 3, '155');
         
 INSERT INTO users ( id, name, email, password )
 VALUES (
