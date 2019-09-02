@@ -56,6 +56,10 @@ form p{
     text-align: left;
     margin-top: 18.5px;
     font-weight: 300;
+    display: inline-block;
+}
+form p.error{
+    color: red;
 }
 form input{
     background-color: rgb(233, 233, 233);

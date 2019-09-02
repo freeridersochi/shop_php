@@ -74,27 +74,38 @@ td.item_quanity div{
     font-family: Bender, serif;
     font-weight: 600;
 }
-.item_quanity div p{
+.first_item_decr , .first_item_incr{
+	width: 45px;
+	height: 45px;
+	float: left;
+	margin: 0;
+}
+.backet_item_value.qanity_count{
+	
+}
+.qanity_count{
+	width: 50px!important;
+	height: 45px;
+	float: left;
+	margin: 0;
+}
+.item_quanity {
     display: inline-block;
     float: left;
     width: 40px;
     height: 46px;
     color: #999999;
     box-sizing: border-box;
-    padding: 13px 10px 10px 10px;
     font-weight: 600;
     text-align: center;
 }
-.item_quanity div p.qanity_count{
+.item_quanity .qanity_count{
     border-left: 2px solid #dadada;
     border-right: 2px solid #dadada;
     width: 60px;
     color: #000;
     padding: 14px 10px 10px 14px;
     text-align: center;
-}
-.item_quanity div p:first-child{
-    font-weight: 600;
 }
 .item_cost{
     font: italic 18px "Supermolot", sans-serif;
@@ -126,6 +137,7 @@ td.item_quanity div{
     border-bottom: none;
 }
 .total_span p{
+	margin: 22px 10px 0 10px;
     float: right;
     font: italic 28px "Supermolot", sans-serif;
     color: #000;
@@ -133,7 +145,7 @@ td.item_quanity div{
     letter-spacing: 1px;
 }
 .total_span p:first-child{
-    margin: 25px 48px 0 20px;
+    margin: 22px 48px 0 0;
     font: italic 28px "Supermolot", sans-serif;
     font-weight: 600;
 }
@@ -157,6 +169,10 @@ button{
     margin-top: 2px;
     text-align: center;
 }
+button a{
+	color: #fff;
+	text-decoration: none;
+}
 .back_to_items{
     float: left;
     background-color: #000;
@@ -168,6 +184,10 @@ button{
     padding-left: 10px;
     letter-spacing: 0.2px;
     font-weight: 300;
+}
+.back_to_items a{
+	color: #fff;
+	text-decoration: none;
 }
 
 

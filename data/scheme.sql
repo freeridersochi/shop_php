@@ -1,15 +1,15 @@
-DROP DATABASE IF EXISTS shop_main_db;
+DROP DATABASE IF EXISTS shop_db;
 
-CREATE DATABASE shop_main_db
+CREATE DATABASE shop_db
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
     
-USE shop_main_db;
+USE shop_db;
 
 CREATE TABLE sizes (
     id INT UNSIGNED PRIMARY KEY,
     product_id INT references products(id) ON DELETE CASCADE,
-    size CHAR(100) NOT NULL    
+    size CHAR(100) NOT NULL     
 );
 
 CREATE TABLE marks (
@@ -22,7 +22,7 @@ CREATE TABLE categories (
     name CHAR(255) NOT NULL UNIQUE,
     alias CHAR(255) NOT NULL UNIQUE,
     banner CHAR(255) NOT NULL,
-    description MEDIUMTEXT 
+    description MEDIUMTEXT
 );
        
 CREATE TABLE products(
@@ -35,10 +35,14 @@ CREATE TABLE products(
     photo3 CHAR(255),
     quanity INT,
     description MEDIUMTEXT,
-    #sizes from table Sizes 
     discount DOUBLE(3,2) DEFAULT 1.0 NOT NULL,
     mark INT references marks(id) ON DELETE RESTRICT,
     category INT references categories(id) ON DELETE RESTRICT 
 );
 
-
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name CHAR(255) NOT NULL,
+    email CHAR(255) NOT NULL UNIQUE,
+    password BINARY(60) NOT NULL
+);

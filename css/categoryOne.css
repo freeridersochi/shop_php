@@ -1,7 +1,9 @@
 html{
     background: #dee1e3;
 }
-.nav1_status{
+
+/*   Pagination  */
+.pag_count{
     float: left;
     width: 1170px;
     text-transform: uppercase;
@@ -9,13 +11,13 @@ html{
     letter-spacing: -0.1px;
     margin-bottom: 22px;
 }
-/*   Pagination  */
 .cat_nav{
     float: left;
     width: 1172px;
     height: 80px;
     background: #fff;
 }
+
 .cat_nav span{
     float: right;
     width: 214px;
@@ -53,6 +55,12 @@ html{
 .cat1_banner_one{
     position: relative;
     float: left;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 879px;
+    height: 324px;
 }
 .cat1_banner_one img{
     position: relative;
@@ -102,6 +110,9 @@ p.banner2_item{
     font-weight: 600;
     letter-spacing: -1.3px;
     line-height: 1;
+    width: 400px;
+    height: 77px;
+    overflow: hidden;
 }
 p.banner2_desc{
     top: 130px;
@@ -109,9 +120,13 @@ p.banner2_desc{
     font-size: 14px;
     letter-spacing: -0.1px;
     color: #555555;
+    width: 250px;
+    height: 109px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 p.baner2_price{
-    top: 222px;
+    top: 233px;
     left: 48px;
     color: #ed1651;
     font-style: italic;
@@ -127,11 +142,15 @@ p.baner2_price b{
 }
 .banner2_item_viev{
     position: absolute;
-    top: 277px;
+    top: 297px;
     left: 46px;
     border: 3px solid #ed1651;
     padding: 13px 11px 11px 13px;
     background: transparent;
     font: italic 17px Supermolot;
     letter-spacing: 0.6px;
+}
+.banner2_item_viev a{
+    color: #000;
+    text-decoration: none;
 }

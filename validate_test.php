@@ -7,36 +7,21 @@ require_once './src/include/include.php'; //link include function
 $categories = get_categories();
 $items = get_items(); 
 $bests = get_best();
-
-// Big pagination
 $new_prod_page_number = intval($_GET['new_prod_page']??0);
 $new_page = get_page($items, $new_prod_page_number, 8);
-
-// Small pagination
 $pop_prod_page_number = intval($_GET['pop_prod_page']??0);
 $pop_page = get_page($items, $pop_prod_page_number, 4);
 
 //Use data from "nav_functions.php" in variable $home_data
 $home_data = [ 
                 'items' => $items,
+                'bests' => $bests,
                 'new_page' => $new_page,
                 'pop_page' => $pop_page
              ];
 
 // Use variable $home_data in Include function
-$home_page = include_template('./src/templates/home.php', $home_data );
-
-if(!$home_page){
-    http_response_code(404);
-    $cat_page = include_template('src/templates/404.php', $cat_data);
-    render_page([
-                'categories' => $categories ,
-                'content' => $cat_page ,
-                'styles' => [] ,
-                'scripts' => []
-    ]);
-    die;
-}
+$home_page = include_template('./src/templates/validate.php', $home_data );
 
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
 $include_result = include_template('./src/templates/layout.php', [

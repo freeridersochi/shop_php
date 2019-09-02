@@ -1,12 +1,11 @@
-
-    <h1><?=$item['item_cat']?></h1>
-    <a class="back_to_cat1" href="pages/product.php?item_id=<?=$item['id']?>">Вернуться в каталог</a>  
+    <h1><?=$category['name']?></h1>
+    <p class="pag_count">Показано <?=sizeof($cat_page['data'])?> из <?=$cat_page['items_count']?> товаров</p>
 <!--   верхняя навигация начало    -->
     <div class="cat_nav">
         <span>
         <p>Страницы</p>
         <?php for($i=1; $i <= $cat_page['total']; $i++): ?>     
-            <a href="cat_one.php?page=<?=$i ?>" class="<?=$cat_page['current'] === $i?'active': ''?>"><?=$i ?></a>
+            <a href="cat_one.php?page=<?= $i ?>&name=<?=$category['alias']?>" class="<?=$cat_page['current'] === $i?'active': ''?>"><?=$i ?></a>  
         <?php endfor; ?> 
         </span>
     </div>  
@@ -15,13 +14,14 @@
     <!--  Баннер1  -->
     <div class="cat1_banner_one">
         <img src="../img/banners/cat1_banner1.png" alt="One">
-        <p><strong><?= $category['name'] ?></strong></p>     
-        <p class="cat1_desc">Краткий текст о категории</p>
+        <p><strong><?= $category['name']?></strong></p>     
+        <p class="cat1_desc"><?=$category['description']?></p>
     </div>
 <!--     Товары    -->
-    <?php foreach($cat_page['data'] as $item):?>
+    <?php for($i=1; $i <= sizeof($cat_page['data']); $i++):?>
+    <?php $item = $cat_page['data'][$i]?>
     <article class="new_item">
-        <a href="/pages/product2.php?item_id=<?=$item['id']?>&item_cat=<?=$item['item_cat']?>">
+        <a href="product.php?item_id=<?=$item['id']?>">
             <div class="img_conteiner">
                 <img src="<?=$item['main_photo']?>" alt="Изображение отсутствует">
             </div>
@@ -31,22 +31,28 @@
             </div>
         </a>
     </article>
-    <?php endforeach; ?> 
+        <?php if($i % 11 === 0 && $promo_products[$cat_page['current']-1]):?>
+        <article class="cat1_banner_two">
+                <img src="../img/banners/cat1_banner<?=$i -1 ?>.png" alt="Two">
+                <?php $promo = $promo_products[$cat_page['current']-1];?>
+                <p class="banner2_item"><?=$promo['name']?></p>
+                <p class="banner2_desc"><?=$promo['description']?></p>
+                <p class="baner2_price"><b><?=$promo['price']?> &#x20bd;</b></p>
+                <button class="banner2_item_viev">
+                    <a href="product.php?item_id=<?=$promo['id']?>">Посмотреть&nbsp;&nbsp;+</a>
+                </button>
+        </article>
+        <?php endif;?>
+    <?php endfor;?> 
     <!--  Баннер2  -->
-    <article class="cat1_banner_two">
-        <img src="../img/banners/cat1_banner2.png" alt="Two">
-        <p class="banner2_item">заголовок<br>промо-товара</p>
-        <p class="banner2_desc">Описание промо-товара</p>
-        <p class="baner2_price">4 540<b>руб.</b></p>
-        <button class="banner2_item_viev">Посмотреть&nbsp;&nbsp;+</button>
-    </article>
+    
     <!--   нижняя навигация начало    -->
     <div class="cat_nav">
         <span>
             <p>Страницы</p>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
+            <?php for($i=1; $i <= $cat_page['total']; $i++): ?>     
+                <a href="cat_one.php?page=<?= $i ?>&name=<?=$category['alias']?>" class="<?=$cat_page['current'] === $i?'active': ''?>"><?=$i ?></a>
+            <?php endfor; ?> 
         </span>
     </div>
     <!--   нижняя навигация конец    -->
