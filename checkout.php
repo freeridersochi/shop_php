@@ -8,6 +8,7 @@ require_once './src/include/user_function.php';
 $categories = get_categories();
 
 //Not user form
+$person_type=[];
 $errors=[];
 if($_SERVER['REQUEST_METHOD']==="POST"){
     
@@ -27,8 +28,8 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         $errors['email'] = "Wrong email";
         }
     if(sizeof($errors) === 0 ){
-        save_data($name, $phone, $email);
-        var_dump("You are not User");
+        $person_type['person'] = "Not user";
+        save_data($name, $phone, $email);       
         }
 }
 
@@ -38,18 +39,16 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 
     $user_email=$_POST['user_email'];
     $user_password=$_POST['user_password'];
-
-    if( $user_email === ''){
-        $user_errors['user_email'] = "Enter email";
-    }else if(!filter_var($user_email, FILTER_VALIDATE_EMAIL)){
-        $user_errors['user_email'] = "Wrong email";
+    
+    if( $user_email === '' ){
+        $errors['name'] = "Enter name";
         }
     if ( $user_password === '' ){
         $user_errors['user_password'] = "Enter password";
         }
-    if(sizeof($user_errors) === 0){    
+    if(sizeof($user_errors) === 0){
+        $person_type['person'] = "User";  
         login_user($user_email, $user_password);
-        var_dump("You are User"); 
         }
 }
 

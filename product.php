@@ -20,6 +20,18 @@ $product_data = [
     'other_page' => $other_page  
 ];
 
+if(!$item_id){
+    http_response_code(404);
+    $cat_page = include_template('src/templates/404.php', $cat_data);
+    render_page([
+                'categories' => $categories ,
+                'content' => $cat_page ,
+                'styles' => [] ,
+                'scripts' => []
+    ]);
+    die;
+}
+
 $product_page = include_template('src/templates/product.php', $product_data );
 
 render_page([

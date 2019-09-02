@@ -1,9 +1,9 @@
-<h1>Оформление &nbsp;заказа</h1>
+<h1>Оформление &nbsp;заказа<?=$person_type['person']?></h1>
 <form action="checkout.php" method="post">
     <!--   Первая форма     -->
     <h2 class="active first_title"><b>1.</b>Контактная информация</h2> 
         <section class="first_form">           
-             <form>
+             <form action="checkout.php" method="post">
                  <div class="left">
                  <h3>Для новых покупателей</h3>
                  <div>
@@ -12,26 +12,26 @@
                           <p class="error"><?=$errors['name']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="text" class="client_name" pattern="[a-zA-Z\u0400-\u04ff]{3,30}" id="client_name" name="name" value="<?=$fields['name']?>" required>
+                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>" onchange="validateName();">
                  <div>
-                     <p>Контактный телефон:<span class="error"></span></p>
+                     <p>Контактный телефон:<span class="error" id="phone_err"></span></p>
                      <?php if($errors['phone']): ?>
                          <p class="error"><?=$errors['phone']?></p>
-                     <? endif; ?>               
+                     <? endif; ?>
                  </div>
-                 <input type="text" class="client_phone" name="phone" value="<?=$fields['phone']?>">
+                 <input type="text" class="client_phone" name="phone" id="phone" value="<?=$fields['phone']?>" onchange="validatePhone();">
                  <div>
-                     <p>E-mail:<span class="error"></span></p>
+                     <p>E-mail:<span class="error" id="email_err"></span></p>
                      <?php if($errors['email']): ?>
                          <p class="error"><?=$errors['email']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="mail" class="client_mail" name="email" value="<?=$fields['email']?>">
-                 <button class="continue_first"><p>Продолжить</p></button>
+                 <input type="email" class="client_email" id="email" name="email" value="<?=$fields['email']?>" onchange="validateEmail();">
+                 <button class="not_user"><p>Продолжить</p></button>
                  </div>
               </form>
-              <form>
-                 <div class="right">
+              <div class="right">
+              <form action="checkout.php" method="post">                 
                  <h3>Быстрый вход</h3>
                  <div>
                      <p>Ваш e-mail:<span class="error"></span></p>
@@ -39,7 +39,7 @@
                          <p class="error"><?=$user_errors['user_email']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="mail" name="user_email" value="<?=$fields['user_email']?>">
+                 <input type="email" name="user_email" value="<?=$fields['user_email']?>">
                  <div>
                      <p class="user_password">Пароль:<span class="error"></span></p>
                      <?php if($user_errors['user_password']): ?>
@@ -47,12 +47,12 @@
                      <? endif; ?>
                  </div>  
                  <input type="password" name="user_password">
-                 <button class="continue_first">
+                 <button class="user">
                      <p>Войти</p>
                  </button>
-                 <a href="#">Восстановить пароль</a>
-                 </div>
+                 <a href="#">Восстановить пароль</a>                 
               </form>
+              </div>
     </section>
     <!--   Вторая форма   -->
     <h2 class="second_title"><b>2. </b>Информация о доставке</h2>
@@ -168,4 +168,56 @@
     </section>
     <button id="final_confirmation"><a href="checkout_final.php">Подтвердить заказ</a></button>
 </form>
+<script>
+    //check name
+    function validateName(){    
+        let regex = /[^a-z0-9]/i;
+        let name = document.getElementById('name');
+        let error = document.getElementById('client_name_err');
+
+        if( name.value != '' ){
+            if (!regex.test(name.value)){
+                    error.innerHTML="<sup>*</sup>Only cirilic letters";       
+                }else{
+                    error.innerHTML="";       
+                    } 
+            }else{
+                error.innerHTML="<sup>*</sup>Not empty";
+            }
+        };                
+    //check phone
+    function validatePhone(){
+            let regex =^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$;
+            let phone = document.getElementById('phone');
+            let error = document.getElementById('phone_err');
+            
+             if( name !== '' ){
+                error.innerHTML="<sup>*</sup>Not empty";
+                }else{
+                    if(phone.value.match(regex)){
+                        return true;
+                        error.innerHTML=""; 
+                    }else{  
+                        error.innerHTML="<sup>*</sup>Only numders, () and + "; 
+                        return false;
+                }
+             }
+        };
+    //check email
+    function validateEmail(){
+            let regex = /.+@.+\..+/i;
+            let name = document.getElementById('email');
+            let error = document.getElementById('email_err');
+
+            if( name !== '' ){
+                if (!regex.test(name.value)){
+                    error.innerHTML="<sup>*</sup>Your adrees must look 'example@gmail.com' ";       
+                }else{
+                    error.innerHTML="";       
+                    }
+            }else{
+                error.innerHTML="<sup>*</sup>Not empty";
+            }
+        };
+</script>
 <script src="../../js/checkout.js"></script>
