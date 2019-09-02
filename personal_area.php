@@ -1,9 +1,9 @@
 <?php 
-
+require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
 require_once 'src/include//user_function.php';
-
+var_dump(get_my_current_user());
 $categories = get_categories();
 
 if($_SERVER['REQUEST_METHOD']==="POST"){

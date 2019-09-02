@@ -412,5 +412,5 @@ VALUES (
         1 ,
         'admin',
         'admin@gmail.com' ,
-        '1234' 
+        sha2(CONCAT( email, '1234' ), 256) 
        );

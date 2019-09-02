@@ -1,4 +1,6 @@
-
+<?php 
+    require_once 'src/include/common.php';
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +40,12 @@
     </div>
     <div class="reg_bar">
         <img class="user_enter" src="../img/icons/icon_user_login.png" alt="User Icon">
-        <a href="login.php" class="red">Войти</a>
-        <a href="registration.php" class="reg">Регистрация</a>
+        <?php if(!get_my_current_user()) :?>
+            <a href="login.php" class="red">Войти</a>
+            <a href="registration.php" class="reg">Регистрация</a>
+        <?php else :?>
+            <a href="logout.php" class="red">Выйти</a>
+        <?php endif; ?>
     </div>
     <a class="backet" href="backet.php">
         <img src="../img/icons/backet_icon.png" alt="Backet Icon">

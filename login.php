@@ -1,8 +1,15 @@
 <?php 
-
+require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
 require_once 'src/include/user_function.php';
+
+$url = $_SERVER['HTTP_REFERER']??'home.php';
+
+if(get_my_current_user()){    
+    header('Location: personal_area.php');
+    die();
+};
 
 $categories = get_categories();
 $errors=[];
@@ -19,8 +26,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $errors['password']="Enter password";
     }
     if( sizeof($errors)===0 ){
-        login($email, $password);
-        header('Location: personal_area.php');
+        $user = login($email, $password);
+        if(!$user){
+            $errors['password']="Invalid credentials";
+        }else{
+            set_my_current_user($user);
+            header('Location: personal_area.php');
+            die();
+        };      
     }
 };
 
