@@ -2,6 +2,7 @@
     <a class="back_to_cat1" href="home.php">Вернуться в каталог</a>  
 <!-- Секция товара начало -->
     <section class="item_in_cat">
+        <form action="backet.php" method="post">
         <!--  left_bar  -->
         <div class="left_bar">   
             <div id="slider"> <!--   Start slider    -->
@@ -18,7 +19,7 @@
                 <p class="cat1_item1_about"><?=$product['description']?></p>
                 <span>
                     <p>Выберете вариант:</p>
-                    <select>                      
+                    <select name="size">                      
                         <?php foreach($sizes as $size):?>
                             <option value="<?=$size['size']?>"><?=$size['size']?></option>
                         <?php endforeach; ?>
@@ -26,6 +27,7 @@
                 </span>    
         </div> 
         <!--  right_bar    -->
+       
         <div class="right_bar">
              <!--      Bay Bar Section start       -->
              <div class="buy_bar">
@@ -36,12 +38,11 @@
                      <p class="cat1_item1_status">есть в наличии</p>
                  </span>
                  <hr class="gray_border">
-                 <a href="backet.php">
-                     <button class="buy_button">
-                         <img src="../img/icons/buy_cart_icon.png">
-                         <p>купить</p>
-                     </button>
-                 </a>
+                 <button class="buy_button" type="submit">
+                     <img src="../img/icons/buy_cart_icon.png">
+                     <p>купить</p>
+                 </button>
+                 <input type="hidden" value="<?=$product['id']?>" name="product_id">
              </div>
              <!--      Bay Bar Section End      -->
              <div class="icon_section">
@@ -66,6 +67,7 @@
                  </div>
              </div>   
         </div> <!--    End right_bar    -->
+    </form>
 </section>
 <!-- Best items in cat section -->
 <section class="best_salers" id="other_items">    

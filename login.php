@@ -1,13 +1,20 @@
 <?php 
-
+require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
 require_once 'src/include/user_function.php';
 
-$categories = get_categories();
+$url = $_SERVER['HTTP_REFERER']??'home.php';
+
+if(get_my_current_user()){    
+    header('Location: personal_area.php');
+    die();
+};
+
 $errors=[];
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
+    $return = $_POST['returnto'];
     $email=trim($_POST['email']);
     $password=$_POST['psw'];
     if($email==''){
@@ -18,9 +25,24 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     if($password==''){
         $errors['password']="Enter password";
     }
+    if($return){
+        $_SESSION['returnto'] = $return;
+    }
     if( sizeof($errors)===0 ){
-        login($email, $password);
-        header('Location: personal_area.php');
+        $user = login($email, $password);
+        if(!$user){
+            $errors['password']="Invalid credentials";
+        }else{
+            set_my_current_user($user);
+            $return = $_SESSION['returnto'];
+            if($return){
+                $_SESSION['returnto'] = null;
+                header("Location: $return");
+            }else{
+                header('Location: personal_area.php');
+            }
+            die();
+        };      
     }
 };
 
@@ -31,7 +53,7 @@ $login_data = [
 
 $login_page = include_template('src/templates/login.php', $login_data);
 
-render_page([ 'categories' => $categories, 
+render_page([  
               'content' => $login_page,
               'styles' => ['../css/login.css'],
               'scripts' => []

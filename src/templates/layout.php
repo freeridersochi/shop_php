@@ -1,4 +1,7 @@
-
+<?php 
+    require_once 'src/include/common.php';
+    $categories = get_categories();
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +33,21 @@
     </div>
     <div class="menu_bg">
         <ul class="mainNav">
+            <?php  ?>
             <?php foreach($categories as $category) : ?>
-                <li><a href="/cat_one.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
+                <li><a href="/category.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
         </ul>
     <hr>
     </div>
     <div class="reg_bar">
         <img class="user_enter" src="../img/icons/icon_user_login.png" alt="User Icon">
-        <a href="login.php" class="red">Войти</a>
-        <a href="registration.php" class="reg">Регистрация</a>
+        <?php if(!get_my_current_user()) :?>
+            <a href="login.php" class="red">Войти</a>
+            <a href="registration.php" class="reg">Регистрация</a>
+        <?php else :?>
+            <a href="logout.php" class="red">Выйти</a>
+        <?php endif; ?>
     </div>
     <a class="backet" href="backet.php">
         <img src="../img/icons/backet_icon.png" alt="Backet Icon">

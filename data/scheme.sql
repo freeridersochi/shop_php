@@ -44,5 +44,5 @@ CREATE TABLE users(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name CHAR(255) NOT NULL,
     email CHAR(255) NOT NULL UNIQUE,
-    password BINARY(60) NOT NULL
+    password BINARY(64) NOT NULL
 );

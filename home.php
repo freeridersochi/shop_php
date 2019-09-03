@@ -4,7 +4,6 @@ require_once './src/include/nav_functions.php';// link nav functions
 require_once './src/include/include.php'; //link include function
 
 // Get data from "nav_functions.php"
-$categories = get_categories();
 $items = get_items(); 
 $bests = get_best();
 
@@ -26,21 +25,8 @@ $home_data = [
 // Use variable $home_data in Include function
 $home_page = include_template('./src/templates/home.php', $home_data );
 
-if(!$home_page){
-    http_response_code(404);
-    $cat_page = include_template('src/templates/404.php', $cat_data);
-    render_page([
-                'categories' => $categories ,
-                'content' => $cat_page ,
-                'styles' => [] ,
-                'scripts' => []
-    ]);
-    die;
-}
-
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
-$include_result = include_template('./src/templates/layout.php', [
-                                                'categories' => $categories,
+$include_result = include_template('./src/templates/layout.php', [                                   
                                                 'content' => $home_page,
                                                 'styles' => [],
                                                 'scripts' => []

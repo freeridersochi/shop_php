@@ -407,10 +407,7 @@ VALUES ( # 01 Product
         1  
        );
         
-INSERT INTO users ( id, name, email, password )
-VALUES (
-        1 ,
-        'admin',
-        'admin@gmail.com' ,
-        '1234' 
-       );
+INSERT INTO users (name, email, password )
+                        VALUES('Admin','admin@gmail.com',sha2(CONCAT(email,'1234'),256));
+INSERT INTO users (name, email, password )
+                        VALUES('Snow Man','demitryvoit@gmail.com',sha2(CONCAT(email,'1234'),256));
