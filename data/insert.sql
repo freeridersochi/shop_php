@@ -408,6 +408,6 @@ VALUES ( # 01 Product
        );
         
 INSERT INTO users (name, email, password )
-                        VALUES('Admin','admin@gmail.com','2c121d45c89cf71c5738a23619427dcc517e9a711af3c82c43453c5eef88ade8');
+                        VALUES('Admin','admin@gmail.com',sha2(CONCAT(email,'1234'),256));
 INSERT INTO users (name, email, password )
-                        VALUES('Snow Man','demitryvoit@gmail.com','544fd9f7b1172dfaa8dfa720692948fd8522168733d21e2fb68ce2311c149c72');
+                        VALUES('Snow Man','demitryvoit@gmail.com',sha2(CONCAT(email,'1234'),256));
