@@ -1,5 +1,5 @@
 <?php 
-
+require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
 require_once 'src/include/user_function.php';
@@ -24,11 +24,19 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     }
     if($confirm_password === ''){
         $errors['confirm_psw']='Confirm password';
+    }else if($confirm_password !== $password ){
+        $errors['confirm_psw']='Password is not equal';
     }
     if( sizeof($errors)===0 ){
-        register($name, $email, $password);
-        #Отправляем в нужное место
-        header('Location: login.php');
+        
+        $registration = register($name, $email, $password);
+        if(!$registration){
+            $errors['email']="Sorry, this email is bisy.";
+        }else{
+            set_my_current_user($user);
+            header('Location: login.php');
+            die();
+        }
     }
 }; 
 
