@@ -3,9 +3,6 @@
 require_once './src/include/nav_functions.php';// link nav functions
 require_once './src/include/include.php'; //link include function
 
-// Get data from "nav_functions.php"
-$categories = get_categories();
-
 //Use data from "nav_functions.php" in variable 
 $checkout_data = [];
 
@@ -13,8 +10,7 @@ $checkout_data = [];
 $checkout_final_page = include_template('./src/templates/checkout_final.php', $checkout_data );
 
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
-$include_result = include_template('./src/templates/layout.php', [
-                                                'categories' => $categories,
+$include_result = include_template('./src/templates/layout.php', [                                           
                                                 'content' => $checkout_final_page,
                                                 'styles' => ['checkout_final.css'],
                                                 'scripts' => []

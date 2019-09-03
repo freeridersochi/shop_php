@@ -3,9 +3,7 @@ require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
 require_once 'src/include//user_function.php';
-
-$categories = get_categories();
-
+    
 if($_SERVER['REQUEST_METHOD']==="POST"){
 $errors=[];
 $name = $_POST['name'];
@@ -50,7 +48,7 @@ $user_data = [
 
 $pers_area_page = include_template('src/templates/personal_area.php', $user_data);
 
-render_page([ 'categories' => $categories, 
+render_page([ 
               'content' => $pers_area_page,
               'styles' => ['personalArea.css'],
               'scripts' => []

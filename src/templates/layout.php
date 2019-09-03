@@ -1,5 +1,6 @@
 <?php 
     require_once 'src/include/common.php';
+    $categories = get_categories();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +33,9 @@
     </div>
     <div class="menu_bg">
         <ul class="mainNav">
+            <?php  ?>
             <?php foreach($categories as $category) : ?>
-                <li><a href="/cat_one.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
+                <li><a href="/category.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
         </ul>
     <hr>

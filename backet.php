@@ -7,7 +7,7 @@ $categories = get_categories();
 
 $backet_page = include_template('src/templates/backet.php');
 
-render_page([ 'categories' => $categories, 
+render_page([ 
               'content' => $backet_page,
               'styles' => ['backet.css'],
               'scripts' => ['backet.js']

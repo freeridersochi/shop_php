@@ -11,7 +11,6 @@ if(get_my_current_user()){
     die();
 };
 
-$categories = get_categories();
 $errors=[];
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -44,7 +43,7 @@ $login_data = [
 
 $login_page = include_template('src/templates/login.php', $login_data);
 
-render_page([ 'categories' => $categories, 
+render_page([  
               'content' => $login_page,
               'styles' => ['../css/login.css'],
               'scripts' => []
