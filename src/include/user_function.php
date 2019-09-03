@@ -6,33 +6,27 @@ function register($name, $email, $password){
     # save user to data base ("Dobby is free!");
         
     global $link;
+    
+    $statement = mysqli_prepare($link,"INSERT INTO users (name, email, password )
+                            VALUES(?,?,?)");
+    # sss ( s-string*3)
+    mysqli_stmt_bind_param( $statement, 'sss', $name,$email,$password );
+    
+    $result = mysqli_stmt_execute($statement);
+    
+    if(!$result){
+        $error = mysqli_error($link);
+        return null;
+    };
 
-    $sql = "SELECT * FROM users WHERE email='$email'"; 
-
-    $result = mysqli_query( $link, $sql ); 
+    $id = mysqli_stmt_insert_id($statement);
+        
+    $result = mysqli_query( $link, "SELECT * FROM users WHERE id=$id" ); 
     
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
-    $user = $data[0];
+    return $data[0];
     
-    if(!$user){ 
-        
-        $password_hash = hash('sha256',$email.$password);
-
-        $db = './data/insert.sql';
-
-        $handle = fopen($db, 'a') or die('Cannot open file:  '.$db);
-
-        $new_user = "INSERT INTO users (name, email, password )
-                        VALUES('$name','$email','$password_hash');";
-
-        fwrite($handle, $new_user);
-
-        return "Dobby is free!";
-
-        # save user to data base ("Dobby is free!");           
-
-    };
 };
 
 function updateData($city, $phone, $street, $home, $appartment){

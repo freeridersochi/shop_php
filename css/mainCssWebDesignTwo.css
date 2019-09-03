@@ -14,7 +14,9 @@ header{
     position: absolute;
     margin-top: 27px;
 }
-
+.hidden{
+    display: none;
+}
 
 /* логотип Super Shop */
 #shop_logo{

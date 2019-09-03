@@ -144,10 +144,6 @@ input{
 .second_form{
     margin-top: 0;
     height: auto;
-    display: none;
-}
-.second_form form{
-	display: none;
 }
 /* Левая секция начало */
 .left_bar{
@@ -311,11 +307,10 @@ textarea{
 /* Форма 2 конец */
 
 /* Форма 3 начало */
-.confim_order{
+.confirm_order{
     width: 1170px;
     background-color: #fff;
     float: left;
-    display: none;
 }
 .form_body{
 	display: none;

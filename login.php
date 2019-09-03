@@ -14,6 +14,7 @@ if(get_my_current_user()){
 $errors=[];
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
+    $return = $_POST['returnto'];
     $email=trim($_POST['email']);
     $password=$_POST['psw'];
     if($email==''){
@@ -24,13 +25,22 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     if($password==''){
         $errors['password']="Enter password";
     }
+    if($return){
+        $_SESSION['returnto'] = $return;
+    }
     if( sizeof($errors)===0 ){
         $user = login($email, $password);
         if(!$user){
             $errors['password']="Invalid credentials";
         }else{
             set_my_current_user($user);
-            header('Location: personal_area.php');
+            $return = $_SESSION['returnto'];
+            if($return){
+                $_SESSION['returnto'] = null;
+                header("Location: $return");
+            }else{
+                header('Location: personal_area.php');
+            }
             die();
         };      
     }

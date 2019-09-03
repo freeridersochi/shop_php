@@ -1,37 +1,39 @@
 <h1>Оформление &nbsp;заказа<?=$person_type['person']?></h1>
-<form action="checkout.php" method="post">
+
     <!--   Первая форма     -->
-    <h2 class="active first_title"><b>1.</b>Контактная информация</h2> 
-        <section class="first_form">           
-             <form action="checkout.php" method="post">
+    <h2 class="active first_title"><b>1.</b>Контактная информация</h2>
+    <?php if ( $step === 0 ):?> 
+        <section class="first_form"> 
+            <form action="checkout.php" method="post">
                  <div class="left">
                  <h3>Для новых покупателей</h3>
                  <div>
-                     <p>Контактное лицо (ФИО):<span class="error" id="client_name_err"></span></p>
+                     <p>Контактное лицо (ФИО):<span class="error" id="name_err"></span></p>
                      <?php if($errors['name']): ?>
                           <p class="error"><?=$errors['name']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>" onchange="validateName();">
+                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>">
                  <div>
                      <p>Контактный телефон:<span class="error" id="phone_err"></span></p>
                      <?php if($errors['phone']): ?>
                          <p class="error"><?=$errors['phone']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="text" class="client_phone" name="phone" id="phone" value="<?=$fields['phone']?>" onchange="validatePhone();">
+                 <input type="text" class="client_phone" name="phone" id="phone" value="<?=$fields['phone']?>">
                  <div>
                      <p>E-mail:<span class="error" id="email_err"></span></p>
                      <?php if($errors['email']): ?>
                          <p class="error"><?=$errors['email']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="email" class="client_email" id="email" name="email" value="<?=$fields['email']?>" onchange="validateEmail();">
-                 <button class="not_user"><p>Продолжить</p></button>
-                 </div>
-              </form>
+                 <input type="email" class="client_email" id="email" name="email" value="<?=$fields['email']?>">
+                 <button class="continue_one" type="submit"><p>Продолжить</p></button>
+                 </div> 
+            </form>             
               <div class="right">
-              <form action="checkout.php" method="post">                 
+              <form action="login.php" method="post" >
+                                 
                  <h3>Быстрый вход</h3>
                  <div>
                      <p>Ваш e-mail:<span class="error"></span></p>
@@ -47,16 +49,21 @@
                      <? endif; ?>
                  </div>  
                  <input type="password" name="user_password">
-                 <button class="user">
+                 <input type="hidden" name="returnto" value="checkout.php">
+                 <button class="continue_one" type="submit">
                      <p>Войти</p>
                  </button>
                  <a href="#">Восстановить пароль</a>                 
               </form>
               </div>
-    </section>
+        </section>
+    <?php endif; ?>
     <!--   Вторая форма   -->
     <h2 class="second_title"><b>2. </b>Информация о доставке</h2>
-    <section class="second_form">       
+    <?php var_dump($step)?>
+    <?php if ( $step == 1 ):?>
+    <section class="second_form <?=get_my_current_user()?'':'hidden'?>">
+        <form action="checkout.php" method="post">       
         <!-- Левая часть начало   -->
         <div class="left_bar">
             <div class="client_adres">
@@ -64,7 +71,7 @@
                 <h3>Адрес доставки</h3>
                 <!-- Содержание -->
                 <p class="city">Город:</p>
-                <input class="client_city" type="text">
+                <input class="client_city" name="city" type="text">
                 <p class="street">Улица:</p>
                 <input class ="client_street" type="text">
                 <div class="home_appartments">
@@ -78,7 +85,7 @@
                     </div>
                 </div>
                 <!-- Кнопка -->
-                <button class="continue_two">
+                <button class="continue_two" type="submit">
                      <p>Продолжить</p>
                 </button>
             </div>
@@ -105,10 +112,14 @@
            <p>Введите ваш комментарий:</p>
            <textarea rows="10" cols="40" name="order_comment">Текст комментария</textarea>
         </div>
+        </form>
     </section>
+    <?php endif; ?>
     <!--   Третья форма   -->
     <h2 class="third_title"><b>3.</b> Подтверждение заказа</h2>
-    <section class="confim_order">
+    <?php if ( $step === 2 ):?>
+    <section class="confirm_order">
+       <form action="checkout.php" method="post">
         <!--   Таблица заказа   -->           
         <h3>Состав заказа:</h3>
         <div class="order_info">
@@ -164,60 +175,8 @@
                  <p>Комментарии к заказу:</p>
                  <input class="delivery_commentss" value="Lorem Ipsum">
              </div>
-        </div>         
+        </div> 
+        <button name="finish" value="true" id="final_confirmation" type="submit">Подтвердить заказ</button>
+        </form>        
     </section>
-    <button id="final_confirmation"><a href="checkout_final.php">Подтвердить заказ</a></button>
-</form>
-<script>
-    //check name
-    function validateName(){    
-        let regex = /[^a-z0-9]/i;
-        let name = document.getElementById('name');
-        let error = document.getElementById('client_name_err');
-
-        if( name.value != '' ){
-            if (!regex.test(name.value)){
-                    error.innerHTML="<sup>*</sup>Only cirilic letters";       
-                }else{
-                    error.innerHTML="";       
-                    } 
-            }else{
-                error.innerHTML="<sup>*</sup>Not empty";
-            }
-        };                
-    //check phone
-    function validatePhone(){
-            let regex =^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$;
-            let phone = document.getElementById('phone');
-            let error = document.getElementById('phone_err');
-            
-             if( name !== '' ){
-                error.innerHTML="<sup>*</sup>Not empty";
-                }else{
-                    if(phone.value.match(regex)){
-                        return true;
-                        error.innerHTML=""; 
-                    }else{  
-                        error.innerHTML="<sup>*</sup>Only numders, () and + "; 
-                        return false;
-                }
-             }
-        };
-    //check email
-    function validateEmail(){
-            let regex = /.+@.+\..+/i;
-            let name = document.getElementById('email');
-            let error = document.getElementById('email_err');
-
-            if( name !== '' ){
-                if (!regex.test(name.value)){
-                    error.innerHTML="<sup>*</sup>Your adrees must look 'example@gmail.com' ";       
-                }else{
-                    error.innerHTML="";       
-                    }
-            }else{
-                error.innerHTML="<sup>*</sup>Not empty";
-            }
-        };
-</script>
-<script src="../../js/checkout.js"></script>
+    <?php endif; ?>

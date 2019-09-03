@@ -29,12 +29,12 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     }
     if( sizeof($errors)===0 ){
         
-        $registration = register($name, $email, $password);
-        if(!$registration){
+        $user = register($name, $email, $password);
+        if(!$user){
             $errors['email']="Sorry, this email is bisy.";
         }else{
             set_my_current_user($user);
-            header('Location: login.php');
+            header('Location: home.php');
             die();
         }
     }
