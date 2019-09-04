@@ -1,7 +1,7 @@
 <?php for($i=0; $i <= sizeof($_SESSION['order'])-1; $i++):?>
 <?php 
     $item = $_SESSION['order'][$i]; 
-    $name = get_product($item['product']);
+    $name = get_product($item['product']);   
 ?> 
     <tr>
         <td class="item_foto"><img src="<?=$name['main_photo']?>"></td>
@@ -17,7 +17,11 @@
         </td>
         <td class="item_cost"></td>
         <td class="del_item">
-            <div><img src="../img/icons/close_icon.png"></div>
+            <form action="<?php //unset($_SESSION['order'][$i]); ?>" method="post">
+            <button type="submit" name="delete_item" value="del">
+                <img src="../img/icons/close_icon.png">
+            </button>
+            </form>
         </td>
-    </tr>
+    </tr>    
 <?php endfor; ?>

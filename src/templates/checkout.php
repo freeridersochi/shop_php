@@ -1,4 +1,4 @@
-<h1>Оформление &nbsp;заказа<?=$person_type['person']?></h1>
+<h1>Оформление &nbsp;заказа</h1>
 
     <!--   Первая форма     -->
     <h2 class="active first_title"><b>1.</b>Контактная информация</h2>
@@ -60,7 +60,6 @@
     <?php endif; ?>
     <!--   Вторая форма   -->
     <h2 class="second_title"><b>2. </b>Информация о доставке</h2>
-    <?php var_dump($step)?>
     <?php if ( $step == 1 ):?>
     <section class="second_form <?=get_my_current_user()?'':'hidden'?>">
         <form action="checkout.php" method="post">       

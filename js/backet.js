@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    
 //total cost
 function update(){
 

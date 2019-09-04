@@ -12,4 +12,3 @@
     <button><a href="checkout.php">Оформить заказ</a></button>
     <button class="back_to_items"><a href="home.php">Вернуться к покупкам</a></button>
 </section>
-<script src="../../js/backet.js"></script>
