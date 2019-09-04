@@ -1,17 +1,10 @@
-    <h1><?=$category['name']?></h1>
-    <p class="pag_count">Показано <?=sizeof($cat_page['data'])?> из <?=$cat_page['items_count']?> товаров</p>
-<!--   верхняя навигация начало    -->
-    <div class="cat_nav">
-        <span>
-        <p>Страницы</p>
-        <?php for($i=1; $i <= $cat_page['total']; $i++): ?>     
-            <a href="cat_one.php?page=<?= $i ?>&name=<?=$category['alias']?>" class="<?=$cat_page['current'] === $i?'active': ''?>"><?=$i ?></a>  
-        <?php endfor; ?> 
-        </span>
-    </div>  
+<h1><?=$category['name']?></h1>
+<p class="pag_count">Показано <?=sizeof($cat_page['data'])?> из <?=$cat_page['items_count']?> товаров</p>
+<!--   верхняя навигация    --> 
+<?=include_template('src/blocks/pagination.php')?>
 <!--    секция товаров первой категории   -->
 <section class="category_items">
-    <!--  Баннер1  -->
+<!--  Баннер1  -->
     <div class="cat1_banner_one">
         <img src="../img/banners/cat1_banner1.png" alt="One">
         <p><strong><?= $category['name']?></strong></p>     
@@ -31,6 +24,7 @@
             </div>
         </a>
     </article>
+<!--  Баннер2  -->
         <?php if($i % 11 === 0 && $promo_products[$cat_page['current']-1]):?>
         <article class="cat1_banner_two">
                 <img src="../img/banners/cat1_banner<?=$i -1 ?>.png" alt="Two">
@@ -43,17 +37,7 @@
                 </button>
         </article>
         <?php endif;?>
-    <?php endfor;?> 
-    <!--  Баннер2  -->
-    
-    <!--   нижняя навигация начало    -->
-    <div class="cat_nav">
-        <span>
-            <p>Страницы</p>
-            <?php for($i=1; $i <= $cat_page['total']; $i++): ?>     
-                <a href="cat_one.php?page=<?= $i ?>&name=<?=$category['alias']?>" class="<?=$cat_page['current'] === $i?'active': ''?>"><?=$i ?></a>
-            <?php endfor; ?> 
-        </span>
-    </div>
-    <!--   нижняя навигация конец    -->
+    <?php endfor;?>    
+<!--   нижняя навигация    -->
+<?=include_template('src/blocks/pagination.php')?>
 </section>

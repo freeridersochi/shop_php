@@ -40,6 +40,10 @@ td{
 td.item_foto{
     padding: 0;
 }
+td.item_foto img{
+    max-height: 138px;
+    max-width: 170px;
+}
 td.item_name{
     width: 300px;
     height: 138px;
@@ -79,9 +83,6 @@ td.item_quanity div{
 	height: 45px;
 	float: left;
 	margin: 0;
-}
-.backet_item_value.qanity_count{
-	
 }
 .qanity_count{
 	width: 50px!important;

@@ -3,6 +3,7 @@
 require_once './src/include/nav_functions.php';// link nav functions
 require_once './src/include/include.php'; //link include function
 
+$title = "Super Shop";
 // Get data from "nav_functions.php"
 $items = get_items(); 
 $bests = get_best();
@@ -26,7 +27,8 @@ $home_data = [
 $home_page = include_template('./src/templates/home.php', $home_data );
 
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
-$include_result = include_template('./src/templates/layout.php', [                                   
+$include_result = include_template('./src/templates/layout.php', [ 
+                                                'title' => $title,
                                                 'content' => $home_page,
                                                 'styles' => [],
                                                 'scripts' => []

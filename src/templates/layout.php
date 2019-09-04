@@ -7,7 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    
+    <title><?=$title?></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -33,7 +34,6 @@
     </div>
     <div class="menu_bg">
         <ul class="mainNav">
-            <?php  ?>
             <?php foreach($categories as $category) : ?>
                 <li><a href="/category.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
@@ -56,7 +56,7 @@
             <p class="type_money">руб.</p>
         </div>
         <div class="backet_item_value">
-            <p class="item_quanity">2</p>
+            <p class="item_quanity"></p>
             <p>&nbsp;предмета</p>
         </div>
     </a>

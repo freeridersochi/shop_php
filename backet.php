@@ -1,6 +1,7 @@
 <?php 
 require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
+require_once 'src/include/product_function.php';
 require_once 'src/include/include.php';
 
 if($_SERVER['REQUEST_METHOD']==="POST"){
@@ -11,18 +12,20 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         $order=[];
     }
     $order[] = [
-                'product' =>$product_id, 
+                'product' => $product_id, 
                 'size' => $size
                 ];
     $_SESSION['order'] = $order; 
 }
-var_dump($_SESSION['order']);
+
+$title="Basket";
 
 $categories = get_categories();
 
 $backet_page = include_template('src/templates/backet.php');
 
 render_page([ 
+              'title' => $title,
               'content' => $backet_page,
               'styles' => ['backet.css'],
               'scripts' => ['backet.js']
