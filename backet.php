@@ -15,7 +15,9 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
                 'product' => $product_id, 
                 'size' => $size
                 ];
-    $_SESSION['order'] = $order; 
+    $_SESSION['order'] = $order;
+    header('Location: backet.php');
+    die();
 }
 
 $title="Basket";
@@ -28,5 +30,5 @@ render_page([
               'title' => $title,
               'content' => $backet_page,
               'styles' => ['backet.css'],
-              'scripts' => ['backet.js']
+              'scripts' => []
 ]);

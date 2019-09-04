@@ -1,4 +1,4 @@
-<?php for($i=1; $i <= sizeof($_SESSION['order'])-1; $i++):?>
+<?php for($i=0; $i <= sizeof($_SESSION['order'])-1; $i++):?>
 <?php 
     $item = $_SESSION['order'][$i]; 
     $name = get_product($item['product']);

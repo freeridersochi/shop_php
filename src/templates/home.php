@@ -26,7 +26,6 @@
         </a>
         <?php endif ?> 
     </span>
-    <?php var_dump($new_page['data'])?>
     <?php foreach($new_page['data'] as $item):?>
     <article class="new_item">
         <a href="product.php?item_id=<?=$item['id']?>">

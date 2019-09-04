@@ -11,16 +11,18 @@
     <title><?=$title?></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
                
     <?php foreach($styles as $style) : ?>   
-    <link href="../../css/<?=$style ?>" rel="stylesheet">
+        <link href="../../css/<?=$style ?>" rel="stylesheet">
     <?php endforeach;?>
     
     <?php foreach($scripts as $script) : ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <?php endforeach;?>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
+    <script src="../../js/backet.js"></script>
           
 </head>
 <body>
@@ -52,11 +54,11 @@
     <a class="backet" href="backet.php">
         <img src="../img/icons/backet_icon.png" alt="Backet Icon">
         <div class="backet_value">
-            <p class="backet_sum">46 945</p>
+            <p class="backet_sum total_order"></p>
             <p class="type_money">руб.</p>
         </div>
         <div class="backet_item_value">
-            <p class="item_quanity"></p>
+            <p class="item_quanity"><?= sizeof($_SESSION['order']) ?></p>
             <p>&nbsp;предмета</p>
         </div>
     </a>

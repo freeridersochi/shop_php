@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
 //total cost
 function update(){
 
@@ -11,9 +12,6 @@ function update(){
 
         var $price = $(this).find("td.item_price").html();
         $price = parseInt($price.replace(/&nbsp;|\s/g,""), 10); 
-
-        console.log($price);
-        console.log($qnt);
 
         var sum = $price * $qnt;
 
