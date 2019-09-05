@@ -1,4 +1,3 @@
-
 html{
     background-color: #e4e0d6;
 }
@@ -6,7 +5,7 @@ body{
     background-color: #e4e0d6;
     width: 1400px;
     height: auto;
-    margin: 0 auto;
+    margin: 0 8%;
     font-family: Supermolot, sans-serif;
 }
 header{
@@ -15,7 +14,9 @@ header{
     position: absolute;
     margin-top: 27px;
 }
-
+.hidden{
+    display: none;
+}
 
 /* логотип Super Shop */
 #shop_logo{
@@ -31,15 +32,21 @@ header{
     position: absolute;
     z-index: 10;
 }
+#shop_logo a{
+    text-decoration: none;
+    color: #fff;
+}
 .super{
     font-size: 95%;
     padding-top: 28px;
+    padding-left: 31px;
 }
 .shop{
     font-size: 115%;
     width: 140px;
     font-weight: 600;
     margin-left: 31px;
+    margin-top: 5px;
 }
 
 /* main Menu */
@@ -50,14 +57,10 @@ header{
     position: absolute;
     z-index: 2;
 }
-menu{
-    margin-left: 170px;
-    z-index: 12;
-
-}
 .mainNav{
     line-height: 62px;
     width: 1170px;
+    margin-left: 170px;
 }
 .mainNav li{ 
     width: 131px; 
@@ -81,7 +84,7 @@ menu{
     background-color: #f1f1f1;
     z-index: 3;
     position: absolute;
-    margin: 45px 170px;
+    margin: 59px 170px;
     border: none;
 }
 .mainNav a:hover{
@@ -192,9 +195,10 @@ menu{
     font-weight: 300;
     font-style: italic;
     text-transform: uppercase;
-    font-size: 70px;
+    font-size: 58px;
     line-height: 0.95;
     letter-spacing: -2px;
+    width: 565px;
 }
 .promo_desc{
     font-size: 16px;
@@ -205,6 +209,7 @@ menu{
     position: absolute;
     top: 360px;
     left: 115px;
+    width: 600px;
 }
 .background_text{
     position: absolute;
@@ -224,12 +229,12 @@ menu{
     white-space: nowrap;
     box-sizing: border-box;
 }
-.about_promo{
+a.about_promo{
     font-weight: 200;
     position: absolute;
     background: none;
     left: 384px;
-    top: 409px;
+    top: 429px;
     width: 250px;
     padding: 16px 30px 16px 56px;
     font-size: 18px;
@@ -252,9 +257,17 @@ h1{
     margin: 178px 0 0;
     float: left;
     letter-spacing: -3.1px;
+    width: 1170px;
+}
+/* h1 */
+h2{
+    float: left;
 }
 
 /* New items* & *Best Saler */
+.first_slider, .second_slider{
+    width: 1172px;
+}
 .best_salers{
     width: 1172px;
     height: 402px;
@@ -264,10 +277,12 @@ h1{
 }
 .new_items{
     width: 1172px;
+    height: 727px;
     background-color: #fff;
     float: left;
     position: relative;
     margin-top: -80px;
+    z-index: 20;
 }
 .new_item_title, .best_item_title{
     width: 1046px;
@@ -307,8 +322,8 @@ article{
     margin: 10px auto;
 }
 .img_conteiner img{
-    max-width: 290px!important;
-    max-height: 220px!important;
+    max-width: 290px;
+    max-height: 220px;
 }
 .item_name{
     font: 14px "Supermolot", sans-serif;
@@ -323,8 +338,6 @@ article{
     float: right;
 }
 .item_price{
-    display: inline-block;
-    float: right;
     margin-top: 33px;
     margin-right: 20px;
     z-index: 15;
@@ -390,13 +403,15 @@ article{
 }
 .banner_one{
     float: left;
+    background: url('../img/banners/banner_one.png');
 }
 .banner_two{
-
+    background: url('../img/banners/banner_two.png');
     float: left;
 }
 .banner_three{
     float: left;
+    background: url('../img/banners/banner_three.png');
 }
 /* Костыль для img (убирает отступы(пробелы)) */
 .banner_two, .banner_three{ 
@@ -516,8 +531,39 @@ footer span a{
 .about_shop h1{
     margin: 0px;
 }
-//404
+
+/* 404 */
 section.error_page{
     float: left;
-    background-image: url('../img/404/kot-kosmonavt.png');
+    background: url(../img/404/kot-kosmonavt.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 810px;
 }
+section.error_page h2{
+    float: left;
+    width: 1170px;
+    font-size: 50.666px;
+    font-weight: 200; 
+    font-family: "Supermolot";
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    text-transform: uppercase;
+    float: left;
+    letter-spacing: -3.1px;
+}
+section.error_page h3{
+    float: left;
+    font-size: 40.666px;
+    font-weight: 400; 
+    font-family: "Supermolot";
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    text-transform: uppercase;
+    float: left;
+    letter-spacing: -3.1px;
+}
+/* background-color:#2c2f3c; */
+
+
+

@@ -10,19 +10,19 @@
     
     <title><?=$title?></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
-    <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
+    <link href="../../css/mainCssWebDesign.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
                
     <?php foreach($styles as $style) : ?>   
-        <link href="../../css/<?=$style ?>" rel="stylesheet">
+        <link href="../../css/<?=$style?>" rel="stylesheet">
     <?php endforeach;?>
     
-    <?php foreach($scripts as $script) : ?>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <?php foreach($scripts as $script) : ?>      
+        <script src="../../js/<?=$script?>"></script>
     <?php endforeach;?>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
-    <script src="../../js/backet.js"></script>
+   
           
 </head>
 <body>
@@ -62,7 +62,6 @@
             <p>&nbsp;предмета</p>
         </div>
     </a>
-
 </header>
 
 <?=$content ?>

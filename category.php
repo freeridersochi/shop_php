@@ -45,5 +45,5 @@ render_page([
                 'categories' => $categories,
                 'content' => $cat_page,
                 'styles' => ['categoryOne.css'],
-                'scripts' => []
+                'scripts' => ['backet.js']
 ]);

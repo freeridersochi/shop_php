@@ -20,7 +20,8 @@ function update(){
     });
 
     $('.total_order').text($orderTotal);
-
+    
+    console.log($orderTotal);
 }
 
 //increment function
