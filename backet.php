@@ -19,8 +19,6 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     header('Location: backet.php');
 }
 
-$title="Basket";
-
 $categories = get_categories();
 
 $backet_page = include_template('src/templates/backet.php');

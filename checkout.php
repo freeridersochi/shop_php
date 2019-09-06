@@ -5,7 +5,6 @@ require_once './src/include/include.php'; //link include function
 require_once './src/include/user_function.php';
 require_once './src/include/checkout_function.php';
 
-$title = "Super Shop";
 $errors=[];
 //first check
 if($_SERVER['REQUEST_METHOD']==="POST"){

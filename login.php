@@ -54,6 +54,7 @@ $login_data = [
 $login_page = include_template('src/templates/login.php', $login_data);
 
 render_page([  
+              'title' => $title,  
               'content' => $login_page,
               'styles' => ['../css/login.css'],
               'scripts' => []

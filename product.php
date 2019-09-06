@@ -34,6 +34,7 @@ if(!$item_id){
 $product_page = include_template('src/templates/product.php', $product_data );
 
 render_page([
+             'title' => $title,   
              'content' => $product_page,
              'styles' => ['product.css','product_slider.css'],
              'scripts' => ['product_slider.js', 'backet.js']

@@ -4,11 +4,12 @@ require_once './src/include/nav_functions.php';// link nav functions
 require_once './src/include/include.php'; //link include function
 require_once 'src/include/promo_functions.php';//link promo function
 
+
 $promo_id = 1;
-$title = "Super Shop";
 // Get data from "nav_functions.php"
 $items = get_items(); 
 $bests = get_best();
+
 
 // Big pagination
 $new_prod_page_number = intval($_GET['new_prod_page']??0);

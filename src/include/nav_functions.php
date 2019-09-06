@@ -104,3 +104,5 @@ function get_page( $items , $current_page, $item_counter ){
     return $new_page;    
 };
 
+//title
+$title = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];

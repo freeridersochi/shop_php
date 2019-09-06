@@ -48,6 +48,7 @@ $registration_data = [
 $registration_page = include_template('src/templates/registration.php', $registration_data);
 
 render_page([ 
+              'title' => $title,  
               'content' => $registration_page,
               'styles' => ['registration.css'],
               'scripts' => []

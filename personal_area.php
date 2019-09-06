@@ -49,6 +49,7 @@ $user_data = [
 $pers_area_page = include_template('src/templates/personal_area.php', $user_data);
 
 render_page([ 
+              'title' => $title,  
               'content' => $pers_area_page,
               'styles' => ['personalArea.css'],
               'scripts' => []
