@@ -406,8 +406,8 @@ VALUES ( # 01 Product
         NUll ,
         1  
        );
-        
-INSERT INTO users (name, email, password )
-                        VALUES('Admin','admin@gmail.com',sha2(CONCAT(email,'1234'),256));
-INSERT INTO users (name, email, password )
-                        VALUES('Snow Man','demitryvoit@gmail.com',sha2(CONCAT(email,'1234'),256));
+       
+INSERT INTO users (name, email, password, phone, city, street, home, appartments, user_orders)
+                        VALUES('Admin','admin@gmail.com',sha2(CONCAT(email,'1234'),256), NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO users (name, email, password, phone, city, street, home, appartments, user_orders)
+                        VALUES('Snow Man','demitryvoit@gmail.com',sha2(CONCAT(email,'1234'),256), NULL, NULL, NULL, NULL, NULL, NULL, NULL);

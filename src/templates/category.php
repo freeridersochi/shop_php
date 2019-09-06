@@ -1,15 +1,7 @@
 <h1><?=$category['name']?></h1>
 <p class="pag_count">Показано <?=sizeof($cat_page['data'])?> из <?=$cat_page['items_count']?> товаров</p>
 <!--   верхняя навигация    --> 
-<div class="cat_nav">
-    <span>
-    <p>Страницы</p>
-    <?php for($i=1; $i<= $cat_page['total']; $i++): ?>     
-        <a href="category.php?page=<?=$i?>&name=<?=$category['alias']?>" 
-            class="<?=$cat_page['current']===$i?'active': ''?>"><?=$i?></a>  
-    <?php endfor; ?> 
-    </span>
-</div> 
+<?=include_template('src/blocks/pagination.php')?>
 <!--    секция товаров первой категории   -->
 <section class="category_items">
 <!--  Баннер1  -->
@@ -20,7 +12,7 @@
     </div>
 <!--     Товары    -->
     <?php for($i=1; $i <= sizeof($cat_page['data']); $i++):?>
-    <?php $item = $cat_page['data'][$i]?>
+    <?php $item = $cat_page['data'][$i -1]?>
     <article class="new_item">
         <a href="product.php?item_id=<?=$item['id']?>">
             <div class="img_conteiner">
@@ -49,3 +41,4 @@
 <!--   нижняя навигация    -->
 <?=include_template('src/blocks/pagination.php')?>
 </section>
+<script src="../../js/backet.js"></script>

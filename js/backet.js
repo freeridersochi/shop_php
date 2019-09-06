@@ -46,5 +46,8 @@ $('table').on('click', function(event){
 });
 
 update();
+    
+let orderCost = $orderTotal;
+$('.total_cost').text($orderCost);
 	
 });

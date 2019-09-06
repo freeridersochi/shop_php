@@ -17,7 +17,6 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
                 ];
     $_SESSION['order'] = $order;
     header('Location: backet.php');
-
 }
 
 $title="Basket";

@@ -14,7 +14,10 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     $phone=$_POST['phone'];
     $email=$_POST['email'];
 
-    if( $name === '' ){
+    if( $name === ''){
+        if(!preg_match("/[A-z0-9]/i", $name)){
+            $errors['name'] = "Not valid name";
+            }
         $errors['name'] = "Enter name";
         }
     if ( $phone != ''){
@@ -35,15 +38,20 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
                                 ];
         }
 }
-//second check
+//second check 
 if($_SERVER['REQUEST_METHOD']==="POST"){
     $city=$_POST['city'];
     if( $city === '' ){
         $errors['city'] = "Enter city";
     }
+    $city=$_POST['street'];
+    if( $city === '' ){
+        $errors['street'] = "Enter street";
+    }
     if(sizeof($errors) === 0){
         $_SESSION['address'] = [
-                                 'city'=>$city  
+                                 'city'=>$city,
+                                 'street'=>$street 
                                 ];       
         }
 };
@@ -99,7 +107,7 @@ $include_result = include_template('./src/templates/layout.php', [
                                                 'title' => $title,
                                                 'content' => $checkout_page,
                                                 'styles' => ['checkout.css'],
-                                                'scripts' => ['checkout.js']
+                                                'scripts' => ['backet.js','сheckout.js']
                                                 ]);
 //Show final template with include template
 print($include_result);

@@ -44,5 +44,19 @@ CREATE TABLE users(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name CHAR(255) NOT NULL,
     email CHAR(255) NOT NULL UNIQUE,
-    password BINARY(64) NOT NULL
+    password BINARY(64) NOT NULL,
+    phone CHAR(255),
+    city CHAR(255),
+    street CHAR(255),
+    home CHAR(255),
+    appartments INT,
+    user_orders CHAR(255)
+);
+
+CREATE TABLE orders(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    number CHAR(255) NOT NULL,
+    cost CHAR(255) NOT NULL UNIQUE,
+    status CHAR(255),
+    time CHAR(255),   
 );

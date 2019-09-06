@@ -13,7 +13,7 @@
                           <p class="error"><?=$errors['name']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>">
+                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>" required>
                  <div>
                      <p>Контактный телефон:<span class="error" id="phone_err"></span></p>
                      <?php if($errors['phone']): ?>

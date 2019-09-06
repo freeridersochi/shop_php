@@ -7,10 +7,11 @@ function register($name, $email, $password){
         
     global $link;
     
-    $statement = mysqli_prepare($link,"INSERT INTO users (name, email, password )
-                            VALUES(?,?,?)");
+    $statement = mysqli_prepare($link,"INSERT INTO users (name, email, password, phone, city, street, home, appartments, user_orders )
+                            VALUES(?,?,?,?,?,?,?,?,?)");
+
     # sss ( s-string*3)
-    mysqli_stmt_bind_param( $statement, 'sss', $name,$email,$password );
+    mysqli_stmt_bind_param( $statement, 'sssssssss', $name,$email,$password,$phone,$city,$street,$home,$appartments,$user_orders);
     
     $result = mysqli_stmt_execute($statement);
     

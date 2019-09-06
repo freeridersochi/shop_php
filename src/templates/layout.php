@@ -54,7 +54,7 @@
     <a class="backet" href="backet.php">
         <img src="../img/icons/backet_icon.png" alt="Backet Icon">
         <div class="backet_value">
-            <p class="backet_sum total_order"></p>
+            <p class="backet_sum total_order total_cost"></p>
             <p class="type_money">руб.</p>
         </div>
         <div class="backet_item_value">
