@@ -49,6 +49,7 @@
             <a href="registration.php" class="reg">Регистрация</a>
         <?php else :?>
             <a href="logout.php" class="red">Выйти</a>
+            <a href="personal_area.php" class="reg">Личный кабинет</a>
         <?php endif; ?>
     </div>
     <a class="backet" href="backet.php">
