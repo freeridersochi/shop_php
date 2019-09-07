@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title><?=mb_substr($title, 0, -4, 'UTF-8')?></title>
+    <title><?=$title?></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesign.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

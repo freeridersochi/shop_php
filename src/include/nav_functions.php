@@ -105,4 +105,11 @@ function get_page( $items , $current_page, $item_counter ){
 };
 
 //title
-$title = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+function get_title($start_cut,$end_cut){ 
+    $page_url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $page_url = mb_substr($page_url, $start_cut, $end_cut, 'UTF-8');
+    $page_title = $page_url;
+    
+    return $page_title;
+}
+

@@ -40,6 +40,8 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     }
 }; 
 
+$title = get_title($start_cut=0,$end_cut=-4);
+
 $registration_data = [
     'errors' => $errors,
     'fields' => $_POST

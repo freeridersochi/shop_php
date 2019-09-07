@@ -9,7 +9,9 @@ $promo_id = 1;
 // Get data from "nav_functions.php"
 $items = get_items(); 
 $bests = get_best();
-
+$start_cut = 0;
+$end_cut = -4;
+$title = get_title($start_cut,$end_cut);
 
 // Big pagination
 $new_prod_page_number = intval($_GET['new_prod_page']??0);

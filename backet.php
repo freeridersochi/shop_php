@@ -19,6 +19,8 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     header('Location: backet.php');
 }
 
+$title = get_title($start_cut=0,$end_cut=-4);
+
 $categories = get_categories();
 
 $backet_page = include_template('src/templates/backet.php');
