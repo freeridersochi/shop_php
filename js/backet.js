@@ -12,9 +12,6 @@ function update(){
         var $price = $(this).find("td.item_price").html();
         $price = parseInt($price.replace(/&nbsp;|\s/g,""), 10); 
 
-        console.log($price);
-        console.log($qnt);
-
         var sum = $price * $qnt;
 
         $(this).find("td").eq(5).text(sum);
@@ -23,7 +20,8 @@ function update(){
     });
 
     $('.total_order').text($orderTotal);
-
+    
+    console.log($orderTotal);
 }
 
 //increment function
@@ -48,5 +46,8 @@ $('table').on('click', function(event){
 });
 
 update();
+    
+let orderCost = $orderTotal;
+$('.total_cost').text($orderCost);
 	
 });

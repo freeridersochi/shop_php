@@ -70,7 +70,7 @@ $(document).ready(function(){
     //check city    
     $('.city').on('input',function(){
         function validateCity(){
-                let regex = /[A-z0-9]/i;
+                let regex = /[A-z]/i;
                 let city = document.getElementById('city');
                 let error = document.getElementById('city_err');
                 let value = email.value.trim();
@@ -88,83 +88,69 @@ $(document).ready(function(){
             };
         validateCity();
     });
-    //end check control 
+
+//end check control 
 
 //form control
 
     //first parth
-$('.continue_one').on('click',function(){ 
+    $('.continue_one').on('click',function(){ 
     
-    event.preventDefault();
-    
-    let error = false;
-        
-    if($('.client_name').val()==''){
-        $('#name_err').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    }
-    if($('.client_phone').val()==''){ 
-        $('#phone_err').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    }
-    if($('.client_email').val()==''){
-        $('#email_err').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    } 
+        let error = false;
 
-    if($('#name_err').text().length > 0 || $('#phone_err').text().length > 0 || $('#email_err').text().length > 0){
-        error = true;    
-    };
+        if($('.client_name').val()==''){
+            $('#name_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        }
+        if($('.client_phone').val()==''){ 
+            $('#phone_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        }
+        if($('.client_email').val()==''){
+            $('#email_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        } 
+
+        if($('#name_err').text().length > 0 || $('#phone_err').text().length > 0 || $('#email_err').text().length > 0){
+            error = true;    
+        };
+
+        if(error){
+            return false;
+        };
     
-    if(error){
-        return false;
-    };
-    
-    $('.first_form').css('display','none');
-    $('.first_form h2').removeClass('active');
-    $('.second_form').css('display','block');
-    $('.second_form h2').addClass('active');
-    $('p.client_nane').html($('input.client_name').val());
-    $('p.client_phone').html($('input.client_phone').val());
-    $('p.client_mail').html($('input.client_email').val());
     });//end first parth
     
     //second parth
+    $('.continue_two').on('click',function(){ 
+    
+        let error = false;
 
-$('.continue_two').on('click',function(){ 
-    
-    event.preventDefault();
-    
-    let error = false;
-    
-    if($('.client_city').val()==''){
-        $('#client_city').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    }
-    if($('.client_street').val()==''){ 
-        $('#client_street').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    }
-    if($('.home_num').val()==''){
-        $('#email_err').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    } 
-    if($('.appartment_num').val()==''){
-        $('#email_err').html("<sup>*</sup>Обязательное поле");
-        error = true;
-    } 
-          
-    $('.second_form').css('display','none');
-    $('.second_form h2').removeClass('active');
-    $('.confirm_order').css('display','block');
-    $('.confirm_order h2').addClass('active');
-    $('p.client_city').html($('input.client_city').val());
-    $('p.client_street').html($('input.client_street').val());
-    $('p.home_num').html($('input.home_num').val());
-    $('p.appartment_num').html($('input.appartment_num').val());
-    $('p.delivery_choose').html($('input:checked').val());
-    $('p.delivery_commentss').html($('textarea').val());
-        
-    });//end form control
-    
-});//end ready
+        if($('.client_city').val()==''){
+            $('#city_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        }
+        if($('.client_street').val()==''){ 
+            $('#street_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        }
+        if($('.home_num').val()==''){
+            $('#home_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        } 
+        if($('.appartment_num').val()==''){
+            $('#appartment_err').html("<sup>*</sup>Обязательное поле");
+            error = true;
+        } 
+        if($('#city_err').text().length > 0 || $('#street_err').text().length > 0 || $('#home_err').text().length > 0||$('#appartment_err').text().length > 0){
+            error = true;    
+        };
+
+        if(error){
+            return false;
+        };
+    });//end second parth    
+
+//end form control
+
+});//end ready 

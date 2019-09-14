@@ -19,6 +19,10 @@ $product_data = [
     'other_page' => $other_page  
 ];
 
+$prod_name = $product['name'];
+$title = get_title($start_cut=0,$end_cut=12).'/'.$prod_name;
+
+
 if(!$item_id){
     http_response_code(404);
     $cat_page = include_template('src/templates/404.php', $cat_data);
@@ -34,7 +38,8 @@ if(!$item_id){
 $product_page = include_template('src/templates/product.php', $product_data );
 
 render_page([
+             'title' => $title,   
              'content' => $product_page,
              'styles' => ['product.css','product_slider.css'],
-             'scripts' => ['product_slider.js']
+             'scripts' => ['product_slider.js', 'backet.js']
 ]);

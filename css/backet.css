@@ -40,6 +40,10 @@ td{
 td.item_foto{
     padding: 0;
 }
+td.item_foto img{
+    max-height: 138px;
+    max-width: 170px;
+}
 td.item_name{
     width: 300px;
     height: 138px;
@@ -80,9 +84,6 @@ td.item_quanity div{
 	float: left;
 	margin: 0;
 }
-.backet_item_value.qanity_count{
-	
-}
 .qanity_count{
 	width: 50px!important;
 	height: 45px;
@@ -120,15 +121,17 @@ td.item_quanity div{
     padding: 56px 30px 56px 8px;
     text-align: center;
 }
-.del_item div img{
-    margin: 4px;
-    width: 12px;
-    height: 12px;
+.del_item img{
+    margin-top: 2px;
+    width: 14px;
+    height: 14px;
 }
-.del_item div{
+.del_item button{
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    position: inherit;
+    margin: 0;
 }
 .del_item div:hover{
     background-color: #ed1651;

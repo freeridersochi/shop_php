@@ -1,4 +1,4 @@
-<h1>Оформление &nbsp;заказа<?=$person_type['person']?></h1>
+<h1>Оформление &nbsp;заказа</h1>
 
     <!--   Первая форма     -->
     <h2 class="active first_title"><b>1.</b>Контактная информация</h2>
@@ -13,7 +13,7 @@
                           <p class="error"><?=$errors['name']?></p>
                      <? endif; ?>
                  </div>
-                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>">
+                 <input type="text" class="client_name" id="name" name="name" value="<?=$fields['name']?>" required>
                  <div>
                      <p>Контактный телефон:<span class="error" id="phone_err"></span></p>
                      <?php if($errors['phone']): ?>
@@ -60,7 +60,6 @@
     <?php endif; ?>
     <!--   Вторая форма   -->
     <h2 class="second_title"><b>2. </b>Информация о доставке</h2>
-    <?php var_dump($step)?>
     <?php if ( $step == 1 ):?>
     <section class="second_form <?=get_my_current_user()?'':'hidden'?>">
         <form action="checkout.php" method="post">       

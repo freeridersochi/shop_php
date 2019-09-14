@@ -3,12 +3,14 @@
 <section class="jumbotron">
     <div >
         <img src="../img/banners/slider_image.png">
+        <?php $promo = $promo_products[$new_page['current']];?>
+        <?php var_dump($new_page['current']);?>
         <p class="name_promo_item">
-            <strong>Название</strong><br>Промо-товара
+            <strong><?=mb_substr($promo['name'], 0, 30, 'UTF-8').'...'?></strong><br>
         </p>
-        <p class="promo_desc">Описание промо-товара</p>
+        <p class="promo_desc"><?=mb_substr($promo['description'], 0, 100, 'UTF-8').'...'?></p>
         <span class="background_text">super shop</span>
-        <button class="about_promo">Посмотреть &nbsp;+</button>
+        <a class="about_promo" href="product.php?item_id=<?=$promo['id']?>">Посмотреть&nbsp;&nbsp;+</a>
     </div>
 </section>
 <!-- Item parth -->

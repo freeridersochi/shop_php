@@ -46,6 +46,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }
 };
 
+$title = get_title($start_cut=0,$end_cut=-4);
+
 $login_data = [
     'errors' => $errors,
     'fields' => $_POST
@@ -54,6 +56,7 @@ $login_data = [
 $login_page = include_template('src/templates/login.php', $login_data);
 
 render_page([  
+              'title' => $title,  
               'content' => $login_page,
               'styles' => ['../css/login.css'],
               'scripts' => []

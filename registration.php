@@ -40,6 +40,8 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     }
 }; 
 
+$title = get_title($start_cut=0,$end_cut=-4);
+
 $registration_data = [
     'errors' => $errors,
     'fields' => $_POST
@@ -48,6 +50,7 @@ $registration_data = [
 $registration_page = include_template('src/templates/registration.php', $registration_data);
 
 render_page([ 
+              'title' => $title,  
               'content' => $registration_page,
               'styles' => ['registration.css'],
               'scripts' => []

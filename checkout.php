@@ -1,12 +1,10 @@
 <?php 
-require_once 'src/include/common.php';
+require_once './src/include/common.php';
 require_once './src/include/nav_functions.php';// link nav functions
 require_once './src/include/include.php'; //link include function
 require_once './src/include/user_function.php';
 require_once './src/include/checkout_function.php';
 
-//Not user form
-$person_type=[];
 $errors=[];
 //first check
 if($_SERVER['REQUEST_METHOD']==="POST"){
@@ -15,7 +13,10 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     $phone=$_POST['phone'];
     $email=$_POST['email'];
 
-    if( $name === '' ){
+    if( $name === ''){
+        if(!preg_match("/[A-z0-9]/i", $name)){
+            $errors['name'] = "Not valid name";
+            }
         $errors['name'] = "Enter name";
         }
     if ( $phone != ''){
@@ -33,19 +34,23 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
                                  'name'=>$name, 
                                  'phone'=>$phone, 
                                  'email'=>$email
-                                ]; 
-       
+                                ];
         }
 }
-//second check
+//second check 
 if($_SERVER['REQUEST_METHOD']==="POST"){
     $city=$_POST['city'];
     if( $city === '' ){
         $errors['city'] = "Enter city";
     }
+    $city=$_POST['street'];
+    if( $city === '' ){
+        $errors['street'] = "Enter street";
+    }
     if(sizeof($errors) === 0){
         $_SESSION['address'] = [
-                                 'city'=>$city  
+                                 'city'=>$city,
+                                 'street'=>$street 
                                 ];       
         }
 };
@@ -60,11 +65,9 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         if ($user && $address && $order) {
         
             $order_number = checkout($user, $address, $order);
-            // Use variable $home_data in Include function
+            
             $checkout_final_page = include_template('./src/templates/checkout_final.php', ['order_number' => $order_number] );
-            
-            
-            
+
             $include_result = include_template('./src/templates/layout.php', [                                           
                                                 'content' => $checkout_final_page,
                                                 'styles' => ['checkout_final.css'],
@@ -88,7 +91,6 @@ if($_SESSION['new_user']||get_my_current_user()){
     };
 }
 
-
 //data for temlpate
 $checkout_data = [
     'errors' => $errors,
@@ -101,9 +103,10 @@ $checkout_page = include_template('./src/templates/checkout.php', $checkout_data
 
 // Include template with data from $categories and data from $home_data in temlate "layout.php"
 $include_result = include_template('./src/templates/layout.php', [
+                                                'title' => $title,
                                                 'content' => $checkout_page,
                                                 'styles' => ['checkout.css'],
-                                                'scripts' => ['checkout.js']
+                                                'scripts' => ['backet.js','сheckout.js']
                                                 ]);
 //Show final template with include template
 print($include_result);

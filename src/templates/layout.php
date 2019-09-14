@@ -7,19 +7,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    
+    <title><?=$title?></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
-    <link href="../../css/mainCssWebDesignTwo.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="../../css/mainCssWebDesign.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
                
     <?php foreach($styles as $style) : ?>   
-    <link href="../../css/<?=$style ?>" rel="stylesheet">
+        <link href="../../css/<?=$style?>" rel="stylesheet">
     <?php endforeach;?>
     
-    <?php foreach($scripts as $script) : ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <?php foreach($scripts as $script) : ?>      
+        <script src="../../js/<?=$script?>"></script>
     <?php endforeach;?>
+    
+   
           
 </head>
 <body>
@@ -33,7 +36,6 @@
     </div>
     <div class="menu_bg">
         <ul class="mainNav">
-            <?php  ?>
             <?php foreach($categories as $category) : ?>
                 <li><a href="/category.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
             <?php endforeach;?>    
@@ -47,16 +49,17 @@
             <a href="registration.php" class="reg">Регистрация</a>
         <?php else :?>
             <a href="logout.php" class="red">Выйти</a>
+            <a href="personal_area.php" class="reg">Личный кабинет</a>
         <?php endif; ?>
     </div>
     <a class="backet" href="backet.php">
         <img src="../img/icons/backet_icon.png" alt="Backet Icon">
         <div class="backet_value">
-            <p class="backet_sum">46 945</p>
+            <p class="backet_sum total_order total_cost"></p>
             <p class="type_money">руб.</p>
         </div>
         <div class="backet_item_value">
-            <p class="item_quanity">2</p>
+            <p class="item_quanity"><?= sizeof($_SESSION['order']) ?></p>
             <p>&nbsp;предмета</p>
         </div>
     </a>
