@@ -45,9 +45,9 @@
         <!--  User adress bar   -->
         <div class="right_bar">
             <label for="city" class="user_data_lebels">Город:</label>
-            <input class="client_city" type="text">
+            <input class="city" type="text">
             <label for="street" class="user_data_lebels">Улица:</label>
-            <input class ="client_street" type="text">
+            <input class ="street" type="text">
             <div class="home_appartments">
                 <div class="home_input">
                     <label for="home_num" class="user_data_lebels">Дом:</label>

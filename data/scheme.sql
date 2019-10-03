@@ -33,7 +33,7 @@ CREATE TABLE products(
     photo1 CHAR(255),
     photo2 CHAR(255),
     photo3 CHAR(255),
-    quanity INT,
+    quantity INT,
     description MEDIUMTEXT,
     discount DOUBLE(3,2) DEFAULT 1.0 NOT NULL,
     mark INT references marks(id) ON DELETE RESTRICT,

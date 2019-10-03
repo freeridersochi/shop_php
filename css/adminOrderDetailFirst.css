@@ -132,7 +132,7 @@ th{
     letter-spacing: 0.3px;
 }
 /* Price and Total row */
-.price_column, .total_price_column, .quanity_column{
+.price_column, .total_price_column, .quantity_column{
     padding-left: 0px;
     text-align: center;
     color: #000;
@@ -142,10 +142,10 @@ th{
     text-transform: lowercase;
 }
 /* Quanity column */
-.quanity_column{
+.quantity_column{
     width: 60px;
 }
-.item_quanity{
+.item_quantity{
     border: 1px solid #dee1e2;
     width: 36px;
     height: 27px;
@@ -236,7 +236,7 @@ h2{
     text-indent: 4px;
 }
 /* колонка адреса пользователя */
-p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.delivery_choose{
+p.client_name, p.client_phone, p.client_mail, p.city, p.street, p.delivery_choose{
     font-size: 16px;
     margin-top: 1px;
     border: 1px solid #dee1e2;
@@ -245,7 +245,7 @@ p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.
     padding: 3px 6px;
     margin: 1px 1px 20px 16px;
 }
-p.client_city, p.client_street{
+p.city, p.street{
     margin-left: 0;
 }
 .home_num{
@@ -452,7 +452,7 @@ th{
     letter-spacing: 0.3px;
 }
 /* Price and Total row */
-.price_column, .total_price_column, .quanity_column{
+.price_column, .total_price_column, .quantity_column{
     padding-left: 0px;
     text-align: center;
     color: #000;
@@ -462,10 +462,10 @@ th{
     text-transform: lowercase;
 }
 /* Quanity column */
-.quanity_column{
+.quantity_column{
     width: 60px;
 }
-.item_quanity{
+.item_quantity{
     border: 1px solid #dee1e2;
     width: 36px;
     height: 27px;
@@ -556,7 +556,7 @@ h2{
     text-indent: 4px;
 }
 /* колонка адреса пользователя */
-p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.delivery_choose{
+p.client_name, p.client_phone, p.client_mail, p.city, p.street, p.delivery_choose{
     font-size: 16px;
     margin-top: 1px;
     border: 1px solid #dee1e2;
@@ -565,7 +565,7 @@ p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.
     padding: 3px 6px;
     margin: 1px 1px 20px 16px;
 }
-p.client_city, p.client_street{
+p.city, p.street{
     margin-left: 0;
 }
 .home_num{

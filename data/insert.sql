@@ -67,7 +67,7 @@ INSERT INTO products (
                       photo1,
                       photo2,
                       photo3,
-                      quanity,
+                      quantity,
                       description,
                       discount,
                       mark,

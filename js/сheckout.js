@@ -24,6 +24,7 @@ $(document).ready(function(){
         };
         validateName();
     });
+    
     //check phone
     $('.client_phone').on('input',function(){        
         function validatePhone(){
@@ -46,6 +47,7 @@ $(document).ready(function(){
             };
         validatePhone();
     });
+    
     //check email
     $('.client_email').on('input',function(){
         function validateEmail(){
@@ -67,18 +69,19 @@ $(document).ready(function(){
             };
         validateEmail();
     });
+    
     //check city    
-    $('.city').on('input',function(){
+    $('#city').on('input',function(){
         function validateCity(){
                 let regex = /[A-z]/i;
                 let city = document.getElementById('city');
                 let error = document.getElementById('city_err');
-                let value = email.value.trim();
+                let value = city.value.trim();
 
                 if( value!== '' ){
-                    if (!regex.test(value)){
+                    if (regex.test(value)){
                         error.innerHTML="<sup>*</sup>Only cirilic latters";
-                        errors.push(email_err[error]);
+                        errors.push(city_err[error]);
                     }else{
                         error.innerHTML="";       
                         }
@@ -87,6 +90,72 @@ $(document).ready(function(){
                 }
             };
         validateCity();
+    });
+    
+    //check street  
+    $('#street').on('input',function(){
+    function validateStreet(){
+            let regex = /[A-z]/i;
+            let street = document.getElementById('street');
+            let error = document.getElementById('street_err');
+            let value = street.value.trim();
+
+            if( value!== '' ){
+                if (regex.test(value)){
+                    error.innerHTML="<sup>*</sup>Only cirilic latters";
+                    errors.push(street_err[error]);
+                }else{
+                    error.innerHTML="";       
+                    }
+            }else{
+                error.innerHTML="<sup>*</sup>Not empty";
+            }
+        };
+    validateStreet();
+    });
+    
+    //check home    
+    $('.home').on('input',function(){
+        function validateHome(){
+                let regex = /[A-z]/i;
+                let home = document.getElementById('home_num');
+                let error = document.getElementById('home_err');
+                let value = home.value.trim();
+
+                if( value!== '' ){
+                    if (regex.test(value)){
+                        error.innerHTML="<sup>*</sup>Only cirilic";
+                        errors.push(home_err[error]);
+                    }else{
+                        error.innerHTML="";       
+                        }
+                }else{
+                    error.innerHTML="<sup>*</sup>Not empty";
+                }
+            };
+        validateHome();
+    });
+    
+    //check appartment 
+    $('.appartment').on('input',function(){
+    function validateAppartment(){
+            let regex = /[A-z]/i;
+            let appartment = document.getElementById('appartment_num');
+            let error = document.getElementById('appartment_err');
+            let value = appartment.value.trim();
+
+            if( value!== '' ){
+                if (regex.test(value)){
+                    error.innerHTML="<sup>*</sup>Only cirilic";
+                    errors.push(appartment_err[error]);
+                }else{
+                    error.innerHTML="";       
+                    }
+            }else{
+                error.innerHTML="<sup>*</sup>Not empty";
+            }
+        };
+        validateAppartment();
     });
 
 //end check control 
@@ -126,11 +195,11 @@ $(document).ready(function(){
     
         let error = false;
 
-        if($('.client_city').val()==''){
+        if($('.city').val()==''){
             $('#city_err').html("<sup>*</sup>Обязательное поле");
             error = true;
         }
-        if($('.client_street').val()==''){ 
+        if($('.street').val()==''){ 
             $('#street_err').html("<sup>*</sup>Обязательное поле");
             error = true;
         }
