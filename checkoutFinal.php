@@ -41,7 +41,17 @@ if($_SERVER['REQUEST_METHOD']==="POST" && $_POST['finish']){
     $order_id = checkout($user, $address, $order);
     
     if($order_id){ 
-        header("Location: checkout_final.php?order=$order_id");
+        header("Location: ");
+        $checkout_final_page = include_template('./src/templates/checkout_final.php', ['order_number' => $order_number] );
+
+        $include_result = include_template('./src/templates/layout.php', [
+                                            'title' => 'Оформление заказа',
+                                            'content' => $checkout_final_page,
+                                            'styles' => ['checkout_final.css'],
+                                            'scripts' => []
+                                            ]);
+        //Show final template with include template
+        print($include_result);
         $_SESSION['new_customer'] = null;
         $_SESSION['address'] = null;
         $_SESSION['orders'] = null;

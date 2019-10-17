@@ -14,7 +14,16 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
      $quantity = intval($_POST['quantity'][$i]);
      $orders[$i] = ['product'=>$product,  'size'=>$size, 'quantity'=> $quantity];
   }
-
+    if(sizeof($orders)===0){
+        $empty_backet_page = include_template('src/templates/empty_busket.php');
+        render_page([
+              'title' => 'Корзина',
+              'content' => $empty_backet_page,
+              'styles' => ['backet.css'],
+              'scripts' => ['backet.js']
+        ]); 
+        die();
+     }   
   $_SESSION['orders'] = $orders;
   header('Location: checkout.php');
 }

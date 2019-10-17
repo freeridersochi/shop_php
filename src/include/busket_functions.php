@@ -15,7 +15,6 @@ function get_total_items(){
   
   for($i=0; $i<count($_SESSION['orders']); $i++){
       $total_in_position = $_SESSION['orders'][$i]['quantity'];
-      var_dump($total_in_position);
       $total += $total_in_position;
   };
   return $total;  

@@ -7,11 +7,11 @@ function register($name, $email, $password){
         
     global $link;
     
-    $statement = mysqli_prepare($link,"INSERT INTO users (name, email, password, phone, city, street, home, appartments, user_orders )
-                            VALUES(?,?,?,?,?,?,?,?,?)");
+    $statement = mysqli_prepare($link,"INSERT INTO users (name, email, password)
+                            VALUES(?,?,?)");
 
     # sss ( s-string*3)
-    mysqli_stmt_bind_param( $statement, 'sssssssss', $name,$email,$password,$phone,$city,$street,$home,$appartments,$user_orders);
+    mysqli_stmt_bind_param( $statement, 'sss', $name,$email,$password);
     
     $result = mysqli_stmt_execute($statement);
     
@@ -30,8 +30,9 @@ function register($name, $email, $password){
     
 };
 
-function updateData($city, $phone, $street, $home, $appartment){
-    # save in bd
+function updateData($user_id, $address ){
+    // save in bd
+    //$city, $phone, $street, $home, $appartment;
 };
 function login($user_email, $user_password){
        
@@ -56,6 +57,22 @@ function login($user_email, $user_password){
     };
     
     return $user; 
+    
+};
+
+function get_user_orders($user_id){
+    
+    global $link;
+
+    $sql = "SELECT * FROM orders WHERE owner_id ='$user_id'"; 
+
+    $result = mysqli_query( $link, $sql ); 
+    
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    $user_orders = $data;
+    
+    return $user_orders;      
     
 };
 function save_data($name, $phone, $email){

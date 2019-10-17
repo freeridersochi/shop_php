@@ -83,28 +83,18 @@
         <div class="user_orders">
             <h2>Ваши заказы</h2>
             <!--   Actual orders start    -->
+           <?php foreach($orders as $order): ?>
             <div class="actual_order">
-                <div class="order_info">
-                    <p class="order_num">№4653</p>
-                    <p class="order_sum">(45 458 руб.)</p>
-                    <p class="order_time">01.01.2019 в 15:45</p>
-                </div>
+                <div class="order_info">                   
+                    <p class="order_num"><?=$order['id']?></p>
+                    <p class="order_sum"></p>
+                    <p class="order_time"><?=$order['created_at']?></p>                   
+                </div>                
                 <div class="order_status">
-                    <p>Ожидает доставки</p>
+                    <p><?=get_status($order['status'])?></p>
                 </div>
             </div>
-            <!--   Actual orders end    -->
-            <!--   Done orders start    -->
-            <div class="done_order">
-                <div class="order_info">
-                    <p class="order_num">№4653</p>
-                    <p class="order_sum">(45458 руб.)</p>
-                    <p class="order_time">01.01.2019 в 15:45</p>
-                </div>
-                <div class="order_status">
-                    <p>Доставлено</p>
-                </div>
-            </div>
+            <?php endforeach ;?>
             <!--   Done orders end    -->
         </div>
         <!-- Orders Section end -->

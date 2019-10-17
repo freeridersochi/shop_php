@@ -22,7 +22,7 @@ function get_items(){
 
     global $link;
 
-    $sql = "SELECT * FROM `products`";
+    $sql = "SELECT * FROM `products` WHERE quantity > 0";
 
     $result = mysqli_query( $link, $sql );
 
@@ -72,7 +72,7 @@ function get_cat_items($item_cat){
 
     $sql = "SELECT * FROM `products` WHERE id<=4";//.$item_cat;
 
-    $result = mysqli_query ( $link, $sql );
+    $result = mysqli_query( $link, $sql );
 
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 

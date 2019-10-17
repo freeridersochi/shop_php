@@ -59,3 +59,24 @@ function get_promo_products($category_id){
     return $data;
         
 };
+//remove product function
+function remove_products($product_id, $quantity){
+    global $link;
+    $product = get_product($product_id);
+    if($product['quantity']-$quantity < 0){
+        return false;
+    }
+    $statement = mysqli_prepare($link, "UPDATE products SET quantity = quantity-?");
+    
+    mysqli_stmt_bind_param($statement, 'i', $quantity);
+    
+    $result = mysqli_stmt_execute($statement);
+    
+    if(!$result){
+        $error = mysqli_error($link);
+        return false;
+    };
+    
+    return true;
+    
+}

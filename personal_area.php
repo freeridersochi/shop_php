@@ -2,7 +2,8 @@
 require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
-require_once 'src/include//user_functions.php';
+require_once 'src/include/user_functions.php';
+require_once 'src/include/order_functions.php';
 
 if($_SERVER['REQUEST_METHOD']==="POST"){
 $errors=[];
@@ -41,9 +42,14 @@ $appartment = $_POST['appartment'];
     }
 }
 
+$user = get_my_current_user();
+$user_id = $user['id'];
+$orders = get_user_orders($user_id);
+
 $user_data = [
     'errors' => $errors,
-    'fields' => $_POST
+    'fields' => $_POST,
+    'orders' => $orders
 ];
 
 $pers_area_page = include_template('src/templates/personal_area.php', $user_data);

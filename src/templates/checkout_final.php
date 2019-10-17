@@ -1,6 +1,7 @@
 <h1>Оформление &nbsp;заказа</h1>
 <section class="checkOut_Panel">
     <!-- Заголовок  -->
+    <!-- //TO DO use order number -->
     <h2>Заказ № 22455 <b>успешно оформлен</b></h2>
         <p class="info_p">
             Спасибо за ваш заказ!
