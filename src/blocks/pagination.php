@@ -7,9 +7,9 @@
 <div class="cat_nav">
     <span>
     <p>Страницы</p>
-    <?php for($i=1; $i<= $cat_page['total']; $i++): ?>     
+    <?php for($i=1; $i<= $cat_page['total']; $i++): ?>
         <a href="category.php?page=<?=$i?>&name=<?=$_GET['name']?>" 
-            class="<?=$cat_page['current']===$i ?'active': ''?>"><?=$i?></a>  
-    <?php endfor; ?> 
+            class="<?=$cat_page['current']===$i ?'active': ''?>"><?=$i?></a>
+    <?php endfor; ?>
     </span>
 </div> 

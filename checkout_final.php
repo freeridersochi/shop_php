@@ -7,7 +7,13 @@ require_once './src/include/checkout_functions.php';
 $order_number = $_GET['order'];
 
 if(!$order_number){
-    //to do 404
+        $checkout_error = include_template('src/templates/checkout_error.php');
+        render_page([
+              'title' => 'Оформление заказа',
+              'content' => $checkout_error,
+              'styles' => ['checkout_final.css']
+        ]); 
+        die();
 }
 
 $checkout_final_page = include_template('./src/templates/checkout_final.php', ['order_number' => $order_number] );

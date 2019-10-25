@@ -62,13 +62,19 @@ function get_promo_products($category_id){
 //remove product function
 function remove_products($product_id, $quantity){
     global $link;
+    //get orduct array
     $product = get_product($product_id);
-    if($product['quantity']-$quantity < 0){
+    //get product quantity
+    $product_quantity = $product['quantity'];
+    //know quatity to change db
+    $total_quantity = $product_quantity - $quantity;
+    if($total_quantity < 0){
+        $err_message ="Sorry, this product is end now!";
         return false;
     }
-    $statement = mysqli_prepare($link, "UPDATE products SET quantity = quantity-?");
+    $statement = mysqli_prepare($link, "UPDATE products SET quantity = ? WHERE id =  ?");
     
-    mysqli_stmt_bind_param($statement, 'i', $quantity);
+    mysqli_stmt_bind_param($statement, 'ii', $total_quantity, $product_id );
     
     $result = mysqli_stmt_execute($statement);
     

@@ -11,7 +11,7 @@ function checkout($user, $address, $orders) {
     $err_message = null;
     $order_id = -1;
     try {
-         //Action hear
+        //Action hear
         if(!$user['id']){
            $password = rand(100,1000).$user['name']; //Generate random password
            $user = register($user['name'], $user['email'], $password);
@@ -35,6 +35,8 @@ function checkout($user, $address, $orders) {
     } else {
         mysqli_rollback($link);
         //print $err_message;
+        
+        
         //TO DO errror message (like 'Такой товар к сожалению кончился.') и остальные условия(кончился размер.) Сообщение об ошибке + номер заказа. 
     }
     return $order_id ;
