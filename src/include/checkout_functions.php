@@ -15,7 +15,7 @@ function checkout($user, $address, $orders) {
         if(!$user['id']){
            $password = rand(100,1000).$user['name']; //Generate random password
            $user = register($user['name'], $user['email'], $password);
-            if(!user) {
+            if(!$user) {
                 $err_message ="User email is not avaialable!";
             }
         }
@@ -35,11 +35,10 @@ function checkout($user, $address, $orders) {
     } else {
         mysqli_rollback($link);
         //print $err_message;
-        
-        
+    
         //TO DO errror message (like 'Такой товар к сожалению кончился.') и остальные условия(кончился размер.) Сообщение об ошибке + номер заказа. 
     }
-    return $order_id ;
+    return ['order'=> $order_id, 'error'=> $err_message];
 };
 
 function create_ordered_product($id, $order) {
@@ -53,14 +52,14 @@ function create_ordered_product($id, $order) {
 
     if(!$result){
         $error = mysqli_error($link);
-        return null;
+        throw new Exception($error);
     };
 
     $id = mysqli_stmt_insert_id($statement);
     //update table orders
     
     if(!remove_products($order['product'], $order['quantity'])){
-        return null;
+        throw new Exception('Такой товар закончился');
     }
     
     return $id;
@@ -77,7 +76,7 @@ function create_order($owner_id, $orders) {
     
     if(!$result){
         $error = mysqli_error($link);
-        return null;
+        throw new Exception($error);
     };
     
     $id = mysqli_stmt_insert_id($statement);

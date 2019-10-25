@@ -3,12 +3,13 @@
   <?php
       $item = $_SESSION['orders'][$i];
       $name = get_product($item['product']);
+      $size = get_size($item['size']);
   ?>
   
   <tr>      
       <td class="item_foto"><img src="<?=$name['main_photo']?>"></td>
       <td class="item_name"><?=$name['name']?><input type="hidden" name="product[]" value="<?=$item['product']?>"></td>
-      <td class="item_status"><?=$item['size']?><input type="hidden" name="size[]" value="<?=$item['size']?>"></td>
+      <td class="item_status"><?=$size['size']?><input type="hidden" name="size[]" value="<?=$item['size']?>"></td>
       <td class="item_price"><?=$name['price']?></td>
       <td class="item_quantity">
           <div>

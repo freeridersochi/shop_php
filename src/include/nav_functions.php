@@ -1,6 +1,7 @@
 <?php
 //Connect DB
 require_once 'database.php';
+require_once 'product_functions.php';
 
 // GEt cat func
 function get_categories(){
@@ -22,14 +23,22 @@ function get_items(){
 
     global $link;
 
-    $sql = "SELECT * FROM `products` WHERE quantity > 0";
+    $sql = "SELECT * FROM `products`";
 
     $result = mysqli_query( $link, $sql );
 
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    $result = [];
+    
+    foreach($data as $item){
+        $quantity = get_quantity($item['id']);
+        if($quantity > 0){
+            $result[] = $item; 
+        }
+    }
 
-    return $data;
-
+    return $result;
 }
 
 //Get best

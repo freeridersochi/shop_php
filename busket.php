@@ -5,8 +5,8 @@ require_once 'src/include/product_functions.php';
 require_once 'src/include/include.php';
 
 if($_SERVER['REQUEST_METHOD']==="POST"){
-
-  $orders=[];
+  
+    $orders=[];
 
   for ($i=0 ; $i <= sizeof($_POST['product'])-1; $i++){
      $product = intval($_POST['product'][$i]);

@@ -19,9 +19,9 @@
                 <p class="cat1_item1_about"><?=$product['description']?></p>
                 <span>
                     <p>Выберете вариант:</p>
-                    <select name="size">
+                    <select name="size_id">
                         <?php foreach($sizes as $size):?>
-                            <option value="<?=$size['size']?>"><?=$size['size']?></option>
+                            <option value="<?=$size['id']?>"><?=$size['size']?></option>
                         <?php endforeach; ?>
                     </select>
                 </span>

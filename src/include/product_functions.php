@@ -45,6 +45,29 @@ function get_sizes($id){
     
     return $data;
 }
+
+function get_size($size_id){
+     
+    global $link;
+
+    $sql = "SELECT * FROM `sizes` WHERE id=".$size_id; 
+
+    $result = mysqli_query( $link, $sql ); 
+
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    return $data[0];
+}
+
+//calc quantity
+function get_quantity($id){
+    $quantity = 0;
+    $sizes = get_sizes($id);
+    foreach($sizes as $size){
+        $quantity += $size['quantity'];
+    }
+    return $quantity;
+}
 //promo
 function get_promo_products($category_id){    
     

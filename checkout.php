@@ -8,6 +8,8 @@ $errors=[];
 //first check
 if($_SERVER['REQUEST_METHOD']==="POST" && $_POST["get_contacts"]){    
     if(sizeof($errors) === 0){ 
+        
+        // TO DO CHECK errrors
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
@@ -38,9 +40,18 @@ if($_SERVER['REQUEST_METHOD']==="POST" && $_POST['finish']){
   
     if ($user && $address && $order) {
 
-    $order_id = checkout($user, $address, $order);
-    
-    if($order_id){ 
+    $result = checkout($user, $address, $order);
+    if($result['error']){
+        $data = ['err_message'=>$result['error']];  
+        $checkout_error = include_template('src/templates/checkout_error.php', $data);
+        render_page([
+              'title' => 'Оформление заказа',
+              'content' => $checkout_error,
+              'styles' => ['checkout_final.css']
+        ]);
+        die();      
+    }else{
+        $order_id = $result['order'];
         header("Location: checkout_final.php?order=$order_id");
         $_SESSION['new_customer'] = null;
         $_SESSION['address'] = null;
