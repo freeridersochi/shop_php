@@ -36,19 +36,19 @@
         <form action="login.php" method="post">
             <h3>Быстрый вход</h3>
             <div>
-                <p>Ваш e-mail:<span class="error"></span></p>
+                <p>Ваш e-mail:<span class="error" id="user_email_err"></span></p>
                 <?php if($user_errors['user_email']): ?>
                 <p class="error"><?=$user_errors['user_email']?></p>
                 <? endif; ?>
             </div>
-            <input type="email" name="user_email" value="<?=$fields['user_email']?>">
+            <input type="email" class="user_email" name="user_email" value="<?=$fields['user_email']?>">
             <div>
-                <p class="user_password">Пароль:<span class="error"></span></p>
+                <p class="user_password">Пароль:<span class="error" class="email_err"></span></p>
                 <?php if($user_errors['user_password']): ?>
                 <p class="error user_psw"><?=$user_errors['user_password']?></p>
                 <? endif; ?>
             </div>
-            <input type="password" name="user_password">
+            <input type="password" name="user_password" id="user_password">
             <input type="hidden" name="returnto" value="checkout.php">
             <button class="continue_one" type="submit">
                 <p>Войти</p>

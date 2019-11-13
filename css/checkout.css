@@ -424,3 +424,6 @@ p.delivery_choose{
 .continue{
 	color: #fff;
 }
+.error{
+    color: red;
+}

@@ -8,8 +8,14 @@ function get_status($status){
         case 'accepted': 
             $result = "принят";
             break;
+        case 'in_process': 
+            $result = "отгружен";
+            break;
+        case 'courier': 
+            $result = "у курьера";
+            break;
         case 'delivered': 
-            $result = "доставлено";
+            $result = "доставлен";
             break;
         case 'cancelled': 
             $result = "отменено";

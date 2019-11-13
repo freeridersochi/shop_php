@@ -1,4 +1,7 @@
 $(document).ready(function(){ 
+
+/* ***** First parth ****** */
+    
 //check control
     let errors=[];
     //check name 
@@ -48,18 +51,48 @@ $(document).ready(function(){
         validatePhone();
     });
     
-    //check email
+    //email check function 
+    function validateEmail(email,error){
+            let regex = /.+@.+\..+/i;
+            let value = email[0].value.trim();
+
+            if( value!== '' ){
+                if (!regex.test(value)){
+                    error.innerHTML="<sup>*</sup>Your adrees must look 'example@gmail.com' ";
+                    errors.push(email_err[error]);
+                }else{
+                    error.innerHTML="";       
+                    }
+            }else{
+                error.innerHTML="<sup>*</sup>Not empty";
+            }
+        };
+    //check client email
     $('.client_email').on('input',function(){
-        function validateEmail(){
-                let regex = /.+@.+\..+/i;
-                let email = document.getElementById('email');
-                let error = document.getElementById('email_err');
-                let value = email.value.trim();
+        let email = document.getElementsByClassName('client_email');
+        let error = document.getElementById('email_err');
+        validateEmail(email,error);
+    });
+    
+    //check user_email
+    $('.user_email').on('input',function(){
+        let email = document.getElementsByClassName('user_email');
+        let error = document.getElementById('user_email_err');
+        validateEmail(email,error);
+    });
+    
+    //check user_password
+    $('#user_password').on('input',function(){
+        function validatePsv(){
+                let regex = /[А-яё]/i;
+                let psv = document.getElementById('user_password');
+                let error = document.getElementById('password_err');
+                let value = psv.value.trim();
 
                 if( value!== '' ){
-                    if (!regex.test(value)){
-                        error.innerHTML="<sup>*</sup>Your adrees must look 'example@gmail.com' ";
-                        errors.push(email_err[error]);
+                    if (regex.test(value)){
+                        error.innerHTML="<sup>*</sup>Only english letters";
+                        errors.push(password_err[error]);
                     }else{
                         error.innerHTML="";       
                         }
@@ -67,8 +100,10 @@ $(document).ready(function(){
                     error.innerHTML="<sup>*</sup>Not empty";
                 }
             };
-        validateEmail();
+        validatePsv();
     });
+    
+/* ******** Second parth ****** */
     
     //check city    
     $('#city').on('input',function(){
@@ -139,14 +174,14 @@ $(document).ready(function(){
     //check appartment 
     $('.appartment').on('input',function(){
     function validateAppartment(){
-            let regex = /[A-z]/i;
+            let regex = /[A-zА-яё]/i;
             let appartment = document.getElementById('appartment_num');
             let error = document.getElementById('appartment_err');
             let value = appartment.value.trim();
 
             if( value!== '' ){
                 if (regex.test(value)){
-                    error.innerHTML="<sup>*</sup>Only cirilic";
+                    error.innerHTML="<sup>*</sup>Only number";
                     errors.push(appartment_err[error]);
                 }else{
                     error.innerHTML="";       
@@ -166,7 +201,8 @@ $(document).ready(function(){
     $('.continue_one').on('click',function(){ 
     
         let error = false;
-
+        
+        /*
         if($('.client_name').val()==''){
             $('#name_err').html("<sup>*</sup>Обязательное поле");
             error = true;
@@ -178,7 +214,8 @@ $(document).ready(function(){
         if($('.client_email').val()==''){
             $('#email_err').html("<sup>*</sup>Обязательное поле");
             error = true;
-        } 
+        }
+        */
 
         if($('#name_err').text().length > 0 || $('#phone_err').text().length > 0 || $('#email_err').text().length > 0){
             error = true;    

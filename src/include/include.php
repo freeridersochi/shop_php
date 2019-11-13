@@ -1,10 +1,10 @@
 <?php    
 /* Функция шаблонизации */
-/**
+/*
 * @param string $src
 * @param array|null $data
 * @return string
-**/
+*/
 //Include func
 function include_template(string $src, array $data = null): string{
     $result = '';
@@ -17,7 +17,7 @@ function include_template(string $src, array $data = null): string{
     
     //Fuction action
     ob_start();
-    if ($data) {
+    if ($data){
         extract($data);
     }
     
