@@ -61,13 +61,14 @@ function get_size($size_id){
 
 //calc quantity
 function get_quantity($id){
-    $quantity = 0;
+    $quantity;
     $sizes = get_sizes($id);
     foreach($sizes as $size){
         $quantity += $size['quantity'];
     }
     return $quantity;
 }
+
 //promo
 function get_promo_products($category_id){    
     

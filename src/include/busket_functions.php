@@ -19,3 +19,4 @@ function get_total_items(){
   };
   return $total;  
 };
+

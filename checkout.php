@@ -34,9 +34,10 @@ if($_SERVER['REQUEST_METHOD']==="POST" && $_POST["user_address"]){
 
 //final check
 if($_SERVER['REQUEST_METHOD']==="POST" && $_POST['finish']){
-  $user = get_my_current_user() ?? $_SESSION['new_customer'];
-  $address = $_SESSION['address'];
-  $order = $_SESSION['orders'] ?? 1;
+  
+    $user = get_my_current_user() ?? $_SESSION['new_customer'];
+    $address = $_SESSION['address'];
+    $order = $_SESSION['orders'] ?? 1;
   
     if ($user && $address && $order) {
 
@@ -49,7 +50,7 @@ if($_SERVER['REQUEST_METHOD']==="POST" && $_POST['finish']){
               'content' => $checkout_error,
               'styles' => ['checkout_final.css']
         ]);
-        die();      
+        die();
     }else{
         $order_id = $result['order'];
         header("Location: checkout_final.php?order=$order_id");
