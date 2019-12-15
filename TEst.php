@@ -1,5 +1,14 @@
 <?php 
 
+require_once './src/include/checkout_functions.php';
+$user = [
+    'name' -> 'fjdslkf',
+    'email' -> 'sdf@fdsj.com'
+];
+$address
+$result = checkout($user, $address, $orders);
+print $result;
+
 $first = ""; //22(10)
 $second = 0x2a ;//42
 $name = 'Андрей' ;

@@ -1,4 +1,3 @@
-
 <!--   Jumbotron   -->
 <section class="jumbotron">
     <div >
@@ -21,12 +20,12 @@
         <a href="home.php?new_prod_page=<?=$new_page['current']+1?>#new_items">
             <img class="arrow_right next" src="../img/icons/arrow_right.png" alt="move in right">
         </a>
-        <?php endif ?> 
+        <?php endif ?>
         <?php if ($new_page['current']>1):?>
         <a href="home.php?new_prod_page=<?=$new_page['current']-1?>#new_items">
             <img class="arrow_left prev" src="../img/icons/arrow_left.png" alt="move in left">
         </a>
-        <?php endif ?> 
+        <?php endif ?>
     </span>
     <?php foreach($new_page['data'] as $item):?>
     <article class="new_item">
@@ -60,7 +59,7 @@
         </p>
     </div>
 </section>
-<section class="best_salers" id="best_items">    
+<section class="best_salers" id="best_items">
     <span>
         <p class="best_item_title">Популярные товары</p>
         <?php if ($pop_page['current']<$pop_page['total']): ?>
@@ -72,7 +71,7 @@
             <a href="home.php?pop_prod_page=<?=$pop_page['current']-1?>#best_items">
                 <img class="arrow_left prev_two" src="../img/icons/arrow_left.png" alt="move in left">
             </a>
-        <?php endif ?> 
+        <?php endif ?>
     </span>
         <?php foreach($pop_page['data'] as $item):?>
         <article class="best_items">
@@ -93,8 +92,8 @@
     <img src="../img/banners/about_shop.png">
     <h1>О магазине</h1>
     <div>
-    <p>Этот магазин реализован в рамках дипломной работы. 
-       Даже если товары имеют сходство с реальными они являются вымышлеными. Названия и цены тоже. 
+    <p>Этот магазин реализован в рамках дипломной работы.
+       Даже если товары имеют сходство с реальными они являются вымышлеными. Названия и цены тоже.
        Если вы хотели что-то купить это не получится. Приношу свои извинения! Если сам магазин понравился и есть желание купить шаблон свжитесь со мной через контакты в нижней части сайта. Хорошего дня и приятного просмотра, все работает в "зазеркалье", приятного просмотра!
     </p>
     </div>

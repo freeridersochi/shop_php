@@ -8,8 +8,6 @@ $errors=[];
 //first check
 if($_SERVER['REQUEST_METHOD']==="POST" && $_POST["get_contacts"]){    
     if(sizeof($errors) === 0){ 
-        
-        // TO DO CHECK errrors
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
@@ -34,26 +32,26 @@ if($_SERVER['REQUEST_METHOD']==="POST" && $_POST["user_address"]){
 
 //final check
 if($_SERVER['REQUEST_METHOD']==="POST" && $_POST['finish']){
-  
-    $user = get_my_current_user() ?? $_SESSION['new_customer'];
-    $address = $_SESSION['address'];
-    $order = $_SESSION['orders'] ?? 1;
+  $user = get_my_current_user() ?? $_SESSION['new_customer'];
+  $address = $_SESSION['address'];
+  $order = $_SESSION['orders'] ?? 1;
   
     if ($user && $address && $order) {
 
-    $result = checkout($user, $address, $order);
-    if($result['error']){
-        $data = ['err_message'=>$result['error']];  
-        $checkout_error = include_template('src/templates/checkout_error.php', $data);
-        render_page([
-              'title' => 'Оформление заказа',
-              'content' => $checkout_error,
-              'styles' => ['checkout_final.css']
-        ]);
-        die();
-    }else{
-        $order_id = $result['order'];
-        header("Location: checkout_final.php?order=$order_id");
+    $order_id = checkout($user, $address, $order);
+    
+    if($order_id){ 
+        header("Location: ");
+        $checkout_final_page = include_template('./src/templates/checkout_final.php', ['order_number' => $order_number] );
+
+        $include_result = include_template('./src/templates/layout.php', [
+                                            'title' => 'Оформление заказа',
+                                            'content' => $checkout_final_page,
+                                            'styles' => ['checkout_final.css'],
+                                            'scripts' => []
+                                            ]);
+        //Show final template with include template
+        print($include_result);
         $_SESSION['new_customer'] = null;
         $_SESSION['address'] = null;
         $_SESSION['orders'] = null;

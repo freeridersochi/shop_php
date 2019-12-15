@@ -1,12 +1,12 @@
-<?php 
+<?php
 require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
-require_once 'src/include/user_function.php';
+require_once 'src/include/user_functions.php';
 
 $url = $_SERVER['HTTP_REFERER']??'home.php';
 
-if(get_my_current_user()){    
+if(get_my_current_user()){
     header('Location: personal_area.php');
     die();
 };
@@ -42,11 +42,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 header('Location: personal_area.php');
             }
             die();
-        };      
+        };
     }
 };
-
-$title = get_title($start_cut=0,$end_cut=-4);
 
 $login_data = [
     'errors' => $errors,
@@ -55,8 +53,8 @@ $login_data = [
 
 $login_page = include_template('src/templates/login.php', $login_data);
 
-render_page([  
-              'title' => $title,  
+render_page([
+              'title' => 'Вход',
               'content' => $login_page,
               'styles' => ['../css/login.css'],
               'scripts' => []

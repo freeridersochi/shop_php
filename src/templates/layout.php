@@ -1,33 +1,36 @@
-<?php 
-    require_once 'src/include/common.php';
+<?php
+    require_once 'src/include/common.php';//Start session
+    require_once 'src/include/busket_functions.php';
     $categories = get_categories();
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title><?=$title?></title>
     <link href="../../css/resetCss.css" rel="stylesheet">
     <link href="../../css/mainCssWebDesign.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
-               
-    <?php foreach($styles as $style) : ?>   
-        <link href="../../css/<?=$style?>" rel="stylesheet">
-    <?php endforeach;?>
-    
-    <?php foreach($scripts as $script) : ?>      
-        <script src="../../js/<?=$script?>"></script>
-    <?php endforeach;?>
-    
-   
-          
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <?php if(isset($styles)):?>
+      <?php foreach($styles as $style) : ?>
+          <link href="../../css/<?=$style?>" rel="stylesheet">
+      <?php endforeach;?>
+    <?php endif; ?>
+
+    <?php if(isset($scripts)):?>
+      <?php foreach($scripts as $script) : ?>
+          <script src="../../js/<?=$script?>"></script>
+      <?php endforeach;?>
+    <?php endif; ?>
+
 </head>
 <body>
 <!--  Заголовок и  основное меню  -->
-<header> 
+<header>
     <div id="shop_logo">
         <a href="home.php">
             <p class="super">SUPER</p>
@@ -38,7 +41,7 @@
         <ul class="mainNav">
             <?php foreach($categories as $category) : ?>
                 <li><a href="/category.php?name=<?=$category['alias']?>&id=<?=$category['id']?>"><?=$category['name']?></a></li>
-            <?php endforeach;?>    
+            <?php endforeach;?>
         </ul>
     <hr>
     </div>
@@ -52,17 +55,19 @@
             <a href="personal_area.php" class="reg">Личный кабинет</a>
         <?php endif; ?>
     </div>
-    <a class="backet" href="backet.php">
-        <img src="../img/icons/backet_icon.png" alt="Backet Icon">
-        <div class="backet_value">
-            <p class="backet_sum total_order total_cost"></p>
-            <p class="type_money">руб.</p>
-        </div>
-        <div class="backet_item_value">
-            <p class="item_quanity"><?= sizeof($_SESSION['order']) ?></p>
-            <p>&nbsp;предмета</p>
-        </div>
-    </a>
+    <?php if($_SESSION['orders']): ?>
+      <a class="backet" href="busket.php">
+          <img src="../img/icons/backet_icon.png" alt="Backet Icon">
+          <div class="backet_value">
+              <p class="backet_sum total_order total_cost"><?=get_total_cost()?></p>
+              <p class="type_money">руб.</p>
+          </div>
+          <div class="backet_item_value">
+              <p class="item_quantity"><?=get_total_items()?></p>
+              <p>&nbsp;предмета</p>
+          </div>
+      </a>
+  <?php endif;?>
 </header>
 
 <?=$content ?>

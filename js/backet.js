@@ -7,10 +7,10 @@ function update(){
     $('tr').each(function()
     {
         var $qnt = $(this).find("td .qanity_count").val();
-        $qnt = parseInt($qnt, 10); 
+        $qnt = parseInt($qnt, 10);
 
         var $price = $(this).find("td.item_price").html();
-        $price = parseInt($price.replace(/&nbsp;|\s/g,""), 10); 
+        $price = parseInt($price.replace(/&nbsp;|\s/g,""), 10);
 
         var sum = $price * $qnt;
 
@@ -20,7 +20,7 @@ function update(){
     });
 
     $('.total_order').text($orderTotal);
-    
+
     console.log($orderTotal);
 }
 
@@ -46,8 +46,11 @@ $('table').on('click', function(event){
 });
 
 update();
+
     
-let orderCost = $orderTotal;
-$('.total_cost').text($orderCost);
-	
-});
+//del btn
+$('.del_btn').on('click', function(){
+    $(this).parent().parent().remove();
+})
+
+});//end ready

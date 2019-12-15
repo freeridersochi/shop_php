@@ -1,8 +1,8 @@
-<?php 
+<?php
 require_once 'src/include/common.php';
 require_once 'src/include/nav_functions.php';
 require_once 'src/include/include.php';
-require_once 'src/include/user_function.php';
+require_once 'src/include/user_functions.php';
 
 $errors=[];
 
@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     $name=trim($_POST['name']);
     $email=trim($_POST['email']);
     $password=$_POST['psw'];
-    $confirm_password=$_POST['confirm_psw'];   
+    $confirm_password=$_POST['confirm_psw'];
     if($name === ''){
         $errors['name']='Enter name!';
     }
@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         $errors['confirm_psw']='Password is not equal';
     }
     if( sizeof($errors)===0 ){
-        
+
         $user = register($name, $email, $password);
         if(!$user){
             $errors['email']="Sorry, this email is bisy.";
@@ -38,9 +38,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
             die();
         }
     }
-}; 
-
-$title = get_title($start_cut=0,$end_cut=-4);
+};
 
 $registration_data = [
     'errors' => $errors,
@@ -49,10 +47,9 @@ $registration_data = [
 
 $registration_page = include_template('src/templates/registration.php', $registration_data);
 
-render_page([ 
-              'title' => $title,  
+render_page([
+              'title' => 'Регистрация',  
               'content' => $registration_page,
               'styles' => ['registration.css'],
               'scripts' => []
 ]);
-

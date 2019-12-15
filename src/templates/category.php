@@ -1,13 +1,13 @@
 <h1><?=$category['name']?></h1>
 <p class="pag_count">Показано <?=sizeof($cat_page['data'])?> из <?=$cat_page['items_count']?> товаров</p>
-<!--   верхняя навигация    --> 
+<!--   верхняя навигация    -->
 <?=include_template('src/blocks/pagination.php')?>
 <!--    секция товаров первой категории   -->
 <section class="category_items">
 <!--  Баннер1  -->
     <div class="cat1_banner_one">
         <img src="../img/banners/cat1_banner1.png" alt="One">
-        <p><strong><?= $category['name']?></strong></p>     
+        <p><strong><?= $category['name']?></strong></p>
         <p class="cat1_desc"><?=$category['description']?></p>
     </div>
 <!--     Товары    -->
@@ -37,8 +37,7 @@
                 </button>
         </article>
         <?php endif;?>
-    <?php endfor;?>    
+    <?php endfor;?>
 <!--   нижняя навигация    -->
 <?=include_template('src/blocks/pagination.php')?>
 </section>
-<script src="../../js/backet.js"></script>

@@ -47,8 +47,8 @@
                 <tr>
                     <td class="item_name_column">название товара</td>
                     <td class="price_column">2 500 <b>руб.</b></td>
-                    <td class="quanity_column">
-                        <p class="item_quanity">5</p>
+                    <td class="quantity_column">
+                        <p class="item_quantity">5</p>
                     </td>
                     <td class="total_price_column">12 500 <b>руб.</b></td>
                     <td class="control_column">
@@ -58,8 +58,8 @@
                 <tr>
                     <td class="item_name_column">название товара</td>
                     <td class="price_column">2 500 <b>руб.</b></td>
-                    <td class="quanity_column">
-                        <p class="item_quanity">5</p>
+                    <td class="quantity_column">
+                        <p class="item_quantity">5</p>
                     </td>
                     <td class="total_price_column">12 500 <b>руб.</b></td>
                     <td class="control_column">
@@ -69,8 +69,8 @@
                 <tr>
                     <td class="item_name_column">название товара</td>
                     <td class="price_column">2 500 <b>руб.</b></td>
-                    <td class="quanity_column">
-                        <p class="item_quanity">5</p>
+                    <td class="quantity_column">
+                        <p class="item_quantity">5</p>
                     </td>
                     <td class="total_price_column">12 500 <b>руб.</b></td>
                     <td class="control_column">
@@ -95,9 +95,9 @@
                  </div>
                  <div class="person_adress middle">
                      <p>Город:</p>
-                     <p class="client_city">Lorem Ipsum</p>
+                     <p class="city">Lorem Ipsum</p>
                      <p>Улица:</p>
-                     <p class="client_street">Lorem Ipsum</p>
+                     <p class="street">Lorem Ipsum</p>
                      <div class="home_num"> 
                          <p>Дом:</p>
                          <p>78</p>

@@ -1,4 +1,4 @@
-DELETE FROM marks;
+﻿DELETE FROM marks;
 DELETE FROM categories;
 DELETE FROM products;
 DELETE FROM users;
@@ -67,7 +67,7 @@ INSERT INTO products (
                       photo1,
                       photo2,
                       photo3,
-                      quanity,
+                      quantity,
                       description,
                       discount,
                       mark,
@@ -407,7 +407,14 @@ VALUES ( # 01 Product
         1  
        );
        
-INSERT INTO users (name, email, password, phone, city, street, home, appartments, user_orders)
-                        VALUES('Admin','admin@gmail.com',sha2(CONCAT(email,'1234'),256), NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO users (name, email, password, phone, city, street, home, appartments, user_orders)
-                        VALUES('Snow Man','demitryvoit@gmail.com',sha2(CONCAT(email,'1234'),256), NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO users (name, email, password)
+VALUES(
+    'Admin',
+    'admin@gmail.com',
+    sha2(CONCAT(email,'1234'),256)
+        ),
+    (
+    'Snow Man',
+    'demitryvoit@gmail.com',
+    sha2(CONCAT(email,'1234'),256)
+            );

@@ -43,10 +43,11 @@ h3{
     margin-top: 29px;
 }
 /* Title End */
-.first_form, .second_form{
+.first_form, .second_form, .confirm_order{
     background-color: #fff;
     width: 1170px;
-    float: left;
+    overflow: hidden;
+    padding: 20px 40px 40px;
 }
 /* Bg start */
 .checkOut_form{
@@ -60,22 +61,16 @@ h3{
 
 /* Форма 1 начало */
 .left{
-    float: left;
-    width: 460px;
-    padding-left: 31px;    
+    float: left;   
 }
 .right{
     float: right;
-    width: 710px;
-    height: 416px;
-    padding: 0 277px 0 41px;
 }
 form p{
     font-size: 14px;
     font-weight: 300;
     margin: 14px 20px 0 0;
     color: #999;
-    float: left;
 }
 form p.error{
     color: red;
@@ -96,7 +91,6 @@ input{
     border: none;
     padding-left: 16px;
     font-weight: 300;
-    float: left;
 }
 .left button{
     margin-top: 18px;
@@ -104,7 +98,7 @@ input{
     height: 50px;
     border: none;
     background-color: #ed1651;
-    float: left;
+    display: block;
 }
 .left button p{
     font-size: 18px;
@@ -122,7 +116,7 @@ input{
     height: 50px;
     border: none;
     background-color: #ed1651;
-    float: left;
+    display: block;
 }
 .right button p{
     font-size: 18px;
@@ -134,9 +128,8 @@ input{
 .right a{
     color: #000;
     font-size: 14px;
-    margin: 46px 122px 15px 19px;
     display: block;
-    float: right;
+    margin: -30px 20px;
 }
 /* Форма 1 конец */
 
@@ -147,18 +140,20 @@ input{
 }
 /* Левая секция начало */
 .left_bar{
-        width: 430px;
-        float: left;
+    width: 430px;
+    float: left;
 }
-.client_adres{
-    width: 385px;
-    padding-left: 31px;
+.client_adres p{
+    display: block;
+}
+.home_appartments{
+    min-width: 390px;
+    display: inline-block;
 }
 .city{
     margin-top: 13px;
-    width: auto;
 }
-.client_city, .client_street{
+.city, .street{
     margin-top: 4px;
 }
 .client_adres button{
@@ -180,31 +175,10 @@ input{
 }
 .street{
     margin-top: 15px;
-    width: auto;
 }
-.home_appartments{
-    float: left;
-    width: 390px;
-}
-.home_input{
-    float: left;
-    width: 180px;
-}
-.appartment_input{
-    float: right;
-    width: 180px;
-}
+
 .small_input{
     width: 180px;
-}
-.home_input p, .appartment_input p{
-    width: auto;
-}
-.home_input p{
-    float: left;
-}
-.appartment_input p{
-    float: left;
 }
 .client_adres button{
     margin-top: 52px;
@@ -226,9 +200,8 @@ input{
 
 /* Средняя секция */
 .midle_bar{
-    width: 300px;
+    max-width: 280px;
     float: left;
-    padding-left: 46px;
 }
 .midle_bar h3{
     margin-bottom: 31px;
@@ -301,7 +274,7 @@ textarea{
 
 /* Правая секеция */
 .right_bar{
-    width: 395px;
+    max-width: 375px;
     float: right;
 }
 /* Форма 2 конец */
@@ -357,7 +330,10 @@ th:last-child{
 /* Delivery info */
 .delivery_info{
     overflow: hidden;
-    height: 222px;
+}
+.delivery_info input{
+    background-color: transparent;
+    padding-left: 4px;
 }
 .form_body input{
     width: auto;
@@ -370,19 +346,18 @@ th:last-child{
     float: none;
 }
 /* name phone mail*/
-.person_info.left{
-    width: 240px;
-    margin-right: 50px;
+.person_info{
+    max-width: 320px;
+    overflow: hidden;
 }
-.person_adress.middle{
-    width: 300px;
-    float: left;
+.person_adress{
+    max-width: 300px;
+    margin-left: 40px;
+    overflow: hidden;
 }
 .delivery_adress.right{
     padding: 0;
-    width: 400px;
-    margin-right: 143px;
-    height: auto;
+    max-width: 400px;
 }
 .delivery_info p{
     font-size: 14px;
@@ -391,7 +366,7 @@ th:last-child{
     letter-spacing: -0.2px;
     margin-top: 12px;
 }
-p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.delivery_choose, p.delivery_commentss{
+p.client_name, p.client_phone, p.client_mail, p.city, p.street, p.delivery_choose, p.delivery_commentss{
     margin-bottom: 27px;
     font-size: 16px;
     color: #000;
@@ -405,15 +380,10 @@ p.client_name, p.client_phone, p.client_mail, p.client_city, p.client_street, p.
     margin-top: 0;
     font-size: 14px;
 }
-.small_size div.left{
+.small_size{
     width: 100px;
     padding: 0;
-}
-.small_size div.right{
-    width: 100px;
-    padding: 0;
-    margin-right: 100px;
-    height: auto;
+    overflow: hidden;
 }
 p.home_num.left{
     font-size: 18px;
@@ -445,7 +415,7 @@ p.delivery_choose{
     font-family: Supermolot, sans-serif;
     border: none;
     color: #fff;
-    margin: 0 0 50px 20px;
+    margin: 20px 0 50px;
 }
 #final_confirmation a{
 	color: #fff;
@@ -453,4 +423,7 @@ p.delivery_choose{
 }
 .continue{
 	color: #fff;
+}
+.error{
+    color: red;
 }
