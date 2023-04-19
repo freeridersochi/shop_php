@@ -59,6 +59,20 @@ function get_size($size_id){
     return $data[0];
 }
 
+//get size quantity
+function get_size_quantity($size){
+    
+    global $link;
+
+    $sql = "SELECT * FROM `sizes` WHERE size=".size; 
+
+    $result = mysqli_query( $link, $sql ); 
+
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    return $data[0];
+}
+
 //calc quantity
 function get_quantity($id){
     $quantity;

@@ -1,5 +1,7 @@
 <?php 
 
+var_dump('db connect');
+
 $link = mysqli_connect('localhost','root','','shop_db');
 
 if (mysqli_connect_errno()){

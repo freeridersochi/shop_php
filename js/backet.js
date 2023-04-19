@@ -36,6 +36,7 @@ function increment( event, step ){
             update();
         }
 };
+    
 $('table').on('click', function(event){
     if(event.target.classList.contains('first_item_incr')){
         increment(event,+1);

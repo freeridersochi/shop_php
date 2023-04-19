@@ -12,16 +12,27 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         $product = intval($_POST['product'][$i]);
         $size = $_POST['size'][$i];
         $quantity = intval($_POST['quantity'][$i]);
-        $quantity_on_stock = $_SESSION['orders'][$i]['quantity'];
         $orders[$i] = [
-            'product' => $product,  
-            'size' => $size, 
-            'quantity' => $quantity, 
-            'on_stock' => $quantity_on_stock
+            'product' => $product,
+            'size' => $size,
+            'quantity' => $quantity
             ];
         }
-    $_SESSION['orders'] = $orders;
+    $_SESSION['orders'] = $orders; 
     
+    $quantity_on_stock = get_size_quantity($orders[$i]['size']);
+    
+    if( $quantity > $quantity_on_stock['quantity']){
+    $empty_on_stock = include_template('src/templates/disable_on_stock.php');
+    render_page([
+              'title' => 'Корзина',
+              'content' => $empty_on_stock,
+              'styles' => ['backet.css'],
+              'scripts' => ['backet.js']
+            ]); 
+         die();
+         }
+   
     if(sizeof($orders)===0){
         $empty_backet_page = include_template('src/templates/empty_busket.php');
         render_page([
@@ -32,19 +43,8 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         ]); 
         die();
     }
-    
-    if( $quantity > $quantity_on_stock ){
-        $empty_on_stock = include_template('src/templates/disable_on_stock.php');
-        render_page([
-                  'title' => 'Корзина',
-                  'content' => $empty_on_stock,
-                  'styles' => ['backet.css'],
-                  'scripts' => ['backet.js']
-                ]); 
-                die();
-             }
     header('Location: checkout.php');
-    }
+ }
 
 $backet_page = include_template('src/templates/busket.php');
 
